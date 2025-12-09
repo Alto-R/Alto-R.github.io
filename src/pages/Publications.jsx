@@ -25,22 +25,22 @@ const publications = [
   },
   {
     id: 3,
-    title: "Climate Change Reshaping Global Energy Systems: A Review of Supply-Demand-Network Dynamics and Regional Resilience",
-    authors: <><strong>Churui Huang</strong>, et al.</>,
-    venue: "Nature Reviews",
-    year: "Submitted",
-    abstract: "A comprehensive review examining how climate change is reshaping global energy systems. We analyze the complex interactions between energy supply, demand, and network infrastructure, with emphasis on regional resilience strategies in the face of environmental disruptions.",
-    tags: ["Climate Change", "Energy Systems", "Resilience"],
-    link: "#"
-  },
-  {
-    id: 4,
     title: "Power generation potential evaluation on electric vehicle integrated photovoltaic: A case study of Shanghai's taxi fleet",
     authors: <><strong>Churui Huang</strong>, et al.</>,
     venue: "Applied Energy",
     year: "Submitted",
     abstract: "This case study evaluates the potential of integrating photovoltaic systems with electric vehicle fleets, focusing on Shanghai's taxi network. We assess the technical feasibility, economic viability, and environmental benefits of solar-powered EV infrastructure in urban transportation systems.",
     tags: ["Electric Vehicles", "Photovoltaic", "Urban Energy"],
+    link: "#"
+  },
+  {
+    id: 4,
+    title: "Climate Change Reshaping Global Energy Systems: A Review of Supply-Demand-Network Dynamics and Regional Resilience",
+    authors: <><strong>Churui Huang</strong>, et al.</>,
+    venue: "Nature Reviews",
+    year: "Working",
+    abstract: "A comprehensive review examining how climate change is reshaping global energy systems. We analyze the complex interactions between energy supply, demand, and network infrastructure, with emphasis on regional resilience strategies in the face of environmental disruptions.",
+    tags: ["Climate Change", "Energy Systems", "Resilience"],
     link: "#"
   }
 ];
