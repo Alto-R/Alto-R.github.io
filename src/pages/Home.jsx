@@ -2,9 +2,12 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { useNavigate } from 'react-router-dom';
 import ParticlesWave from '../components/ParticlesWave';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
       {/* --- WebGL Layer (底层) --- */}
@@ -37,22 +40,28 @@ const Home = () => {
       {/* --- HTML Layer (上层覆盖) --- */}
       <div className="hero-overlay">
         <div className="hero-content">
-          <h1>Hi, I'm Alto-R.</h1>
+          <h1>Hi, I'm Churui Huang.</h1>
           <p className="subtitle">
-            Researcher / Developer / Creator. <br/>
-            Exploring the intersection of AI and Design.
+            Student / Developer. <br/>
+            <br/>
+            My research interests are in smart cities and big data, <br/>
+            with a current focus on convex optimization and reinforcement learning, <br/>
+            aiming to leverage these techniques to build more intelligent and efficient urban systems.
           </p>
-          {/* 你可以在这里添加按钮，比如 "View My Work" */}
+  
           <div style={{marginTop: '2rem'}}>
-             <button style={{
-                 padding: '12px 24px', 
-                 background: 'white', 
-                 border: 'none', 
-                 borderRadius: '4px', 
+             <button
+               onClick={() => navigate('/resume')}
+               style={{
+                 padding: '12px 24px',
+                 background: 'white',
+                 border: 'none',
+                 borderRadius: '4px',
                  cursor: 'pointer',
-                 fontWeight: 'bold'
+                 fontWeight: 'bold',
+                 color: 'black'
              }}>
-                 View Publications
+                 View Resume
              </button>
           </div>
         </div>

@@ -10,22 +10,24 @@ const About = () => {
         {/* Introduction Section */}
         <section className="about-section">
           <p className="about-intro">
-            Hi, I'm <strong>Alto-R</strong>, a researcher and developer passionate about advancing the frontiers
-            of artificial intelligence and computer vision. My work focuses on developing innovative solutions
-            that bridge the gap between theoretical research and practical applications.
+            Hi, I'm <strong>Alto-R</strong>, a postgraduate student at Peking University pursuing my Master's degree
+            in Smart City and Big Data. I am passionate about leveraging data-driven approaches and advanced
+            computational techniques to address the complex challenges facing modern urban systems.
           </p>
 
           <p className="about-text">
-            With a background in deep learning and neural networks, I explore how machines can better understand
-            and interact with the visual world. My research spans from low-level image processing to high-level
-            scene understanding, with a particular interest in efficient model architectures for resource-constrained
-            environments.
+            My research interests lie at the intersection of smart cities and big data, with a particular focus on
+            convex optimization and reinforcement learning. I am fascinated by how these powerful mathematical and
+            computational frameworks can be applied to optimize urban infrastructure, improve resource allocation,
+            and enhance the overall quality of life in cities. From transportation networks to energy systems,
+            I believe intelligent algorithms can unlock significant efficiency gains and sustainability benefits.
           </p>
 
           <p className="about-text">
-            Beyond research, I enjoy building interactive experiences and tools that showcase the creative
-            potential of AI. Whether it's developing web applications with cutting-edge technologies or
-            experimenting with generative models, I'm always excited to explore new possibilities.
+            Through my academic journey and research projects, I strive to develop practical solutions that can
+            translate theoretical advances into real-world impact. Whether it's analyzing large-scale urban datasets,
+            designing optimization algorithms for complex systems, or building decision-support tools for urban
+            planners, I aim to contribute to building more intelligent, efficient, and livable cities for the future.
           </p>
         </section>
 
@@ -33,12 +35,14 @@ const About = () => {
         <section className="resume-section">
           <h2 className="section-title">Research Interests</h2>
           <div className="skills-list">
-            <span>Computer Vision</span>
-            <span>Deep Learning</span>
-            <span>Generative AI</span>
-            <span>Edge Computing</span>
-            <span>Neural Architecture Search</span>
-            <span>Multimodal Learning</span>
+            <span>Smart Cities</span>
+            <span>Big Data Analytics</span>
+            <span>Convex Optimization</span>
+            <span>Reinforcement Learning</span>
+            <span>Urban Computing</span>
+            <span>Transportation Systems</span>
+            <span>Energy Systems</span>
+            <span>Data-Driven Decision Making</span>
           </div>
         </section>
 
@@ -50,14 +54,11 @@ const About = () => {
               Feel free to reach out for collaborations, research discussions, or just to say hi!
             </p>
             <div className="contact-links">
-              <a href="mailto:alto-r@example.com" className="contact-link">
+              <a href="mailto:2501212708@stu.pku.edu.cn" className="contact-link">
                 <span>Email</span>
               </a>
-              <a href="https://github.com/alto-r" target="_blank" rel="noopener noreferrer" className="contact-link">
+              <a href="https://github.com/Alto-R" target="_blank" rel="noopener noreferrer" className="contact-link">
                 <span>GitHub</span>
-              </a>
-              <a href="https://twitter.com/alto-r" target="_blank" rel="noopener noreferrer" className="contact-link">
-                <span>Twitter</span>
               </a>
             </div>
           </div>
@@ -66,7 +67,7 @@ const About = () => {
         {/* Fun Fact */}
         <section className="about-section" style={{marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)'}}>
           <p className="about-text" style={{fontStyle: 'italic', color: 'rgba(255,255,255,0.6)'}}>
-            "The best way to predict the future is to invent it." - Alan Kay
+            "Le vent se lève, il faut tenter de vivre"
           </p>
         </section>
       </div>

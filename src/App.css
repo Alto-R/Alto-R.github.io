@@ -21,20 +21,23 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 2rem; /* 减小左右padding，留出更多空间 */
   display: flex;
   justify-content: flex-end;
+  gap: 1.5rem; /* 使用gap代替margin-left，更灵活 */
+  flex-wrap: wrap; /* 允许换行，防止超出屏幕 */
   z-index: 100;
   background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); /* 渐变背景，防止字看不清 */
   backdrop-filter: blur(5px);
+  box-sizing: border-box;
 }
 
 .navbar a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  margin-left: 2rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  white-space: nowrap; /* 防止文字换行 */
 }
 
 .navbar a:hover {
@@ -165,9 +168,15 @@ h1 {
 
 .pub-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
   margin-top: auto;
+}
+
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .tag {
@@ -176,7 +185,7 @@ h1 {
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.8rem;
-  margin-right: 8px;
+  white-space: nowrap;
 }
 
 .pub-link {
@@ -184,6 +193,24 @@ h1 {
   text-decoration: none;
   font-weight: bold;
   border-bottom: 1px solid white;
+  align-self: flex-end;
+}
+
+.abstract-toggle {
+  background: none;
+  border: none;
+  color: #a5b4fc;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.abstract-toggle:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* --- Resume 样式 --- */
@@ -218,6 +245,7 @@ h1 {
 
 .resume-date {
   min-width: 120px;
+  margin-right: 2rem; /* 增加右边距，与内容保持间距 */
   font-weight: bold;
   color: rgba(255,255,255,0.6);
   padding-top: 4px;
