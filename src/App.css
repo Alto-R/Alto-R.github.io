@@ -1,0 +1,302 @@
+/* --- 基础设置 --- */
+html, body, #root {
+  width: 100%;
+  min-height: 100vh; /* 改为 min-height 允许内容撑开 */
+  margin: 0;
+  padding: 0;
+  background-color: #050505; /* 深色背景 */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+}
+
+/* 移除之前的 overflow: hidden，但我们要保证 Home 页面不出现滚动条 */
+body {
+  overflow-x: hidden; /* 防止水平滚动 */
+  overflow-y: auto;   /* 允许垂直滚动 */
+}
+
+/* --- 导航栏 --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); /* 渐变背景，防止字看不清 */
+  backdrop-filter: blur(5px);
+}
+
+.navbar a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #a5b4fc;
+}
+
+/* --- Home 页面的特殊处理 --- */
+/* 只有 Home 页面需要锁死一屏 */
+.home-container {
+  position: fixed; /* 固定定位 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10vw;
+  pointer-events: none;
+}
+
+.hero-content {
+  pointer-events: auto;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0;
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- 通用页面容器 (Publications, Resume) --- */
+.page-container {
+  position: relative;
+  padding-top: 100px; /* 给导航栏留位置 */
+  padding-bottom: 50px;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10; /* 保证在 Canvas 之上 (虽然切页后 Canvas 不在，但为了层级安全) */
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1rem;
+}
+
+/* --- Publications 卡片样式 --- */
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* 响应式网格 */
+  gap: 2rem;
+}
+
+.pub-card {
+  background: rgba(255, 255, 255, 0.03); /* 极淡的背景 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pub-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(165, 180, 252, 0.5); /* 悬停时边框变蓝 */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.pub-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #a5b4fc;
+}
+
+.pub-title {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.pub-authors {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.pub-abstract {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* 让内容撑开，保证底部对齐 */
+}
+
+.pub-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.tag {
+  background: rgba(165, 180, 252, 0.1);
+  color: #a5b4fc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-right: 8px;
+}
+
+.pub-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+}
+
+/* --- Resume 样式 --- */
+.resume-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #a5b4fc;
+  margin-bottom: 2rem;
+}
+
+.resume-item {
+  display: flex;
+  margin-bottom: 2.5rem;
+  border-left: 2px solid rgba(255,255,255,0.1);
+  padding-left: 2rem;
+  position: relative;
+}
+
+.resume-item::before {
+  content: '';
+  position: absolute;
+  left: -6px; /* 调整圆点位置 */
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: #a5b4fc;
+  border-radius: 50%;
+}
+
+.resume-date {
+  min-width: 120px;
+  font-weight: bold;
+  color: rgba(255,255,255,0.6);
+  padding-top: 4px;
+}
+
+.resume-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+}
+
+.institution {
+  margin: 0 0 0.5rem 0;
+  color: #a5b4fc;
+}
+
+.description {
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+}
+
+.skills-list span {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* --- About 页面样式 --- */
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.about-intro strong {
+  color: #a5b4fc;
+  font-weight: 600;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.contact-info {
+  margin-top: 1.5rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: rgba(165, 180, 252, 0.1);
+  border: 1px solid rgba(165, 180, 252, 0.3);
+  border-radius: 8px;
+  color: #a5b4fc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background: rgba(165, 180, 252, 0.2);
+  border-color: rgba(165, 180, 252, 0.5);
+  transform: translateY(-2px);
+}
