@@ -78,14 +78,24 @@ body {
 
 .hero-content {
   pointer-events: auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  backdrop-filter: blur(0.1px);
+  width: fit-content;
+  max-width: 90%;
 }
 
 h1 {
   font-size: 4rem;
   margin: 0;
-  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #a5b4fc;
+}
+
+.subtitle {
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
 /* --- 通用页面容器 (Publications, Resume) --- */

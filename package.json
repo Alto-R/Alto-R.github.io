@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --remote personalweb"
+    "deploy": "gh-pages -d dist --remote personalweb",
+    "process-buildings": "node scripts/processBuildings.js"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

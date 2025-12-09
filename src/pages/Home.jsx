@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useNavigate } from 'react-router-dom';
-import ParticlesCity from '../components/ParticlesCity'; // <--- 引入新组件
+import ParticlesCityReal from '../components/ParticlesCityReal'; // <--- 使用真实城市建筑数据
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,23 +15,25 @@ const Home = () => {
         <Canvas dpr={[1, 2]}>
           <Suspense fallback={null}>
             {/* 调整相机：
-              y=15, z=25 (拉得更远，看全景)
+              高空斜向下看整个城市，初始角度略微偏右
+              数据范围: X[-254,256], Y[0,208], Z[-220,220]
             */}
-            <PerspectiveCamera makeDefault position={[12, 15, 25]} fov={40} />
-            
-            <ambientLight intensity={0.5} />
-            
-            {/* 雾气调整：让远处完全变黑，突出近处的霓虹感 */}
-            <fog attach="fog" args={['#050505', 10, 60]} />
+            <PerspectiveCamera makeDefault position={[-180, 60, -60]} fov={60} />
 
-            <ParticlesCity />
-            
-            <OrbitControls 
-              enableZoom={false} 
-              enablePan={false} 
-              autoRotate={true}
-              autoRotateSpeed={0.3} // 更慢更庄重
-              maxPolarAngle={Math.PI / 2} 
+            <ambientLight intensity={0.5} />
+
+            {/* 轻微的雾气效果 */}
+            <fog attach="fog" args={['#050505', 200, 400]} />
+
+            <ParticlesCityReal />
+
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              autoRotate={false}
+              minPolarAngle={Math.PI / 6}
+              maxPolarAngle={Math.PI / 2.2}
+              target={[0, 0, 0]}
             />
           </Suspense>
         </Canvas>
@@ -48,7 +50,7 @@ const Home = () => {
             with a current focus on convex optimization and reinforcement learning, <br/>
             aiming to leverage these techniques to build more intelligent and efficient urban systems.
           </p>
-  
+
           <div style={{marginTop: '2rem'}}>
              <button
                onClick={() => navigate('/resume')}
