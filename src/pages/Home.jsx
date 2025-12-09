@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useNavigate } from 'react-router-dom';
-import ParticlesWave from '../components/ParticlesWave';
+import ParticlesCity from '../components/ParticlesCity'; // <--- 引入新组件
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,26 +12,28 @@ const Home = () => {
     <div className="home-container">
       {/* --- WebGL Layer (底层) --- */}
       <div className="canvas-container">
-        {/* Canvas 是 R3F 的入口 */}
-        <Canvas dpr={[1, 2]}> {/* dpr 适配高清屏 */}
+        <Canvas dpr={[1, 2]}>
           <Suspense fallback={null}>
-            {/* 设置相机位置和视野 */}
-            <PerspectiveCamera makeDefault position={[0, 5, 10]} fov={50} />
+            {/* 相机位置调整：
+              原来的 [0, 5, 10] 是平视，改成了 [10, 10, 15] 
+              这样可以俯瞰整个城市结构 
+            */}
+            <PerspectiveCamera makeDefault position={[10, 10, 15]} fov={45} />
             
-            {/* 添加一点环境光 */}
+            {/* 环境设置 */}
             <ambientLight intensity={0.5} />
+            {/* 添加黑色雾气，让远处的粒子渐隐，制造景深感 */}
+            <fog attach="fog" args={['#000000', 5, 40]} />
 
-            {/* 我们的粒子组件 */}
-            <ParticlesWave count={8000} />
+            {/* 城市粒子组件 */}
+            <ParticlesCity />
             
-            {/* 允许鼠标控制视角旋转 (可选，去掉则为固定视角) */}
-            {/* enableZoom={false} 禁止缩放，避免穿帮 */}
             <OrbitControls 
               enableZoom={false} 
               enablePan={false} 
-              autoRotate={true} // 开启自动缓慢旋转
+              autoRotate={true}
               autoRotateSpeed={0.5}
-              maxPolarAngle={Math.PI / 2} // 限制不能看到地平线以下
+              maxPolarAngle={Math.PI / 2} // 限制视角不能钻到地底下
             />
           </Suspense>
         </Canvas>
@@ -59,7 +61,8 @@ const Home = () => {
                  borderRadius: '4px',
                  cursor: 'pointer',
                  fontWeight: 'bold',
-                 color: 'black'
+                 color: 'black',
+                 boxShadow: '0 0 10px rgba(255,255,255,0.3)' // 给按钮加一点微光
              }}>
                  View Resume
              </button>
