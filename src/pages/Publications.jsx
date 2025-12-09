@@ -108,7 +108,7 @@ const Publications = () => {
                   <div className="pub-tags">
                     {pub.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
                   </div>
-                  <a href={pub.link} className="pub-link">PDF &rarr;</a>
+                  <a href={pub.link} className="pub-link" target="_blank" rel="noopener noreferrer">PDF &rarr;</a>
                 </div>
               </div>
             );

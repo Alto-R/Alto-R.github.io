@@ -50,19 +50,17 @@ const Resume = () => {
           <div className="resume-item">
             <div className="resume-date">Submitted</div>
             <div className="resume-content">
-              <h3>Climate Change Reshaping Global Energy Systems: A Review of Supply-Demand-Network Dynamics and 
-Regional Resilience</h3>
-              <p className="institution">Nature Reviews</p>
-              <p className="description">Comprehensive review of supply-demand-network dynamics and regional resilience in energy systems.</p>
+              <h3>Power generation potential evaluation on electric vehicle integrated photovoltaic: A case study of Shanghai's taxi fleet</h3>
+              <p className="institution">Applied Energy</p>
+              <p className="description">Case study evaluating photovoltaic integration potential in Shanghai's taxi fleet.</p>
             </div>
           </div>
           <div className="resume-item">
-            <div className="resume-date">Submitted</div>
+            <div className="resume-date">Working</div>
             <div className="resume-content">
-              <h3>Power generation potential evaluation on electric vehicle integrated photovoltaic: A case study of Shanghai's 
-taxi fleet</h3>
-              <p className="institution">Applied Energy</p>
-              <p className="description">Case study evaluating photovoltaic integration potential in Shanghai's taxi fleet.</p>
+              <h3>Climate Change Reshaping Global Energy Systems: A Review of Supply-Demand-Network Dynamics and Regional Resilience</h3>
+              <p className="institution">Nature Reviews</p>
+              <p className="description">Comprehensive review of supply-demand-network dynamics and regional resilience in energy systems.</p>
             </div>
           </div>
         </section>
