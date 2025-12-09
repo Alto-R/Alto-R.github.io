@@ -14,26 +14,24 @@ const Home = () => {
       <div className="canvas-container">
         <Canvas dpr={[1, 2]}>
           <Suspense fallback={null}>
-            {/* 相机位置调整：
-              原来的 [0, 5, 10] 是平视，改成了 [10, 10, 15] 
-              这样可以俯瞰整个城市结构 
+            {/* 调整相机：
+              y=15, z=25 (拉得更远，看全景)
             */}
-            <PerspectiveCamera makeDefault position={[10, 10, 15]} fov={45} />
+            <PerspectiveCamera makeDefault position={[12, 15, 25]} fov={40} />
             
-            {/* 环境设置 */}
             <ambientLight intensity={0.5} />
-            {/* 添加黑色雾气，让远处的粒子渐隐，制造景深感 */}
-            <fog attach="fog" args={['#000000', 5, 40]} />
+            
+            {/* 雾气调整：让远处完全变黑，突出近处的霓虹感 */}
+            <fog attach="fog" args={['#050505', 10, 60]} />
 
-            {/* 城市粒子组件 */}
             <ParticlesCity />
             
             <OrbitControls 
               enableZoom={false} 
               enablePan={false} 
               autoRotate={true}
-              autoRotateSpeed={0.5}
-              maxPolarAngle={Math.PI / 2} // 限制视角不能钻到地底下
+              autoRotateSpeed={0.3} // 更慢更庄重
+              maxPolarAngle={Math.PI / 2} 
             />
           </Suspense>
         </Canvas>

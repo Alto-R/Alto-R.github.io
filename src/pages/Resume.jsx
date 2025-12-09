@@ -35,7 +35,7 @@ const Resume = () => {
             <div className="resume-date">Published</div>
             <div className="resume-content">
               <h3>Carbon emission implications of toll discount policies and network expansions in highway</h3>
-              <p className="institution">Transportation Research Part D (First Author)</p>
+              <p className="institution">Transportation Research Part D (Co-First Author)</p>
               <p className="description">Analyzed the impact of highway toll discount policies and network expansions on carbon emissions.</p>
             </div>
           </div>
@@ -119,9 +119,9 @@ taxi fleet</h3>
           <h2 className="section-title">Professional Skills</h2>
           <div className="skills-list">
             <span>Python</span>
+            <span>JavaScript</span>
             <span>SPSS</span>
             <span>MATLAB</span>
-            <span>JavaScript</span>
             <span>AutoCAD</span>
             <span>SketchUp</span>
             <span>Photoshop</span>

@@ -10,7 +10,7 @@ const About = () => {
         {/* Introduction Section */}
         <section className="about-section">
           <p className="about-intro">
-            Hi, I'm <strong>Alto-R</strong>, a postgraduate student at Peking University pursuing my Master's degree
+            Hi, I'm <strong>Churui Huang</strong>, a postgraduate student at Peking University pursuing my Master's degree
             in Smart City and Big Data. I am passionate about leveraging data-driven approaches and advanced
             computational techniques to address the complex challenges facing modern urban systems.
           </p>
