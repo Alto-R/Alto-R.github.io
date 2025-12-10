@@ -1,0 +1,186 @@
+{
+  "nav": {
+    "home": "Home",
+    "resume": "Resume",
+    "publications": "Publications",
+    "about": "About"
+  },
+  "home": {
+    "greeting": "Hi, I'm Churui Huang.",
+    "subtitle": "Student / Developer.",
+    "description": "My research interests are in smart cities and big data,",
+    "description2": "with a current focus on convex optimization and reinforcement learning,",
+    "description3": "aiming to leverage these techniques to build more intelligent and efficient urban systems.",
+    "button": "View Resume"
+  },
+  "resume": {
+    "title": "Resume",
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "date": "2025.09 - Present",
+          "degree": "Master's in Smart City and Big Data",
+          "institution": "Peking University, College of Urban Planning and Design",
+          "description": "Focus on smart city planning and data-driven urban design."
+        },
+        {
+          "date": "2020.09 - 2025.07",
+          "degree": "B.S. in Urban and Rural Planning",
+          "institution": "Peking University, College of Urban and Environmental Sciences",
+          "description": "Comprehensive training in urban planning, design, and environmental studies."
+        }
+      ]
+    },
+    "research": {
+      "title": "Research & Publications",
+      "items": [
+        {
+          "date": "Published",
+          "title": "Carbon emission implications of toll discount policies and network expansions in highway",
+          "institution": "Transportation Research Part D (Co-First Author)",
+          "description": "Analyzed the impact of highway toll discount policies and network expansions on carbon emissions."
+        },
+        {
+          "date": "Under Review",
+          "title": "A global feasibility gap in resilient island energy transitions",
+          "institution": "Nature Communications",
+          "description": "Examined challenges in achieving resilient energy transitions for island systems globally."
+        },
+        {
+          "date": "Submitted",
+          "title": "Power generation potential evaluation on electric vehicle integrated photovoltaic: A case study of Shanghai's taxi fleet",
+          "institution": "Applied Energy",
+          "description": "Case study evaluating photovoltaic integration potential in Shanghai's taxi fleet."
+        },
+        {
+          "date": "Working",
+          "title": "Climate Change Reshaping Global Energy Systems: A Review of Supply-Demand-Network Dynamics and Regional Resilience",
+          "institution": "Nature Reviews",
+          "description": "Comprehensive review of supply-demand-network dynamics and regional resilience in energy systems."
+        }
+      ]
+    },
+    "projects": {
+      "title": "Project Experience",
+      "items": [
+        {
+          "date": "PKU Research",
+          "title": "Recreation Route Recommendation System Based on Social Media Data and User Needs",
+          "institution": "Peking University Research Training Program",
+          "description": "Independently developed a recreation route recommendation system based on social media data and user preferences."
+        }
+      ]
+    },
+    "internship": {
+      "title": "Internship Experience",
+      "items": [
+        {
+          "date": "2024.08 - 2024.11",
+          "title": "Backend Developer Intern",
+          "institution": "Urban Planning & Design Institute of Shenzhen (UPDIS)",
+          "description": "Responsible for backend development of Shenzhen's Mountain-Sea Connection Smart Navigation System."
+        }
+      ]
+    },
+    "activities": {
+      "title": "Campus Activities",
+      "items": [
+        {
+          "date": "2023.09 - 2024.09",
+          "title": "Peer Counselor",
+          "institution": "Peking University, College of Urban and Environmental Sciences",
+          "description": "Assisted with daily student management and provided support to fellow students."
+        },
+        {
+          "date": "2022.09 - 2023.09",
+          "title": "Director of Volunteer Service Department",
+          "institution": "Peking University, College of Urban and Environmental Sciences",
+          "description": "Led team training, managed reimbursements, and coordinated all volunteer service activities."
+        }
+      ]
+    },
+    "skills": {
+      "title": "Professional Skills",
+      "items": ["Python", "JavaScript", "SPSS", "MATLAB", "AutoCAD", "SketchUp", "Photoshop", "Premiere", "Lightroom"]
+    },
+    "languageSkills": {
+      "title": "Language Proficiency",
+      "items": ["English (CET-6: 563)"]
+    },
+    "interests": {
+      "title": "Personal Interests",
+      "items": ["Photography", "Basketball", "Gaming"]
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "Hi, I'm <1>Churui Huang</1>, a postgraduate student at Peking University pursuing my Master's degree in Smart City and Big Data. I am passionate about leveraging data-driven approaches and advanced computational techniques to address the complex challenges facing modern urban systems.",
+    "paragraph1": "My research interests lie at the intersection of smart cities and big data, with a particular focus on convex optimization and reinforcement learning. I am fascinated by how these powerful mathematical and computational frameworks can be applied to optimize urban infrastructure, improve resource allocation, and enhance the overall quality of life in cities. From transportation networks to energy systems, I believe intelligent algorithms can unlock significant efficiency gains and sustainability benefits.",
+    "paragraph2": "Through my academic journey and research projects, I strive to develop practical solutions that can translate theoretical advances into real-world impact. Whether it's analyzing large-scale urban datasets, designing optimization algorithms for complex systems, or building decision-support tools for urban planners, I aim to contribute to building more intelligent, efficient, and livable cities for the future.",
+    "researchTitle": "Research Interests",
+    "researchInterests": [
+      "Smart Cities",
+      "Big Data Analytics",
+      "Convex Optimization",
+      "Reinforcement Learning",
+      "Urban Computing",
+      "Transportation Systems",
+      "Energy Systems",
+      "Data-Driven Decision Making"
+    ],
+    "contactTitle": "Get in Touch",
+    "contactText": "Feel free to reach out for collaborations, research discussions, or just to say hi!",
+    "email": "Email",
+    "github": "GitHub",
+    "quote": "Le vent se lève, il faut tenter de vivre"
+  },
+  "publications": {
+    "title": "Selected Publications",
+    "readMore": " Read more",
+    "showLess": " Show less",
+    "pdfLink": "PDF →",
+    "items": [
+      {
+        "id": 1,
+        "title": "Carbon emission implications of toll discount policies and network expansions in highway",
+        "authors": "Han Yang^†^, **Churui Huang**^†^, Qing Yu^*^, et al.",
+        "venue": "Transportation Research Part D",
+        "year": "Published",
+        "abstract": "Highways account for a significant share of transportation-related CO2 emissions, yet policy interventions in mitigating these emissions remain underexplored. This paper investigates the impact of toll discount policies and network expansions on highway carbon emissions, drawing on long-term Electronic Toll Collection (ETC) data. We propose a bottom-up framework for estimating highway emissions and use a combination of time series decomposition and causal inference methods to isolate policy impacts. Our results reveal that toll discounts exert a significant and positive effect on highway carbon emissions, the shift of freight traffic onto highways reduces overall system-wide emissions: on average, each kilometer of discounted highway travel yields a net reduction of 52 g of CO2 per day in the transportation network. These findings underscore both the potential of policy-driven highway utilization to lower total carbon footprints and the importance of carefully calibrated policies to manage induced passenger travel.",
+        "tags": ["Transportation", "Carbon Emissions", "Policy Analysis"],
+        "link": "https://www.sciencedirect.com/science/article/pii/S1361920925001683"
+      },
+      {
+        "id": 2,
+        "title": "A global feasibility gap in resilient island energy transitions",
+        "authors": "**Churui Huang**, Haoran Zhang^*^, Jinyue Yan",
+        "venue": "Nature Communications",
+        "year": "Under Review",
+        "abstract": "Island nations are central to achieving UN Sustainable Development Goal 7 on affordable and clean energy, yet the economic feasibility of their energy transitions has not been systematically quantified at the global scale. Using a high-resolution framework covering more than 1,800 inhabited islands and 50 million hourly records of demand and renewable potential, we assess the costs of resilient low-carbon systems. We find that over 50% of islands face unaffordable transition costs under current income levels, with burdens most acute in Southeast Asia, coastal Africa, and the Western Pacific. Incorporating climate-resilience design further worsens outcomes, reclassifying 7% of islands into higher-cost categories. Although continued technological progress is projected to reduce the global average Levelized Cost of Energy (LCOE) by about 4% by 2050, such a modest decline remains insufficient to bridge the feasibility gap for low-income islands, leaving substantial disparities in progress toward the energy equity objectives of SDG7. Our results highlight that market-driven cost declines alone cannot deliver affordable island transitions, calling for targeted international finance to bridge persistent feasibility gaps.",
+        "tags": ["Island energy transitions", "Economic feasibility", "Climate resilience"],
+        "link": "#"
+      },
+      {
+        "id": 3,
+        "title": "Power generation potential evaluation on electric vehicle integrated photovoltaic: A case study of Shanghai's taxi fleet",
+        "authors": "**Churui Huang**, et al.",
+        "venue": "Applied Energy",
+        "year": "Submitted",
+        "abstract": "This case study evaluates the potential of integrating photovoltaic systems with electric vehicle fleets, focusing on Shanghai's taxi network. We assess the technical feasibility, economic viability, and environmental benefits of solar-powered EV infrastructure in urban transportation systems.",
+        "tags": ["Electric Vehicles", "Photovoltaic", "Urban Energy"],
+        "link": "#"
+      },
+      {
+        "id": 4,
+        "title": "Climate Change Reshaping Global Energy Systems: A Review of Supply-Demand-Network Dynamics and Regional Resilience",
+        "authors": "**Churui Huang**, et al.",
+        "venue": "Nature Reviews",
+        "year": "Working",
+        "abstract": "A comprehensive review examining how climate change is reshaping global energy systems. We analyze the complex interactions between energy supply, demand, and network infrastructure, with emphasis on regional resilience strategies in the face of environmental disruptions.",
+        "tags": ["Climate Change", "Energy Systems", "Resilience"],
+        "link": "#"
+      }
+    ]
+  }
+}

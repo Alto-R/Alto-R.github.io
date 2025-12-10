@@ -6,6 +6,9 @@ import { initReactI18next } from 'react-i18next';
 import enTranslation from './locales/en.json';
 import zhTranslation from './locales/zh.json';
 
+// 从 localStorage 读取保存的语言，默认为英文
+const savedLanguage = localStorage.getItem('language') || 'en';
+
 i18n
   .use(initReactI18next)
   .init({
@@ -17,11 +20,16 @@ i18n
         translation: zhTranslation
       }
     },
-    lng: 'en', // 默认语言
+    lng: savedLanguage, // 使用保存的语言
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false // React 已经处理了 XSS
     }
   });
+
+// 监听语言变化并保存到 localStorage
+i18n.on('languageChanged', (lng) => {
+  localStorage.setItem('language', lng);
+});
 
 export default i18n;
