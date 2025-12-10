@@ -1,12 +1,27 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Home from './pages/Home';
 import Publications from './pages/Publications';
 import Resume from './pages/Resume';
 import About from './pages/About';
 import './App.css';
+
+// ScrollToTop 组件：路由切换时瞬间跳转到顶部
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -14,6 +29,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         {/* 顶部导航栏 */}
         <nav className="navbar">
