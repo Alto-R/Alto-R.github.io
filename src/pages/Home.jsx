@@ -5,6 +5,7 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ParticlesCityReal from '../components/ParticlesCityReal';
+import { BlurFade } from '../components/BlurFade';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -45,31 +46,38 @@ const Home = () => {
       {/* --- HTML Layer (上层覆盖) --- */}
       <div className="hero-overlay">
         <div className="hero-content">
-          <h1>{t('home.greeting')}</h1>
-          <p className="subtitle">
-            {t('home.subtitle')} <br/>
-            <br/>
-            {t('home.description')} <br/>
-            {t('home.description2')} <br/>
-            {t('home.description3')}
-          </p>
+          <BlurFade delay={0.25} inView>
+            <h1>{t('home.greeting')}</h1>
+          </BlurFade>
 
-          <div style={{marginTop: '2rem'}}>
-             <button
-               onClick={() => navigate('/resume')}
-               style={{
-                 padding: '12px 24px',
-                 background: 'white',
-                 border: 'none',
-                 borderRadius: '4px',
-                 cursor: 'pointer',
-                 fontWeight: 'bold',
-                 color: 'black',
-                 boxShadow: '0 0 10px rgba(255,255,255,0.3)' // 给按钮加一点微光
-             }}>
-                 {t('home.button')}
-             </button>
-          </div>
+          <BlurFade delay={0.5} inView>
+            <p className="subtitle">
+              {t('home.subtitle')} <br/>
+              <br/>
+              {t('home.description')} <br/>
+              {t('home.description2')} <br/>
+              {t('home.description3')}
+            </p>
+          </BlurFade>
+
+          <BlurFade delay={0.75} inView>
+            <div style={{marginTop: '2rem'}}>
+               <button
+                 onClick={() => navigate('/resume')}
+                 style={{
+                   padding: '12px 24px',
+                   background: 'white',
+                   border: 'none',
+                   borderRadius: '4px',
+                   cursor: 'pointer',
+                   fontWeight: 'bold',
+                   color: 'black',
+                   boxShadow: '0 0 10px rgba(255,255,255,0.3)' // 给按钮加一点微光
+               }}>
+                   {t('home.button')}
+               </button>
+            </div>
+          </BlurFade>
         </div>
       </div>
     </div>

@@ -1,0 +1,15 @@
+.blur-fade {
+  opacity: 0;
+  filter: blur(var(--blur-fade-blur, 6px));
+  transform: translateY(var(--blur-fade-y-offset, 6px));
+  transition:
+    opacity var(--blur-fade-duration, 0.6s) ease-out,
+    filter var(--blur-fade-duration, 0.6s) ease-out,
+    transform var(--blur-fade-duration, 0.6s) ease-out;
+}
+
+.blur-fade-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}

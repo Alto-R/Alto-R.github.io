@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './Dock.css';
 
 export const Dock = ({ children, iconMagnification = 60, iconDistance = 100 }) => {
