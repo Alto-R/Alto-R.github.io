@@ -1,12 +1,35 @@
 // src/pages/Home.jsx
-import React, { Suspense } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useNavigate } from 'react-router-dom';
-import ParticlesCityReal from '../components/ParticlesCityReal'; // <--- 使用真实城市建筑数据
+import ParticlesCityReal from '../components/ParticlesCityReal';
+import { LanguageContext } from '../App';
 
 const Home = () => {
   const navigate = useNavigate();
+  const { language } = useContext(LanguageContext);
+
+  const content = {
+    en: {
+      greeting: "Hi, I'm Churui Huang.",
+      subtitle: "Student / Developer.",
+      description: "My research interests are in smart cities and big data,",
+      description2: "with a current focus on convex optimization and reinforcement learning,",
+      description3: "aiming to leverage these techniques to build more intelligent and efficient urban systems.",
+      button: "View Resume"
+    },
+    zh: {
+      greeting: "你好，我是黄楚睿。",
+      subtitle: "学生 / 开发者",
+      description: "我的研究兴趣在智慧城市和大数据领域，",
+      description2: "目前专注于凸优化和强化学习，",
+      description3: "旨在利用这些技术构建更智能、更高效的城市系统。",
+      button: "查看简历"
+    }
+  };
+
+  const text = content[language];
 
   return (
     <div className="home-container">
@@ -30,7 +53,8 @@ const Home = () => {
             <OrbitControls
               enableZoom={false}
               enablePan={false}
-              autoRotate={false}
+              autoRotate={true}
+              autoRotateSpeed={0.1}
               minPolarAngle={Math.PI / 6}
               maxPolarAngle={Math.PI / 2.2}
               target={[0, 0, 0]}
@@ -42,13 +66,13 @@ const Home = () => {
       {/* --- HTML Layer (上层覆盖) --- */}
       <div className="hero-overlay">
         <div className="hero-content">
-          <h1>Hi, I'm Churui Huang.</h1>
+          <h1>{text.greeting}</h1>
           <p className="subtitle">
-            Student / Developer. <br/>
+            {text.subtitle} <br/>
             <br/>
-            My research interests are in smart cities and big data, <br/>
-            with a current focus on convex optimization and reinforcement learning, <br/>
-            aiming to leverage these techniques to build more intelligent and efficient urban systems.
+            {text.description} <br/>
+            {text.description2} <br/>
+            {text.description3}
           </p>
 
           <div style={{marginTop: '2rem'}}>
@@ -64,7 +88,7 @@ const Home = () => {
                  color: 'black',
                  boxShadow: '0 0 10px rgba(255,255,255,0.3)' // 给按钮加一点微光
              }}>
-                 View Resume
+                 {text.button}
              </button>
           </div>
         </div>
