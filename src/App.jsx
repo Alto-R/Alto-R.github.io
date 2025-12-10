@@ -1,6 +1,7 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import Home from './pages/Home';
 import Publications from './pages/Publications';
 import Resume from './pages/Resume';
@@ -9,6 +10,7 @@ import './App.css';
 
 function App() {
   const { t, i18n } = useTranslation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <Router>
@@ -34,12 +36,23 @@ function App() {
             </span>
           </div>
 
+          {/* 汉堡菜单按钮 - 仅在移动端显示 */}
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={menuOpen ? 'open' : ''}></span>
+            <span className={menuOpen ? 'open' : ''}></span>
+            <span className={menuOpen ? 'open' : ''}></span>
+          </button>
+
           {/* 导航链接 - 右侧 */}
-          <div className="nav-links">
-            <Link to="/">{t('nav.home')}</Link>
-            <Link to="/resume">{t('nav.resume')}</Link>
-            <Link to="/publications">{t('nav.publications')}</Link>
-            <Link to="/about">{t('nav.about')}</Link>
+          <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
+            <Link to="/" onClick={() => setMenuOpen(false)}>{t('nav.home')}</Link>
+            <Link to="/resume" onClick={() => setMenuOpen(false)}>{t('nav.resume')}</Link>
+            <Link to="/publications" onClick={() => setMenuOpen(false)}>{t('nav.publications')}</Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>{t('nav.about')}</Link>
           </div>
         </nav>
 
