@@ -1,0 +1,243 @@
+/* Publications.css - Expandable Card Styles */
+
+/* Card Styles */
+.pub-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.pub-abstract-preview {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+/* Modal Container */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background: rgba(15, 15, 15, 0.98);
+  border: 1px solid rgba(165, 180, 252, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Custom scrollbar for modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(165, 180, 252, 0.3);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(165, 180, 252, 0.5);
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(165, 180, 252, 0.5);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* Modal Body */
+.modal-body {
+  margin-top: 2rem;
+}
+
+.abstract-title {
+  font-size: 1.3rem;
+  color: #a5b4fc;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.pub-abstract-full {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+/* Modal Footer */
+.modal-content .pub-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pub-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(165, 180, 252, 0.15);
+  border: 1px solid rgba(165, 180, 252, 0.3);
+  border-radius: 8px;
+  color: #a5b4fc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.pub-link-button:hover {
+  background: rgba(165, 180, 252, 0.25);
+  border-color: rgba(165, 180, 252, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(165, 180, 252, 0.2);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .modal-container {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .modal-content {
+    padding: 2rem 1.5rem;
+    max-height: 95vh;
+    margin-top: 1rem;
+  }
+
+  .modal-close {
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .abstract-title {
+    font-size: 1.1rem;
+  }
+
+  .pub-abstract-full {
+    font-size: 0.95rem;
+  }
+
+  .modal-content .pub-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pub-link-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .pub-abstract-preview {
+    font-size: 0.85rem;
+  }
+
+  .abstract-title {
+    font-size: 1rem;
+  }
+
+  .pub-abstract-full {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
+
+/* Animation Enhancements */
+.pub-card {
+  transform-origin: center;
+}
+
+.modal-content .pub-header,
+.modal-content .pub-title,
+.modal-content .pub-authors {
+  margin-bottom: 1rem;
+}
+
+/* Ensure modal content is above everything */
+.modal-backdrop,
+.modal-container {
+  position: fixed;
+}
+
+/* Add gradient fade effect for long content */
+.modal-content::after {
+  content: '';
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to top, rgba(15, 15, 15, 0.98), transparent);
+  pointer-events: none;
+}
