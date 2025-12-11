@@ -1,5 +1,6 @@
 // src/pages/Resume.jsx
 import { useTranslation } from 'react-i18next';
+import { EncryptedText } from '@/components/encrypted-text';
 
 const Resume = () => {
   const { t } = useTranslation();
@@ -16,11 +17,25 @@ const Resume = () => {
   return (
     <div className="page-container">
       <div className="content-wrapper">
-        <h1 className="page-title">{t('resume.title')}</h1>
+        <h1 className="page-title">
+          <EncryptedText
+            text={t('resume.title')}
+            encryptedClassName="text-neutral-500"
+            revealedClassName=""
+            revealDelayMs={50}
+          />
+        </h1>
 
         {/* Education Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('resume.education.title')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('resume.education.title')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={50}
+            />
+          </h2>
           {education.map((item, index) => (
             <div className="resume-item" key={index}>
               <div className="resume-date">{item.date}</div>
@@ -35,7 +50,14 @@ const Resume = () => {
 
         {/* Research & Publications Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('resume.research.title')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('resume.research.title')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={50}
+            />
+          </h2>
           {research.map((item, index) => (
             <div className="resume-item" key={index}>
               <div className="resume-date">{item.date}</div>
@@ -50,7 +72,14 @@ const Resume = () => {
 
         {/* Project Experience Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('resume.projects.title')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('resume.projects.title')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={50}
+            />
+          </h2>
           {projects.map((item, index) => (
             <div className="resume-item" key={index}>
               <div className="resume-date">{item.date}</div>
@@ -65,7 +94,14 @@ const Resume = () => {
 
         {/* Internship Experience Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('resume.internship.title')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('resume.internship.title')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={50}
+            />
+          </h2>
           {internship.map((item, index) => (
             <div className="resume-item" key={index}>
               <div className="resume-date">{item.date}</div>
@@ -80,7 +116,14 @@ const Resume = () => {
 
         {/* Campus Activities Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('resume.activities.title')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('resume.activities.title')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={50}
+            />
+          </h2>
           {activities.map((item, index) => (
             <div className="resume-item" key={index}>
               <div className="resume-date">{item.date}</div>
@@ -95,7 +138,14 @@ const Resume = () => {
 
         {/* Skills Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('resume.skills.title')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('resume.skills.title')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={50}
+            />
+          </h2>
           <div className="skills-list">
             {skills.map((skill, index) => (
               <span key={index}>{skill}</span>
@@ -105,7 +155,14 @@ const Resume = () => {
 
         {/* Language Proficiency Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('resume.languageSkills.title')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('resume.languageSkills.title')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={50}
+            />
+          </h2>
           <div className="skills-list">
             {languageSkills.map((lang, index) => (
               <span key={index}>{lang}</span>
@@ -115,7 +172,14 @@ const Resume = () => {
 
         {/* Personal Interests Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('resume.interests.title')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('resume.interests.title')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={50}
+            />
+          </h2>
           <div className="skills-list">
             {interests.map((interest, index) => (
               <span key={index}>{interest}</span>
