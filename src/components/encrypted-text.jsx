@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 50;
@@ -12,14 +12,28 @@ export const EncryptedText = ({
   revealedClassName = "dark:text-white text-black",
   revealDelayMs = 50,
   encryptSpeed = SHUFFLE_TIME,
-  intervalRef,
+  triggerOnView = true, // 新增：是否在滚动到视口时才触发动画
+  viewThreshold = 0.3,  // 新增：触发阈值（元素可见比例）
+  triggerOnce = true,   // 新增：是否只触发一次
 }) => {
   const [displayText, setDisplayText] = useState(text);
   const [isEncrypted, setIsEncrypted] = useState(true);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const scrambleIntervalRef = useRef(null);
   const revealTimeoutRef = useRef(null);
+  const elementRef = useRef(null);
+
+  // 使用 framer-motion 的 useInView hook
+  const isInView = useInView(elementRef, {
+    amount: viewThreshold,
+    once: triggerOnce
+  });
 
   useEffect(() => {
+    // 如果需要在视口内触发，且元素不在视口内，或已经动画过了，则不执行
+    if (triggerOnView && !isInView) return;
+    if (triggerOnce && hasAnimated) return;
+
     // Start encryption animation
     const scramble = () => {
       let pos = 0;
@@ -53,6 +67,7 @@ export const EncryptedText = ({
       clearInterval(scrambleIntervalRef.current);
       setDisplayText(text);
       setIsEncrypted(false);
+      setHasAnimated(true);
     };
 
     // Delay before starting reveal animation
@@ -65,15 +80,16 @@ export const EncryptedText = ({
       clearInterval(scrambleIntervalRef.current);
       clearTimeout(revealTimeoutRef.current);
     };
-  }, [text, encryptSpeed, revealDelayMs]);
+  }, [text, encryptSpeed, revealDelayMs, isInView, triggerOnView, triggerOnce, hasAnimated]);
 
   return (
     <motion.span
+      ref={elementRef}
       className={`${className} ${
         isEncrypted ? encryptedClassName : revealedClassName
       }`}
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: isInView || !triggerOnView ? 1 : 0 }}
       transition={{ duration: 0.3 }}
     >
       {displayText}
