@@ -2,13 +2,11 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ParticlesCityReal from '../components/ParticlesCityReal';
 import { BlurFade } from '../components/BlurFade';
 
-const Home = () => {
-  const navigate = useNavigate();
+const Home = ({ onNavigate }) => {
   const { t } = useTranslation();
 
   return (
@@ -62,7 +60,7 @@ const Home = () => {
           <BlurFade delay={0.75} inView>
             <div style={{marginTop: '2rem'}}>
                <button
-                 onClick={() => navigate('/resume')}
+                 onClick={() => onNavigate?.(1)}
                  style={{
                    padding: '12px 24px',
                    background: 'white',

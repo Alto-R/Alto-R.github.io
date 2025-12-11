@@ -1,86 +1,149 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Home from './pages/Home';
 import Publications from './pages/Publications';
 import Resume from './pages/Resume';
 import About from './pages/About';
+import NavigationTimeline from './components/NavigationTimeline';
 import './App.css';
 
-// ScrollToTop 组件：路由切换时瞬间跳转到顶部
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'instant'
-    });
-  }, [pathname]);
-
-  return null;
-}
+// 页面配置
+const sections = [
+  { id: 'home', component: Home },
+  { id: 'resume', component: Resume },
+  { id: 'publications', component: Publications },
+  { id: 'about', component: About },
+];
 
 function App() {
   const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState(0);
+  const sectionRefs = useRef([]);
+  const isScrolling = useRef(false); // 防止滚动时重复触发
+
+  // 监听滚动，更新当前 section
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isScrolling.current) return;
+
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      // 找到当前可见的 section
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sectionRefs.current[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          if (currentSection !== i) {
+            setCurrentSection(i);
+          }
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [currentSection]);
+
+  // 点击导航栏滚动到对应 section
+  const scrollToSection = useCallback((index) => {
+    setMenuOpen(false);
+
+    const section = sectionRefs.current[index];
+    if (!section) return;
+
+    isScrolling.current = true;
+    setCurrentSection(index);
+
+    section.scrollIntoView({ behavior: 'smooth' });
+
+    // 滚动完成后重置标志
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 800);
+  }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="app">
-        {/* 顶部导航栏 */}
-        <nav className="navbar">
-          {/* 语言切换器 - 左侧 */}
-          <div className="language-switcher">
-            <span
-              onClick={() => i18n.changeLanguage('zh')}
-              className={i18n.language === 'zh' ? 'active' : ''}
-              style={{ cursor: 'pointer' }}
-            >
-              中文
-            </span>
-            <span style={{ margin: '0 0.5rem', color: 'rgba(255,255,255,0.3)' }}>|</span>
-            <span
-              onClick={() => i18n.changeLanguage('en')}
-              className={i18n.language === 'en' ? 'active' : ''}
-              style={{ cursor: 'pointer' }}
-            >
-              English
-            </span>
-          </div>
+    <div className="app">
+      {/* 左侧导航时间线 */}
+      <NavigationTimeline currentSection={currentSection} />
 
-          {/* 汉堡菜单按钮 - 仅在移动端显示 */}
-          <button
-            className="menu-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+      {/* 顶部导航栏 */}
+      <nav className="navbar">
+        {/* 语言切换器 - 左侧 */}
+        <div className="language-switcher">
+          <span
+            onClick={() => i18n.changeLanguage('zh')}
+            className={i18n.language === 'zh' ? 'active' : ''}
+            style={{ cursor: 'pointer' }}
           >
-            <span className={menuOpen ? 'open' : ''}></span>
-            <span className={menuOpen ? 'open' : ''}></span>
-            <span className={menuOpen ? 'open' : ''}></span>
-          </button>
+            中文
+          </span>
+          <span style={{ margin: '0 0.5rem', color: 'rgba(255,255,255,0.3)' }}>|</span>
+          <span
+            onClick={() => i18n.changeLanguage('en')}
+            className={i18n.language === 'en' ? 'active' : ''}
+            style={{ cursor: 'pointer' }}
+          >
+            English
+          </span>
+        </div>
 
-          {/* 导航链接 - 右侧 */}
-          <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
-            <Link to="/" onClick={() => setMenuOpen(false)}>{t('nav.home')}</Link>
-            <Link to="/resume" onClick={() => setMenuOpen(false)}>{t('nav.resume')}</Link>
-            <Link to="/publications" onClick={() => setMenuOpen(false)}>{t('nav.publications')}</Link>
-            <Link to="/about" onClick={() => setMenuOpen(false)}>{t('nav.about')}</Link>
-          </div>
-        </nav>
+        {/* 汉堡菜单按钮 - 仅在移动端显示 */}
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={menuOpen ? 'open' : ''}></span>
+          <span className={menuOpen ? 'open' : ''}></span>
+          <span className={menuOpen ? 'open' : ''}></span>
+        </button>
 
-        {/* 路由内容区域 */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/publications" element={<Publications />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+        {/* 导航链接 - 右侧 */}
+        <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
+          <a
+            className={currentSection === 0 ? 'active' : ''}
+            onClick={() => scrollToSection(0)}
+          >
+            {t('nav.home')}
+          </a>
+          <a
+            className={currentSection === 1 ? 'active' : ''}
+            onClick={() => scrollToSection(1)}
+          >
+            {t('nav.resume')}
+          </a>
+          <a
+            className={currentSection === 2 ? 'active' : ''}
+            onClick={() => scrollToSection(2)}
+          >
+            {t('nav.publications')}
+          </a>
+          <a
+            className={currentSection === 3 ? 'active' : ''}
+            onClick={() => scrollToSection(3)}
+          >
+            {t('nav.about')}
+          </a>
+        </div>
+      </nav>
+
+      {/* 滚动容器 */}
+      <div className="scroll-container">
+        {sections.map((section, index) => (
+          <section
+            key={section.id}
+            id={section.id}
+            className="scroll-section"
+            ref={(el) => (sectionRefs.current[index] = el)}
+          >
+            <section.component onNavigate={scrollToSection} />
+          </section>
+        ))}
       </div>
-    </Router>
+    </div>
   );
 }
 

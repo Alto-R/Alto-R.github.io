@@ -1,0 +1,157 @@
+.nav-timeline {
+  position: fixed;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+/* 背景轨道线 - 带渐变遮罩 */
+.nav-timeline-track {
+  position: relative;
+  width: 2px;
+  margin-right: 14px;
+  /* 背景渐变：上下透明，中间可见 */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 10%,
+    rgba(255, 255, 255, 0.15) 90%,
+    transparent 100%
+  );
+  border-radius: 1px;
+  overflow: hidden;
+  /* 遮罩：让上下边缘淡出 */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* 进度填充 - 紫蓝渐变 */
+.nav-timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* 从上到下的渐变：透明 -> 蓝色 -> 紫色 */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #3b82f6 10%,
+    #8b5cf6 50%,
+    #a855f7 100%
+  );
+  border-radius: 9999px;
+}
+
+/* 节点容器 */
+.nav-timeline-dots {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 单个节点项 */
+.nav-timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 节点外圈 */
+.nav-timeline-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 节点内圈 */
+.nav-timeline-dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 标签文字 */
+.nav-timeline-label {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-timeline-item.active .nav-timeline-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========================================
+   响应式：平板 (768px 及以下) - 隐藏文字
+   ======================================== */
+@media (max-width: 768px) {
+  .nav-timeline {
+    left: 16px;
+  }
+
+  .nav-timeline-label {
+    display: none;
+  }
+
+  .nav-timeline-track {
+    margin-right: 0;
+  }
+
+  .nav-timeline-dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .nav-timeline-dot-inner {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* ========================================
+   响应式：小屏手机 (480px 及以下)
+   ======================================== */
+@media (max-width: 480px) {
+  .nav-timeline {
+    left: 10px;
+  }
+
+  .nav-timeline-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-timeline-dot-inner {
+    width: 5px;
+    height: 5px;
+  }
+
+  .nav-timeline-track {
+    width: 1.5px;
+  }
+}
