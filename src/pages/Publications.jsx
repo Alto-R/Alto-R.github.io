@@ -89,6 +89,15 @@ const Publications = () => {
                     <span key={tag} className="tag">{tag}</span>
                   ))}
                 </div>
+                <a
+                  href={pub.link}
+                  className="pub-link-compact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  → PDF
+                </a>
               </div>
             </motion.div>
           ))}

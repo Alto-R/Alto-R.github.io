@@ -23,7 +23,7 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
-  z-index: 1000;
+  z-index: 2000;
 }
 
 /* Modal Container */
@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1001;
+  z-index: 2001;
   padding: 2rem;
   overflow-y: auto;
 }
@@ -154,17 +154,41 @@
   box-shadow: 0 4px 12px rgba(165, 180, 252, 0.2);
 }
 
+/* Compact PDF link for card view */
+.pub-card .pub-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.pub-link-compact {
+  display: inline-block;
+  color: rgba(165, 180, 252, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.pub-link-compact:hover {
+  color: #a5b4fc;
+  transform: translateX(4px);
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .modal-container {
     padding: 1rem;
+    padding-top: 1rem;
     align-items: flex-start;
   }
 
   .modal-content {
+    margin-top: calc(5rem + env(safe-area-inset-top, 0px));
     padding: 2rem 1.5rem;
-    max-height: 95vh;
-    margin-top: 1rem;
+    max-height: calc(85vh - 5rem - env(safe-area-inset-top, 0px));
   }
 
   .modal-close {
@@ -194,9 +218,15 @@
 }
 
 @media (max-width: 480px) {
+  .modal-container {
+    padding: 0.75rem;
+  }
+
   .modal-content {
+    margin-top: calc(4.5rem + env(safe-area-inset-top, 0px));
     padding: 1.5rem 1rem;
     border-radius: 12px;
+    max-height: calc(85vh - 4.5rem - env(safe-area-inset-top, 0px));
   }
 
   .pub-abstract-preview {

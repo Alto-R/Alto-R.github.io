@@ -22,7 +22,8 @@ const Resume = () => {
             text={t('resume.title')}
             encryptedClassName="text-neutral-500"
             revealedClassName=""
-            revealDelayMs={20}
+            revealDelayMs={10}
+            encryptSpeed={25}  
           />
         </h1>
 
@@ -33,7 +34,8 @@ const Resume = () => {
               text={t('resume.education.title')}
               encryptedClassName="text-neutral-500"
               revealedClassName=""
-              revealDelayMs={20}
+              revealDelayMs={10}
+              encryptSpeed={25}  
             />
           </h2>
           {education.map((item, index) => (
@@ -55,7 +57,8 @@ const Resume = () => {
               text={t('resume.research.title')}
               encryptedClassName="text-neutral-500"
               revealedClassName=""
-              revealDelayMs={20}
+              revealDelayMs={10}
+              encryptSpeed={25}  
             />
           </h2>
           {research.map((item, index) => (
@@ -77,7 +80,8 @@ const Resume = () => {
               text={t('resume.projects.title')}
               encryptedClassName="text-neutral-500"
               revealedClassName=""
-              revealDelayMs={20}
+              revealDelayMs={10}
+              encryptSpeed={25}  
             />
           </h2>
           {projects.map((item, index) => (
@@ -99,7 +103,8 @@ const Resume = () => {
               text={t('resume.internship.title')}
               encryptedClassName="text-neutral-500"
               revealedClassName=""
-              revealDelayMs={20}
+              revealDelayMs={10}
+              encryptSpeed={25}  
             />
           </h2>
           {internship.map((item, index) => (
@@ -121,7 +126,8 @@ const Resume = () => {
               text={t('resume.activities.title')}
               encryptedClassName="text-neutral-500"
               revealedClassName=""
-              revealDelayMs={20}
+              revealDelayMs={10}
+              encryptSpeed={25}  
             />
           </h2>
           {activities.map((item, index) => (
@@ -143,7 +149,8 @@ const Resume = () => {
               text={t('resume.skills.title')}
               encryptedClassName="text-neutral-500"
               revealedClassName=""
-              revealDelayMs={20}
+              revealDelayMs={10}
+              encryptSpeed={25}  
             />
           </h2>
           <div className="skills-list">
@@ -160,7 +167,8 @@ const Resume = () => {
               text={t('resume.languageSkills.title')}
               encryptedClassName="text-neutral-500"
               revealedClassName=""
-              revealDelayMs={20}
+              revealDelayMs={10}
+              encryptSpeed={25}  
             />
           </h2>
           <div className="skills-list">
@@ -177,7 +185,8 @@ const Resume = () => {
               text={t('resume.interests.title')}
               encryptedClassName="text-neutral-500"
               revealedClassName=""
-              revealDelayMs={20}
+              revealDelayMs={10}
+              encryptSpeed={25}  
             />
           </h2>
           <div className="skills-list">

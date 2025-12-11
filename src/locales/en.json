@@ -137,6 +137,7 @@
   },
   "publications": {
     "title": "Selected Publications",
+    "abstractTitle": "Abstract",
     "readMore": " Read more",
     "showLess": " Show less",
     "pdfLink": "PDF →",

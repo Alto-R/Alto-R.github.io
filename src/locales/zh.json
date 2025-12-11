@@ -137,6 +137,7 @@
   },
   "publications": {
     "title": "精选论文",
+    "abstractTitle": "摘要",
     "readMore": " 展开",
     "showLess": " 收起",
     "pdfLink": "PDF →",
