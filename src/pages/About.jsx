@@ -1,6 +1,8 @@
 // src/pages/About.jsx
 import { useTranslation, Trans } from 'react-i18next';
 import { Dock, DockIcon } from '../components/Dock';
+import { PixelatedCanvas } from '../components/pixelated-canvas';
+import personalPhoto from '../data/personalphoto.jpg';
 
 // Icon components
 const Icons = {
@@ -69,19 +71,42 @@ const About = () => {
       <div className="content-wrapper">
         <h1 className="page-title">{t('about.title')}</h1>
 
-        {/* Introduction Section */}
-        <section className="about-section">
-          <p className="about-intro">
-            <Trans i18nKey="about.intro" components={{ 1: <strong /> }} />
-          </p>
+        {/* Introduction Section with Photo */}
+        <section className="about-section about-with-photo">
+          <div className="about-text-content">
+            <p className="about-intro">
+              <Trans i18nKey="about.intro" components={{ 1: <strong /> }} />
+            </p>
 
-          <p className="about-text">
-            {t('about.paragraph1')}
-          </p>
+            <p className="about-text">
+              {t('about.paragraph1')}
+            </p>
 
-          <p className="about-text">
-            {t('about.paragraph2')}
-          </p>
+            <p className="about-text">
+              {t('about.paragraph2')}
+            </p>
+          </div>
+
+          <div className="about-photo-wrapper">
+            <PixelatedCanvas
+              src={personalPhoto}
+              width={300}
+              height={450}
+              cellSize={2}
+              dotScale={1}
+              shape="square"
+              backgroundColor="#616060ff"
+              dropoutStrength={0.4}
+              interactive={true}
+              distortionStrength={3}
+              distortionRadius={80}
+              distortionMode="swirl"
+              jitterStrength={4}
+              jitterSpeed={4}
+              responsive={true}
+              className="pixelated-photo"
+            />
+          </div>
         </section>
 
         {/* Research Interests Section */}

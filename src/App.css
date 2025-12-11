@@ -320,6 +320,27 @@ h1 {
   margin-bottom: 3rem;
 }
 
+/* About 页面照片布局 */
+.about-with-photo {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-text-content {
+  flex: 1;
+  min-width: 0; /* 防止 flex 子元素溢出 */
+}
+
+.about-photo-wrapper {
+  flex-shrink: 0;
+}
+
+.pixelated-photo {
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
 .about-intro {
   font-size: 1.2rem;
   line-height: 1.8;
@@ -515,6 +536,25 @@ h1 {
   }
 
   /* About */
+  .about-with-photo {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .about-photo-wrapper {
+    order: -1; /* 让照片显示在文本上方 */
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .pixelated-photo {
+    width: 100% !important;
+    height: auto !important;
+  }
+
   .about-intro {
     font-size: 1.1rem; /* 从 1.2rem 略微减小 */
   }
@@ -621,6 +661,14 @@ h1 {
   }
 
   /* About */
+  .about-with-photo {
+    gap: 1.5rem;
+  }
+
+  .about-photo-wrapper {
+    max-width: 240px;
+  }
+
   .about-intro {
     font-size: 1rem;
   }
