@@ -19,6 +19,7 @@ export const EncryptedText = ({
   const [displayText, setDisplayText] = useState(text);
   const [isEncrypted, setIsEncrypted] = useState(true);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const prevTextRef = useRef(text);
   const scrambleIntervalRef = useRef(null);
   const revealTimeoutRef = useRef(null);
   const elementRef = useRef(null);
@@ -26,12 +27,23 @@ export const EncryptedText = ({
   // 使用 framer-motion 的 useInView hook
   const isInView = useInView(elementRef, {
     amount: viewThreshold,
-    once: triggerOnce
+    once: false // 不使用 once，手动控制
   });
 
+  // 当 text 变化时（如语言切换），重置动画状态
   useEffect(() => {
-    // 如果需要在视口内触发，且元素不在视口内，或已经动画过了，则不执行
+    if (prevTextRef.current !== text) {
+      prevTextRef.current = text;
+      setHasAnimated(false);
+      setIsEncrypted(true);
+      setDisplayText(text);
+    }
+  }, [text]);
+
+  useEffect(() => {
+    // 如果需要在视口内触发，且元素不在视口内，则不执行
     if (triggerOnView && !isInView) return;
+    // 如果只触发一次且已经动画过了，则不执行
     if (triggerOnce && hasAnimated) return;
 
     // Start encryption animation
