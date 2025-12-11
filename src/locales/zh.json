@@ -2,7 +2,7 @@
   "nav": {
     "home": "首页",
     "resume": "简历",
-    "publications": "发表论文",
+    "publications": "发表",
     "about": "关于"
   },
   "home": {
@@ -33,7 +33,7 @@
       ]
     },
     "research": {
-      "title": "科研与发表",
+      "title": "科研经历",
       "items": [
         {
           "date": "已发表",
