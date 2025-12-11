@@ -76,7 +76,7 @@ const About = () => {
             encryptedClassName="text-neutral-500"
             revealedClassName=""
             revealDelayMs={10}
-            encryptSpeed={25}
+            encryptSpeed={15}
           />
         </h1>
 
@@ -126,7 +126,7 @@ const About = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}
+              encryptSpeed={15}
             />
           </h2>
           <div className="skills-list">
@@ -144,7 +144,7 @@ const About = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}
+              encryptSpeed={15}
             />
           </h2>
           <div className="contact-info">

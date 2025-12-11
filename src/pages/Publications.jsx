@@ -61,7 +61,7 @@ const Publications = () => {
             encryptedClassName="text-neutral-500"
             revealedClassName=""
             revealDelayMs={10}
-            encryptSpeed={25}
+            encryptSpeed={15}
           />
         </h1>
 

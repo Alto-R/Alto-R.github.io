@@ -23,7 +23,7 @@ const Resume = () => {
             encryptedClassName="text-neutral-500"
             revealedClassName=""
             revealDelayMs={10}
-            encryptSpeed={25}  
+            encryptSpeed={15}  
           />
         </h1>
 
@@ -35,7 +35,7 @@ const Resume = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}  
+              encryptSpeed={15}  
             />
           </h2>
           {education.map((item, index) => (
@@ -58,7 +58,7 @@ const Resume = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}  
+              encryptSpeed={15}  
             />
           </h2>
           {research.map((item, index) => (
@@ -81,7 +81,7 @@ const Resume = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}  
+              encryptSpeed={15}  
             />
           </h2>
           {projects.map((item, index) => (
@@ -104,7 +104,7 @@ const Resume = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}  
+              encryptSpeed={15}  
             />
           </h2>
           {internship.map((item, index) => (
@@ -127,7 +127,7 @@ const Resume = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}  
+              encryptSpeed={15}  
             />
           </h2>
           {activities.map((item, index) => (
@@ -150,7 +150,7 @@ const Resume = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}  
+              encryptSpeed={15}  
             />
           </h2>
           <div className="skills-list">
@@ -168,7 +168,7 @@ const Resume = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}  
+              encryptSpeed={15}  
             />
           </h2>
           <div className="skills-list">
@@ -186,7 +186,7 @@ const Resume = () => {
               encryptedClassName="text-neutral-500"
               revealedClassName=""
               revealDelayMs={10}
-              encryptSpeed={25}  
+              encryptSpeed={15}  
             />
           </h2>
           <div className="skills-list">
