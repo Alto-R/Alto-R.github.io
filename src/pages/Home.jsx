@@ -51,9 +51,8 @@ const Home = () => {
           </BlurFade>
 
           <BlurFade delay={0.5} inView>
-            <p className="subtitle">
+            <p className="subtitle" style={{marginTop: '1.5rem'}}>
               {t('home.subtitle')} <br/>
-              <br/>
               {t('home.description')} <br/>
               {t('home.description2')} <br/>
               {t('home.description3')}
