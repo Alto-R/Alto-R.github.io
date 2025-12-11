@@ -2,6 +2,7 @@
 import { useTranslation, Trans } from 'react-i18next';
 import { Dock, DockIcon } from '../components/Dock';
 import { PixelatedCanvas } from '../components/pixelated-canvas';
+import { EncryptedText } from '../components/encrypted-text';
 import personalPhoto from '../data/personalphoto.jpg';
 
 // Icon components
@@ -69,7 +70,15 @@ const About = () => {
   return (
     <div className="page-container">
       <div className="content-wrapper">
-        <h1 className="page-title">{t('about.title')}</h1>
+        <h1 className="page-title">
+          <EncryptedText
+            text={t('about.title')}
+            encryptedClassName="text-neutral-500"
+            revealedClassName=""
+            revealDelayMs={10}
+            encryptSpeed={25}
+          />
+        </h1>
 
         {/* Introduction Section with Photo */}
         <section className="about-section about-with-photo">
@@ -111,7 +120,15 @@ const About = () => {
 
         {/* Research Interests Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('about.researchTitle')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('about.researchTitle')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={10}
+              encryptSpeed={25}
+            />
+          </h2>
           <div className="skills-list">
             {researchInterests.map((interest, index) => (
               <span key={index}>{interest}</span>
@@ -121,7 +138,15 @@ const About = () => {
 
         {/* Contact Section */}
         <section className="resume-section">
-          <h2 className="section-title">{t('about.contactTitle')}</h2>
+          <h2 className="section-title">
+            <EncryptedText
+              text={t('about.contactTitle')}
+              encryptedClassName="text-neutral-500"
+              revealedClassName=""
+              revealDelayMs={10}
+              encryptSpeed={25}
+            />
+          </h2>
           <div className="contact-info">
             <p className="about-text">
               {t('about.contactText')}

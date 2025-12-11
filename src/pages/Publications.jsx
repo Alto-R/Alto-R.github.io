@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useOutsideClick } from '../hooks/useOutsideClick';
+import { EncryptedText } from '../components/encrypted-text';
 import './Publications.css';
 
 const Publications = () => {
@@ -54,7 +55,15 @@ const Publications = () => {
   return (
     <div className="page-container">
       <div className="content-wrapper">
-        <h1 className="page-title">{t('publications.title')}</h1>
+        <h1 className="page-title">
+          <EncryptedText
+            text={t('publications.title')}
+            encryptedClassName="text-neutral-500"
+            revealedClassName=""
+            revealDelayMs={10}
+            encryptSpeed={25}
+          />
+        </h1>
 
         <div className="publications-grid">
           {publications.map((pub) => (
