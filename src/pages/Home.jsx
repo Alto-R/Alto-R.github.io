@@ -19,7 +19,7 @@ const Home = ({ onNavigate }) => {
               高空斜向下看整个城市，初始角度略微偏右
               数据范围: X[-254,256], Y[0,208], Z[-220,220]
             */}
-            <PerspectiveCamera makeDefault position={[-180, 100, 30]} fov={60} />
+            <PerspectiveCamera makeDefault position={[-180, 60, 30]} fov={60} />
 
             <ambientLight intensity={0.5} />
 

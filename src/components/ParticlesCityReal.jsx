@@ -1,14 +1,63 @@
 // src/components/ParticlesCityReal.jsx
 import { useMemo, useRef, useState } from 'react';
-import { useFrame, useThree } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { shanghaiBuildings } from '../data/shanghaiBuildings'; // 使用预处理的静态数据
+import { shanghaiBuildings } from '../data/shanghaiBuildings';
+
+// Vertex Shader - 在 GPU 上计算爆炸动画
+const vertexShader = `
+  uniform float uProgress;
+  attribute vec3 color;
+  varying vec3 vColor;
+
+  void main() {
+    vColor = color;
+
+    vec3 pos = position;
+
+    // 只在动画进行时计算
+    if (uProgress > 0.0) {
+      // 爆开方向：从中心向外 + 向上
+      vec3 explosionDir = vec3(position.x * 2.0, position.y * 2.0 + 20.0, position.z * 2.0);
+
+      float t;
+      float ease;
+
+      if (uProgress <= 1.0) {
+        // 爆开阶段 (0 -> 1): easeOut
+        t = uProgress;
+        ease = 1.0 - pow(1.0 - t, 3.0);
+        pos = position + explosionDir * ease;
+      } else {
+        // 聚拢阶段 (1 -> 2): easeIn
+        t = uProgress - 1.0;
+        ease = pow(t, 3.0);
+        pos = position + explosionDir * (1.0 - ease);
+      }
+    }
+
+    vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+    gl_Position = projectionMatrix * mvPosition;
+
+    // 根据距离调整点大小
+    gl_PointSize = 1.5 * (300.0 / -mvPosition.z);
+  }
+`;
+
+// Fragment Shader - 渲染颜色
+const fragmentShader = `
+  varying vec3 vColor;
+
+  void main() {
+    gl_FragColor = vec4(vColor, 0.8);
+  }
+`;
 
 const ParticlesCityReal = () => {
   const mesh = useRef();
-  const { gl } = useThree();
+  const materialRef = useRef();
 
-  // 爆开动画状态
+  // 动画状态
   const [exploding, setExploding] = useState(false);
   const explosionProgress = useRef(0);
 
@@ -16,108 +65,74 @@ const ParticlesCityReal = () => {
   const mouseDownPos = useRef({ x: 0, y: 0 });
   const isDragging = useRef(false);
 
-  // 保存原始位置和目标位置
-  const { positions, colors, originalPositions } = useMemo(() => {
+  // 初始化粒子数据（只执行一次）
+  const { positions, colors } = useMemo(() => {
     const positions = [];
     const colors = [];
-    const originalPositions = [];
 
-    // 霓虹赛博朋克配色
-    const colorBottom = new THREE.Color('#4c1d95'); // 深紫
-    const colorMid = new THREE.Color('#ec4899');    // 品红
-    const colorTop = new THREE.Color('#06b6d4');    // 青蓝
+    // --- 方案一：经典"夜之城"霓虹 (High-Tech Cyberpunk) ---
+    // 核心思路：极深的蓝黑底色，强烈的青色和紫色对比，顶部高亮白光。
+    const colorDeep = new THREE.Color('#000510');     // [底部] 极深邃的午夜蓝黑 (让建筑"扎"在地上)
+    const colorBase = new THREE.Color('#1e3a8a');     // [低层] 深宝石蓝 (基础结构)
+    const colorMid = new THREE.Color('#15c9d3');      // [中层] 高亮电光青 (核心科技感，数据流)
+    const colorHigh = new THREE.Color('#bd00ff');     // [高层] 极光紫 (霓虹氛围)
+    const colorTop = new THREE.Color('#ffffff');      // [顶端] 纯白炽热电光 (信号塔尖，最亮)
+
     const tempColor = new THREE.Color();
 
-    // 直接使用预处理好的点位置
     shanghaiBuildings.forEach(point => {
       const { x, y, z } = point;
 
-      // 根据高度计算颜色（深紫→品红→青蓝）
-      const hScale = y / 10;
-      if (hScale < 0.5) {
-        tempColor.lerpColors(colorBottom, colorMid, hScale * 2);
+      // 调整了高度梯度，让底部更暗，中间的青色和紫色区域更广
+      const hScale = Math.min(y / 25, 1);
+
+      if (hScale < 0.1) {
+        // 0-10%: 极深蓝黑 -> 深宝石蓝 (底部基础)
+        tempColor.lerpColors(colorDeep, colorBase, hScale / 0.1);
+      } else if (hScale < 0.45) {
+        // 10-45%: 深宝石蓝 -> 高亮电光青 (迅速变亮，强调科技感)
+        tempColor.lerpColors(colorBase, colorMid, (hScale - 0.1) / 0.35);
+      } else if (hScale < 0.85) {
+        // 45-85%: 高亮电光青 -> 极光紫 (主要视觉区域，冷暖对比)
+        tempColor.lerpColors(colorMid, colorHigh, (hScale - 0.45) / 0.5);
       } else {
-        tempColor.lerpColors(colorMid, colorTop, (hScale - 0.5) * 2);
+        // 85-100%: 极光紫 -> 纯白炽热 (顶端高光)
+        tempColor.lerpColors(colorHigh, colorTop, (hScale - 0.85) / 0.05);
       }
 
-      // 95%概率显示（随机熄灯效果）
-      if (Math.random() > 0.05) {
+      // 稍微降低一点密度，让单个粒子更突出，增加通透感
+      if (Math.random() > 0.15) {
         positions.push(x, y, z);
-        originalPositions.push(x, y, z); // 保存原始位置
         colors.push(tempColor.r, tempColor.g, tempColor.b);
       }
     });
 
     return {
       positions: new Float32Array(positions),
-      colors: new Float32Array(colors),
-      originalPositions: new Float32Array(originalPositions)
+      colors: new Float32Array(colors)
     };
-  }, []); // 空依赖数组，颜色固定
+  }, []);
 
-  // 爆开动画
+  // Shader uniforms
+  const uniforms = useMemo(() => ({
+    uProgress: { value: 0 }
+  }), []);
+
+  // 动画循环 - 只更新一个 uniform 值，不遍历粒子数组
   useFrame(() => {
-    if (!mesh.current || !exploding) return;
+    if (!materialRef.current) return;
 
-    const posArray = mesh.current.geometry.attributes.position.array;
-
-    if (explosionProgress.current < 1) {
-      // 爆开阶段 (0 -> 1)
-      explosionProgress.current += 0.02;
-
-      for (let i = 0; i < posArray.length; i += 3) {
-        const origX = originalPositions[i];
-        const origY = originalPositions[i + 1];
-        const origZ = originalPositions[i + 2];
-
-        // 爆开方向：从中心向外
-        const dirX = origX * 2;
-        const dirY = origY * 2 + 20; // 向上爆开
-        const dirZ = origZ * 2;
-
-        // 使用缓动函数
-        const t = explosionProgress.current;
-        const easeOut = 1 - Math.pow(1 - t, 3);
-
-        posArray[i] = origX + dirX * easeOut;
-        posArray[i + 1] = origY + dirY * easeOut;
-        posArray[i + 2] = origZ + dirZ * easeOut;
-      }
-
-    } else if (explosionProgress.current < 2) {
-      // 聚拢阶段 (1 -> 2)
-      explosionProgress.current += 0.02;
-
-      for (let i = 0; i < posArray.length; i += 3) {
-        const origX = originalPositions[i];
-        const origY = originalPositions[i + 1];
-        const origZ = originalPositions[i + 2];
-
-        const dirX = origX * 2;
-        const dirY = origY * 2 + 20;
-        const dirZ = origZ * 2;
-
-        // 从爆开状态回到原位
-        const t = explosionProgress.current - 1;
-        const easeIn = Math.pow(t, 3);
-
-        posArray[i] = origX + dirX * (1 - easeIn);
-        posArray[i + 1] = origY + dirY * (1 - easeIn);
-        posArray[i + 2] = origZ + dirZ * (1 - easeIn);
-      }
-
-    } else {
-      // 动画结束，重置状态
-      setExploding(false);
-      explosionProgress.current = 0;
-
-      // 恢复原始位置
-      for (let i = 0; i < posArray.length; i++) {
-        posArray[i] = originalPositions[i];
+    if (exploding) {
+      if (explosionProgress.current < 2) {
+        explosionProgress.current += 0.02;
+        materialRef.current.uniforms.uProgress.value = explosionProgress.current;
+      } else {
+        // 动画结束
+        setExploding(false);
+        explosionProgress.current = 0;
+        materialRef.current.uniforms.uProgress.value = 0;
       }
     }
-
-    mesh.current.geometry.attributes.position.needsUpdate = true;
   });
 
   // 处理点击事件（区分点击和拖动）
@@ -135,20 +150,11 @@ const ParticlesCityReal = () => {
   };
 
   const handlePointerUp = () => {
-    // 只有在没有拖动的情况下才触发爆开
     if (!isDragging.current && !exploding) {
       setExploding(true);
       explosionProgress.current = 0;
     }
   };
-
-  // 取消自动旋转动画
-  // useFrame((state) => {
-  //   if (mesh.current) {
-  //     const time = state.clock.getElapsedTime();
-  //     mesh.current.rotation.y = time * 0.02;
-  //   }
-  // });
 
   return (
     <points
@@ -171,12 +177,12 @@ const ParticlesCityReal = () => {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial
-        size={0.8}
-        vertexColors={true}
-        transparent
-        opacity={0.8}
-        sizeAttenuation={true}
+      <shaderMaterial
+        ref={materialRef}
+        vertexShader={vertexShader}
+        fragmentShader={fragmentShader}
+        uniforms={uniforms}
+        transparent={true}
         depthWrite={false}
         blending={THREE.AdditiveBlending}
       />
