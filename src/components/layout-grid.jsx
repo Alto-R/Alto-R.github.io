@@ -1,11 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export const LayoutGrid = ({ cards }) => {
   const [selected, setSelected] = useState(null);
   const [lastSelected, setLastSelected] = useState(null);
+
+  // 当 cards 更新时（如语言切换），同步更新 selected 状态
+  useEffect(() => {
+    if (selected) {
+      const updatedCard = cards.find(card => card.id === selected.id);
+      if (updatedCard) {
+        setSelected(updatedCard);
+      }
+    }
+  }, [cards]);
 
   const handleClick = (card) => {
     setLastSelected(selected);

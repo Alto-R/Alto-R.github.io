@@ -1,5 +1,5 @@
 "use client";;
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +13,24 @@ export const Tabs = ({
 }) => {
   const [active, setActive] = useState(propTabs[0]);
   const [tabs, setTabs] = useState(propTabs);
+
+  // 当 propTabs 更新时（如语言切换），同步更新内部状态
+  useEffect(() => {
+    // 保持当前选中的 tab，找到新 propTabs 中对应的 tab
+    const currentActiveValue = active?.value;
+    const newActiveTab = propTabs.find(tab => tab.value === currentActiveValue) || propTabs[0];
+
+    // 重新排列 tabs，保持当前选中的在前面
+    const newTabs = [...propTabs];
+    const activeIndex = newTabs.findIndex(tab => tab.value === currentActiveValue);
+    if (activeIndex > 0) {
+      const selectedTab = newTabs.splice(activeIndex, 1);
+      newTabs.unshift(selectedTab[0]);
+    }
+
+    setTabs(newTabs);
+    setActive(newActiveTab);
+  }, [propTabs]);
 
   const moveSelectedTabToTop = (idx) => {
     const newTabs = [...propTabs];
