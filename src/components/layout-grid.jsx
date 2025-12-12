@@ -1,8 +1,43 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo, useCallback } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { getCloudinaryUrl } from '../data/galleryData';
+
+// 单个卡片组件 - 使用 React.memo 避免不必要的重渲染
+const GridCard = memo(({ card, isSelected, isLastSelected, onClick }) => {
+  return (
+    <div className={cn(card.className, "relative")}>
+      <motion.div
+        onClick={onClick}
+        className={cn(
+          "relative overflow-hidden bg-white",
+          isSelected
+            ? "rounded-lg cursor-pointer fixed inset-0 z-50 flex items-center justify-center m-auto"
+            : isLastSelected
+            ? "z-40 bg-white rounded-xl h-full w-full"
+            : "bg-white rounded-xl h-full w-full"
+        )}
+        style={
+          isSelected
+            ? { width: "90vw", height: "85vh", maxWidth: "1200px" }
+            : {}
+        }
+        layoutId={`gallery-card-${card.id}`}
+      >
+        {isSelected && <SelectedCard selected={card} />}
+        {!isSelected && <BlurImage card={card} />}
+      </motion.div>
+    </div>
+  );
+}, (prevProps, nextProps) => {
+  // 自定义对比：只有选中状态变化时才重渲染
+  return (
+    prevProps.isSelected === nextProps.isSelected &&
+    prevProps.isLastSelected === nextProps.isLastSelected &&
+    prevProps.card.id === nextProps.card.id
+  );
+});
 
 export const LayoutGrid = ({ cards }) => {
   const [selected, setSelected] = useState(null);
@@ -18,42 +53,26 @@ export const LayoutGrid = ({ cards }) => {
     }
   }, [cards]);
 
-  const handleClick = (card) => {
+  const handleClick = useCallback((card) => {
     setLastSelected(selected);
     setSelected(card);
-  };
+  }, [selected]);
 
-  const handleOutsideClick = () => {
+  const handleOutsideClick = useCallback(() => {
     setLastSelected(selected);
     setSelected(null);
-  };
+  }, [selected]);
 
   return (
     <div className="w-full h-auto p-10 grid grid-cols-1 md:grid-cols-5 auto-rows-[150px] max-w-[2100px] mx-auto gap-4 relative">
-      {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "relative")}>
-          <motion.div
-            onClick={() => handleClick(card)}
-            className={cn(
-              "relative overflow-hidden bg-white",
-              selected?.id === card.id
-                ? "rounded-lg cursor-pointer fixed inset-0 z-50 flex items-center justify-center m-auto"
-                : lastSelected?.id === card.id
-                ? "z-40 bg-white rounded-xl h-full w-full"
-                : "bg-white rounded-xl h-full w-full"
-            )}
-            // 给展开状态加具体的尺寸约束，保证动画平滑
-            style={
-              selected?.id === card.id
-                ? { width: "90vw", height: "85vh", maxWidth: "1200px" }
-                : {}
-            }
-            layoutId={`gallery-card-${card.id}`}
-          >
-            {selected?.id === card.id && <SelectedCard selected={selected} />}
-            {selected?.id !== card.id && <BlurImage card={card} />}
-          </motion.div>
-        </div>
+      {cards.map((card) => (
+        <GridCard
+          key={card.id}
+          card={card}
+          isSelected={selected?.id === card.id}
+          isLastSelected={lastSelected?.id === card.id}
+          onClick={() => handleClick(card)}
+        />
       ))}
 
       {/* 黑色背景遮罩 */}
@@ -69,7 +88,8 @@ export const LayoutGrid = ({ cards }) => {
   );
 };
 
-const BlurImage = ({ card }) => {
+// 缩略图组件 - 使用 memo 优化
+const BlurImage = memo(({ card }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -84,7 +104,7 @@ const BlurImage = ({ card }) => {
       loading="lazy"
     />
   );
-};
+});
 
 // 展开后的卡片 - 高清图只在此时才加载
 const SelectedCard = ({ selected }) => {
