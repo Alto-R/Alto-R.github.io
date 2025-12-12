@@ -12,15 +12,13 @@ export const galleryImages = [
   { id: 1, publicId: 'P1000456_rj2xtv', className: "md:col-span-3 md:row-span-3", title: { zh: "北京的春", en: "Spring in Beijing" }, description: { zh: "", en: "" } },
   { id: 2, publicId: 'P1046525_zwyazi', className: "md:col-span-2 md:row-span-3", title: { zh: "春天的博雅塔", en: "Boya Tower in Spring" }, description: { zh: "", en: "" } },
   { id: 3, publicId: 'P1025301_rjujd7', className: "md:col-span-2 md:row-span-3", title: { zh: "未名湖畔打鸟", en: "Bird Watching by Weiming Lake" }, description: { zh: "", en: "" } },
-  { id: 4, publicId: 'P1000477_bwmgue', className: "md:col-span-3 md:row-span-3", title: { zh: "修缮", en: "Renovation" }, description: { zh: "", en: "" } },
   { id: 5, publicId: 'P1000466_en8svt', className: "md:col-span-3 md:row-span-3", title: { zh: "太庙", en: "Taimiao Temple" }, description: { zh: "", en: "" } },
   { id: 6, publicId: 'P1024105_fuwwu3', className: "md:col-span-2 md:row-span-3", title: { zh: "从景山看故宫", en: "Forbidden City from Jingshan" }, description: { zh: "", en: "" } },
   { id: 7, publicId: 'P1046210_leo8al', className: "md:col-span-3 md:row-span-3", title: { zh: "颐和园", en: "Summer Palace" }, description: { zh: "", en: "" } },
   { id: 8, publicId: 'P1035200_aep2fp', className: "md:col-span-2 md:row-span-3", title: { zh: "未名湖的冬天", en: "Winter at Weiming Lake" }, description: { zh: "", en: "" } },
   { id: 9, publicId: 'P1035232_jpm9nk', className: "md:col-span-2 md:row-span-3", title: { zh: "湖面结冰", en: "Frozen Lake" }, description: { zh: "", en: "" } },
   { id: 10, publicId: 'P1024453_kuktfo', className: "md:col-span-2 md:row-span-3", title: { zh: "北京野生动物园卡皮巴拉", en: "Capybara at Beijing Wildlife Park" }, description: { zh: "", en: "" } },
-  { id: 11, publicId: 'P1024225_odvcbw', className: "md:col-span-5 md:row-span-3", title: { zh: "北京野生动物园老虎", en: "Tiger at Beijing Wildlife Park" }, description: { zh: "", en: "" } },
-  
+
   { id: 12, publicId: 'P1036275_xsm1xp', className: "md:col-span-2 md:row-span-3", title: { zh: "苏州", en: "Suzhou" }, description: { zh: "", en: "" } },
   { id: 13, publicId: 'P1012377_vpxneb', className: "md:col-span-3 md:row-span-3", title: { zh: "深圳湾公园", en: "Shenzhen Bay Park" }, description: { zh: "", en: "" } },
   { id: 14, publicId: 'P1025666_lm9mtr', className: "md:col-span-5 md:row-span-2", title: { zh: "香港", en: "Hong Kong" }, description: { zh: "", en: "" } },
@@ -56,7 +54,7 @@ export const getCloudinaryUrl = (publicId, type = 'thumb') => {
 
 // 照片分类配置
 export const galleryCategories = {
-  nature: { ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], label: { zh: '北京', en: 'Beijing' } },
+  nature: { ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], label: { zh: '北京', en: 'Beijing' } },
   humanity: { ids: [12, 13, 14, 15], label: { zh: '其他城市', en: 'Other cities' } },
   urban: { ids: [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28], label: { zh: '日本', en: 'Japan' } },
 };
