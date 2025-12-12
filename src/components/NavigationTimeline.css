@@ -82,6 +82,13 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 0 0px rgba(165, 180, 252, 0);
+  transition: box-shadow 0.3s ease;
+}
+
+/* 激活状态的光晕 */
+.nav-timeline-item.active .nav-timeline-dot {
+  box-shadow: 0 0 8px rgba(165, 180, 252, 0.8);
 }
 
 /* 节点内圈 */
@@ -128,6 +135,11 @@
     height: 10px;
   }
 
+  /* 手机端较小的光晕 */
+  .nav-timeline-item.active .nav-timeline-dot {
+    box-shadow: 0 0 6px rgba(165, 180, 252, 0.8);
+  }
+
   .nav-timeline-dot-inner {
     width: 4px;
     height: 4px;
@@ -145,6 +157,11 @@
   .nav-timeline-dot {
     width: 8px;
     height: 8px;
+  }
+
+  /* 小屏手机更小的光晕 */
+  .nav-timeline-item.active .nav-timeline-dot {
+    box-shadow: 0 0 4px rgba(165, 180, 252, 0.8);
   }
 
   .nav-timeline-dot-inner {

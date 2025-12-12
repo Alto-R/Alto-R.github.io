@@ -60,9 +60,6 @@ const NavigationTimeline = ({ currentSection }) => {
               className="nav-timeline-dot"
               animate={{
                 scale: index === currentSection ? 1.5 : 1,
-                boxShadow: index === currentSection
-                  ? '0 0 12px rgba(165, 180, 252, 0.8)'
-                  : '0 0 0px rgba(165, 180, 252, 0)'
               }}
               transition={{ duration: 0.3 }}
             >
