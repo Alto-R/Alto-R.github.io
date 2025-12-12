@@ -18,23 +18,11 @@ const createCards = (images, locale) => {
     const description = getLocalizedText(image.description, locale);
     return {
       id: image.id,
-      thumbnail: getCloudinaryUrl(image.publicId, { width: 800, quality: 80 }),
+      publicId: image.publicId,  // 传递 publicId，高清图在展开时才渲染
+      thumbnail: getCloudinaryUrl(image.publicId, 'thumb'),
       className: image.className || '',
-      content: (
-        <div className="relative w-full h-full flex items-center justify-center">
-          {/* 图片 */}
-          <img
-            src={getCloudinaryUrl(image.publicId, { width: 1600, quality: 85 })}
-            alt={title || `Gallery ${image.id}`}
-            className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"
-          />
-          {/* 左下角文字 */}
-          <div className="absolute bottom-4 left-4 text-white z-10">
-            <h3 className="text-2xl font-bold mb-1">{title}</h3>
-            <p className="text-sm text-white/70">{description}</p>
-          </div>
-        </div>
-      ),
+      title,
+      description,
     };
   });
 };

@@ -42,10 +42,16 @@ export const galleryImages = [
 ];
 
 // 生成 Cloudinary URL 的工具函数
-export const getCloudinaryUrl = (publicId, options = {}) => {
-  const { width = 800, quality = 80, format = 'auto' } = options;
-  // 使用 dpr_auto 自动适配设备像素比，提高高分屏清晰度
-  return `https://res.cloudinary.com/${cloudinaryConfig.cloudName}/image/upload/w_${width},q_${quality},f_${format},dpr_auto/${publicId}`;
+// f_auto: 自动转换格式 (webp/avif)，体积减少约 50%
+// q_auto: 自动压缩质量，肉眼几乎看不出区别
+export const getCloudinaryUrl = (publicId, type = 'thumb') => {
+  if (type === 'thumb') {
+    // 缩略图：小尺寸，快速加载
+    return `https://res.cloudinary.com/${cloudinaryConfig.cloudName}/image/upload/f_auto,q_auto,w_400/${publicId}`;
+  } else {
+    // 高清图：展开后查看，限制最大宽度
+    return `https://res.cloudinary.com/${cloudinaryConfig.cloudName}/image/upload/f_auto,q_auto,w_1600/${publicId}`;
+  }
 };
 
 // 照片分类配置

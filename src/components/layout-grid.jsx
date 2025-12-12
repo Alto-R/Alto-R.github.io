@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { getCloudinaryUrl } from '../data/galleryData';
 
 export const LayoutGrid = ({ cards }) => {
   const [selected, setSelected] = useState(null);
@@ -85,8 +86,10 @@ const BlurImage = ({ card }) => {
   );
 };
 
-// 展开后的卡片
+// 展开后的卡片 - 高清图只在此时才加载
 const SelectedCard = ({ selected }) => {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -94,7 +97,28 @@ const SelectedCard = ({ selected }) => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="w-full h-full relative z-[60] flex items-center justify-center rounded-lg shadow-2xl overflow-hidden bg-black"
     >
-      {selected?.content}
+      <div className="relative w-full h-full flex items-center justify-center">
+        <img
+          src={getCloudinaryUrl(selected.publicId, 'full')}
+          alt={selected.title || `Gallery ${selected.id}`}
+          className={cn(
+            "max-h-[85vh] max-w-[90vw] object-contain rounded-lg transition-opacity duration-300",
+            loaded ? "opacity-100" : "opacity-0"
+          )}
+          onLoad={() => setLoaded(true)}
+        />
+        {/* 加载占位 */}
+        {!loaded && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+          </div>
+        )}
+        {/* 左下角文字 */}
+        <div className="absolute bottom-4 left-4 text-white z-10">
+          <h3 className="text-2xl font-bold mb-1">{selected.title}</h3>
+          <p className="text-sm text-white/70">{selected.description}</p>
+        </div>
+      </div>
     </motion.div>
   );
 };
