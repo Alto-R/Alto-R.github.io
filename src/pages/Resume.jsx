@@ -1,6 +1,6 @@
 // src/pages/Resume.jsx
 import { useTranslation } from 'react-i18next';
-import { EncryptedText } from '@/components/encrypted-text';
+import { BlurFade } from '@/components/BlurFade';
 import { Dock, DockIcon } from '@/components/Dock';
 
 // Icon components
@@ -77,25 +77,17 @@ const Resume = () => {
     <div className="page-container">
       <div className="content-wrapper">
         <h1 className="page-title">
-          <EncryptedText
-            text={t('resume.title')}
-            encryptedClassName="text-neutral-500"
-            revealedClassName=""
-            revealDelayMs={10}
-            encryptSpeed={15}  
-          />
+          <BlurFade delay={0.1} inView>
+            {t('resume.title')}
+          </BlurFade>
         </h1>
 
         {/* Education Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('resume.education.title')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}  
-            />
+            <BlurFade delay={0.15} inView>
+              {t('resume.education.title')}
+            </BlurFade>
           </h2>
           {education.map((item, index) => (
             <div className="resume-item" key={index}>
@@ -112,13 +104,9 @@ const Resume = () => {
         {/* Research & Publications Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('resume.research.title')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}  
-            />
+            <BlurFade delay={0.2} inView>
+              {t('resume.research.title')}
+            </BlurFade>
           </h2>
           {research.map((item, index) => (
             <div className="resume-item" key={index}>
@@ -135,13 +123,9 @@ const Resume = () => {
         {/* Project Experience Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('resume.projects.title')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}  
-            />
+            <BlurFade delay={0.25} inView>
+              {t('resume.projects.title')}
+            </BlurFade>
           </h2>
           {projects.map((item, index) => (
             <div className="resume-item" key={index}>
@@ -158,13 +142,9 @@ const Resume = () => {
         {/* Internship Experience Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('resume.internship.title')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}  
-            />
+            <BlurFade delay={0.3} inView>
+              {t('resume.internship.title')}
+            </BlurFade>
           </h2>
           {internship.map((item, index) => (
             <div className="resume-item" key={index}>
@@ -181,13 +161,9 @@ const Resume = () => {
         {/* Campus Activities Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('resume.activities.title')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}  
-            />
+            <BlurFade delay={0.35} inView>
+              {t('resume.activities.title')}
+            </BlurFade>
           </h2>
           {activities.map((item, index) => (
             <div className="resume-item" key={index}>
@@ -204,13 +180,9 @@ const Resume = () => {
         {/* Skills Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('resume.skills.title')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}  
-            />
+            <BlurFade delay={0.4} inView>
+              {t('resume.skills.title')}
+            </BlurFade>
           </h2>
           <div className="skills-list">
             {skills.map((skill, index) => (
@@ -222,13 +194,9 @@ const Resume = () => {
         {/* Language Proficiency Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('resume.languageSkills.title')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}  
-            />
+            <BlurFade delay={0.45} inView>
+              {t('resume.languageSkills.title')}
+            </BlurFade>
           </h2>
           <div className="skills-list">
             {languageSkills.map((lang, index) => (
@@ -240,13 +208,9 @@ const Resume = () => {
         {/* Personal Interests Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('resume.interests.title')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}
-            />
+            <BlurFade delay={0.5} inView>
+              {t('resume.interests.title')}
+            </BlurFade>
           </h2>
           <div className="skills-list">
             {interests.map((interest, index) => (
@@ -258,13 +222,9 @@ const Resume = () => {
         {/* Contact Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('about.contactTitle')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}
-            />
+            <BlurFade delay={0.55} inView>
+              {t('about.contactTitle')}
+            </BlurFade>
           </h2>
           <div className="contact-info">
             <Dock iconMagnification={60} iconDistance={100}>

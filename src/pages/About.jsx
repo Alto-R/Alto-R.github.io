@@ -3,6 +3,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { Dock, DockIcon } from '../components/Dock';
 import { PixelatedCanvas } from '../components/pixelated-canvas';
 import { EncryptedText } from '../components/encrypted-text';
+import { BlurFade } from '../components/BlurFade';
 import { getCloudinaryUrl } from '../data/galleryData';
 
 const personalPhoto = getCloudinaryUrl('personalphoto_aj4ytw', { width: 600, quality: 'auto' });
@@ -73,13 +74,9 @@ const About = () => {
     <div className="page-container">
       <div className="content-wrapper">
         <h1 className="page-title">
-          <EncryptedText
-            text={t('about.title')}
-            encryptedClassName="text-neutral-500"
-            revealedClassName=""
-            revealDelayMs={10}
-            encryptSpeed={15}
-          />
+          <BlurFade delay={0.1} inView>
+            {t('about.title')}
+          </BlurFade>
         </h1>
 
         {/* Introduction Section with Photo */}
@@ -123,13 +120,9 @@ const About = () => {
         {/* Research Interests Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('about.researchTitle')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}
-            />
+            <BlurFade delay={0.2} inView>
+              {t('about.researchTitle')}
+            </BlurFade>
           </h2>
           <div className="skills-list">
             {researchInterests.map((interest, index) => (
@@ -141,17 +134,19 @@ const About = () => {
         {/* Contact Section */}
         <section className="resume-section">
           <h2 className="section-title">
-            <EncryptedText
-              text={t('about.contactTitle')}
-              encryptedClassName="text-neutral-500"
-              revealedClassName=""
-              revealDelayMs={10}
-              encryptSpeed={15}
-            />
+            <BlurFade delay={0.3} inView>
+              {t('about.contactTitle')}
+            </BlurFade>
           </h2>
           <div className="contact-info">
             <p className="about-text">
-              {t('about.contactText')}
+              <EncryptedText
+                text={t('about.contactText')}
+                encryptedClassName="text-neutral-500"
+                revealedClassName=""
+                revealDelayMs={2}
+                encryptSpeed={2}
+              />
             </p>
             <Dock iconMagnification={60} iconDistance={100}>
               <DockIcon className="bg-black/10 dark:bg-white/10" href="mailto:2501212708@stu.pku.edu.cn">

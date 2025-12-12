@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useOutsideClick } from '../hooks/useOutsideClick';
-import { EncryptedText } from '../components/encrypted-text';
+import { BlurFade } from '../components/BlurFade';
 import './Publications.css';
 
 const Publications = () => {
@@ -56,13 +56,9 @@ const Publications = () => {
     <div className="page-container">
       <div className="content-wrapper">
         <h1 className="page-title">
-          <EncryptedText
-            text={t('publications.title')}
-            encryptedClassName="text-neutral-500"
-            revealedClassName=""
-            revealDelayMs={10}
-            encryptSpeed={15}
-          />
+          <BlurFade delay={0.1} inView>
+            {t('publications.title')}
+          </BlurFade>
         </h1>
 
         <div className="publications-grid">

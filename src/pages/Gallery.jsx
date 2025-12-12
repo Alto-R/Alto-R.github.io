@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 import { LayoutGrid } from '../components/layout-grid';
 import { Tabs } from '../components/tabs';
-import { EncryptedText } from '../components/encrypted-text';
+import { BlurFade } from '../components/BlurFade';
 import {
   galleryCategories,
   getImagesByCategory,
@@ -48,13 +48,9 @@ const Gallery = () => {
     <div className="page-container">
       <div className="content-wrapper gallery-content">
         <h1 className="page-title">
-          <EncryptedText
-            text={t('gallery.title')}
-            encryptedClassName="text-neutral-500"
-            revealedClassName=""
-            revealDelayMs={10}
-            encryptSpeed={15}
-          />
+          <BlurFade delay={0.1} inView>
+            {t('gallery.title')}
+          </BlurFade>
         </h1>
 
         {/* Tabs 分类导航 */}
