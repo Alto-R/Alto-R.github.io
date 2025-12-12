@@ -11,6 +11,7 @@ const NavigationTimeline = ({ currentSection }) => {
     { id: 'home', labelKey: 'nav.home' },
     { id: 'resume', labelKey: 'nav.resume' },
     { id: 'publications', labelKey: 'nav.publications' },
+    { id: 'gallery', labelKey: 'nav.gallery' },
     { id: 'about', labelKey: 'nav.about' },
   ];
 

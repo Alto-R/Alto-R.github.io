@@ -3,7 +3,9 @@ import { useTranslation, Trans } from 'react-i18next';
 import { Dock, DockIcon } from '../components/Dock';
 import { PixelatedCanvas } from '../components/pixelated-canvas';
 import { EncryptedText } from '../components/encrypted-text';
-import personalPhoto from '../data/personalphoto.jpg';
+import { getCloudinaryUrl } from '../data/galleryData';
+
+const personalPhoto = getCloudinaryUrl('personalphoto_aj4ytw', { width: 600, quality: 'auto' });
 
 // Icon components
 const Icons = {

@@ -13,6 +13,7 @@
     "process-buildings": "node scripts/processBuildings.js"
   },
   "dependencies": {
+    "@radix-ui/react-tabs": "^1.1.13",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.2",
     "class-variance-authority": "^0.7.1",

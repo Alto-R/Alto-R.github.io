@@ -1,0 +1,78 @@
+/* Gallery 页面样式 */
+
+/* ====================================
+   Gallery 特定内容容器
+   ==================================== */
+.gallery-content {
+  max-width: 1200px;
+}
+
+/* ====================================
+   Tabs 组件样式定制
+   ==================================== */
+.gallery-tabs-container {
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.gallery-tab-button {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+  padding: 0.75rem 1.5rem;
+}
+
+.gallery-tab-button:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Tabs 内容区域 - 移除默认的 mt-32 */
+.gallery-tabs-content {
+  margin-top: 1.5rem !important;
+}
+
+/* ====================================
+   Grid 容器
+   ==================================== */
+.gallery-grid-container {
+  width: 100%;
+  padding-bottom: 3rem;
+}
+
+/* ====================================
+   响应式调整
+   ==================================== */
+@media (max-width: 768px) {
+  .gallery-content {
+    max-width: 100%;
+  }
+
+  .gallery-tabs-container {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .gallery-tab-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .gallery-tabs-content {
+    margin-top: 1rem !important;
+  }
+
+  .gallery-grid-container {
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-tab-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+}

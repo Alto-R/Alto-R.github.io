@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import Home from './pages/Home';
 import Publications from './pages/Publications';
 import Resume from './pages/Resume';
+import Gallery from './pages/Gallery';
 import About from './pages/About';
 import NavigationTimeline from './components/NavigationTimeline';
 import './App.css';
@@ -13,6 +14,7 @@ const sections = [
   { id: 'home', component: Home },
   { id: 'resume', component: Resume },
   { id: 'publications', component: Publications },
+  { id: 'gallery', component: Gallery },
   { id: 'about', component: About },
 ];
 
@@ -124,6 +126,12 @@ function App() {
           <a
             className={currentSection === 3 ? 'active' : ''}
             onClick={() => scrollToSection(3)}
+          >
+            {t('nav.gallery')}
+          </a>
+          <a
+            className={currentSection === 4 ? 'active' : ''}
+            onClick={() => scrollToSection(4)}
           >
             {t('nav.about')}
           </a>

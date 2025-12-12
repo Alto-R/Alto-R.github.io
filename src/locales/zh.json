@@ -3,6 +3,7 @@
     "home": "首页",
     "resume": "简历",
     "publications": "发表",
+    "gallery": "相册",
     "about": "关于"
   },
   "home": {
@@ -183,5 +184,13 @@
         "link": "#"
       }
     ]
+  },
+  "gallery": {
+    "title": "照片墙",
+    "tabs": {
+      "nature": "自然风光",
+      "humanity": "人文纪实",
+      "urban": "城市建筑"
+    }
   }
 }

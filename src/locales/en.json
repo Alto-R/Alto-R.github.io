@@ -3,6 +3,7 @@
     "home": "Home",
     "resume": "Resume",
     "publications": "Publications",
+    "gallery": "Gallery",
     "about": "About"
   },
   "home": {
@@ -183,5 +184,13 @@
         "link": "#"
       }
     ]
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "tabs": {
+      "nature": "Nature",
+      "humanity": "Humanity",
+      "urban": "Urban"
+    }
   }
 }
