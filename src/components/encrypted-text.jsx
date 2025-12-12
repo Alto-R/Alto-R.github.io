@@ -97,7 +97,7 @@ export const EncryptedText = ({
   return (
     <motion.span
       ref={elementRef}
-      className={`${className} ${
+      className={`${className} will-change-[opacity] ${
         isEncrypted ? encryptedClassName : revealedClassName
       }`}
       initial={{ opacity: 0 }}
