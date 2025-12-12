@@ -507,7 +507,7 @@ h1 {
   }
 
   .content-wrapper {
-    padding: 0 1.2rem; /* 从 2rem 减小 */
+    padding: 0 1.2rem 0 3.5rem; /* 左侧留更多空间给 NavigationTimeline */
     box-sizing: border-box;
   }
 
@@ -631,7 +631,7 @@ h1 {
 
   /* 页面容器 */
   .content-wrapper {
-    padding: 0 1rem;
+    padding: 0 1rem 0 3rem; /* 左侧留空间给 NavigationTimeline */
   }
 
   /* 页面标题 */

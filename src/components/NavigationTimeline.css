@@ -120,16 +120,17 @@
 
   .nav-timeline-track {
     margin-right: 0;
+    width: 1.5px;
   }
 
   .nav-timeline-dot {
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
   }
 
   .nav-timeline-dot-inner {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
   }
 }
 
@@ -142,16 +143,16 @@
   }
 
   .nav-timeline-dot {
-    width: 14px;
-    height: 14px;
+    width: 8px;
+    height: 8px;
   }
 
   .nav-timeline-dot-inner {
-    width: 5px;
-    height: 5px;
+    width: 3px;
+    height: 3px;
   }
 
   .nav-timeline-track {
-    width: 1.5px;
+    width: 1px;
   }
 }
