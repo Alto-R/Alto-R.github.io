@@ -13,16 +13,11 @@ const GridCard = memo(({ card, isSelected, isLastSelected, onClick }) => {
         className={cn(
           "relative overflow-hidden bg-white",
           isSelected
-            ? "rounded-lg cursor-pointer fixed inset-0 z-50 flex items-center justify-center m-auto"
+            ? "rounded-lg cursor-pointer fixed inset-0 z-50 flex items-center justify-center m-auto w-[85vw] h-[65vh] md:w-[90vw] md:h-[85vh] md:max-w-[1200px] max-w-[500px]"
             : isLastSelected
             ? "z-40 bg-white rounded-xl h-full w-full"
             : "bg-white rounded-xl h-full w-full"
         )}
-        style={
-          isSelected
-            ? { width: "90vw", height: "85vh", maxWidth: "1200px" }
-            : {}
-        }
         layoutId={`gallery-card-${card.id}`}
       >
         {isSelected && <SelectedCard selected={card} />}
@@ -122,7 +117,7 @@ const SelectedCard = ({ selected }) => {
           src={getCloudinaryUrl(selected.publicId, 'full')}
           alt={selected.title || `Gallery ${selected.id}`}
           className={cn(
-            "max-h-[85vh] max-w-[90vw] object-contain rounded-lg transition-opacity duration-300",
+            "max-h-[60vh] max-w-[85vw] md:max-h-[85vh] md:max-w-[90vw] object-contain rounded-lg transition-opacity duration-300",
             loaded ? "opacity-100" : "opacity-0"
           )}
           onLoad={() => setLoaded(true)}
