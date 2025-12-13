@@ -181,13 +181,14 @@
 @media (max-width: 768px) {
   .modal-container {
     padding: 1rem;
+    padding-left: 3rem; /* 让弹窗整体向右偏移 */
     padding-top: 1rem;
     align-items: flex-start;
   }
 
   .modal-content {
     margin-top: calc(5rem + env(safe-area-inset-top, 0px));
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem; /* 恢复对称内边距 */
     max-height: calc(85vh - 5rem - env(safe-area-inset-top, 0px));
   }
 
@@ -220,11 +221,12 @@
 @media (max-width: 480px) {
   .modal-container {
     padding: 0.75rem;
+    padding-left: 2.5rem; /* 让弹窗整体向右偏移 */
   }
 
   .modal-content {
     margin-top: calc(4.5rem + env(safe-area-inset-top, 0px));
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem; /* 恢复对称内边距 */
     border-radius: 12px;
     max-height: calc(85vh - 4.5rem - env(safe-area-inset-top, 0px));
   }
