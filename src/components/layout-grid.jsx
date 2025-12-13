@@ -13,7 +13,7 @@ const GridCard = memo(({ card, isSelected, isLastSelected, onClick }) => {
         className={cn(
           "relative overflow-hidden bg-white",
           isSelected
-            ? "rounded-lg cursor-pointer fixed inset-0 z-50 flex items-center justify-center m-auto w-[85vw] h-[65vh] md:w-[90vw] md:h-[85vh] md:max-w-[1200px] max-w-[500px]"
+            ? "rounded-lg cursor-pointer fixed inset-0 z-[9999] flex items-center justify-center m-auto w-[85vw] h-[65vh] md:w-[90vw] md:h-[85vh] md:max-w-[1200px] max-w-[500px]"
             : isLastSelected
             ? "z-40 bg-white rounded-xl h-full w-full"
             : "bg-white rounded-xl h-full w-full"
@@ -74,7 +74,7 @@ export const LayoutGrid = ({ cards }) => {
       <motion.div
         onClick={handleOutsideClick}
         className={cn(
-          "fixed h-full w-full left-0 top-0 bg-black opacity-0 z-40",
+          "fixed h-full w-full left-0 top-0 bg-black opacity-0 z-[9998]",
           selected?.id ? "pointer-events-auto" : "pointer-events-none"
         )}
         animate={{ opacity: selected?.id ? 0.3 : 0 }}

@@ -105,6 +105,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0; /* Canvas 层 */
 }
 
 .hero-overlay {
@@ -113,6 +114,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1; /* 在 Canvas 之上 */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,7 +152,7 @@ h1 {
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  z-index: 10; /* 保证在 Canvas 之上 (虽然切页后 Canvas 不在，但为了层级安全) */
+  /* 不设置 z-index，避免创建层叠上下文 */
 }
 
 .content-wrapper {
