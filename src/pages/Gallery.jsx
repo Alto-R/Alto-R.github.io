@@ -57,7 +57,7 @@ const Gallery = () => {
         <Tabs
           tabs={tabsData}
           containerClassName="gallery-tabs-container"
-          activeTabClassName="bg-indigo-500/20"
+          activeTabClassName="bg-indigo-600/50"
           tabClassName="gallery-tab-button"
           contentClassName="gallery-tabs-content"
           disableContentTransform={true}

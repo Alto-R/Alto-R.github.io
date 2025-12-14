@@ -22,8 +22,9 @@
   font-size: 1rem;
   font-weight: 500;
   color: #fff;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
   padding: 0.75rem 1.5rem;
+  background-color: rgba(99, 102, 241, 0.25);
 }
 
 .gallery-tab-button:hover {

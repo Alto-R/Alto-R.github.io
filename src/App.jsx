@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Home from './pages/Home';
 import Publications from './pages/Publications';
+import Projects from './pages/Projects';
 import Resume from './pages/Resume';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
@@ -14,6 +15,7 @@ const sections = [
   { id: 'home', component: Home },
   { id: 'resume', component: Resume },
   { id: 'publications', component: Publications },
+  { id: 'projects', component: Projects },
   { id: 'gallery', component: Gallery },
   { id: 'about', component: About },
 ];
@@ -127,11 +129,17 @@ function App() {
             className={currentSection === 3 ? 'active' : ''}
             onClick={() => scrollToSection(3)}
           >
-            {t('nav.gallery')}
+            {t('nav.projects')}
           </a>
           <a
             className={currentSection === 4 ? 'active' : ''}
             onClick={() => scrollToSection(4)}
+          >
+            {t('nav.gallery')}
+          </a>
+          <a
+            className={currentSection === 5 ? 'active' : ''}
+            onClick={() => scrollToSection(5)}
           >
             {t('nav.about')}
           </a>

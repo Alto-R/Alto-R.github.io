@@ -3,6 +3,7 @@
     "home": "Home",
     "resume": "Resume",
     "publications": "Publications",
+    "projects": "Projects",
     "gallery": "Gallery",
     "about": "About"
   },
@@ -183,6 +184,15 @@
         "abstract": "A comprehensive review examining how climate change is reshaping global energy systems. We analyze the complex interactions between energy supply, demand, and network infrastructure, with emphasis on regional resilience strategies in the face of environmental disruptions.",
         "tags": ["Climate Change", "Energy Systems", "Resilience"],
         "link": "#"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "items": [
+      {
+        "title": "Recreation Route Recommendation System Based on Social Media Data",
+        "description": "Independently developed a recreation route recommendation system based on social media data and user preferences, integrating data crawling, NLP, and path optimization algorithms."
       }
     ]
   },
