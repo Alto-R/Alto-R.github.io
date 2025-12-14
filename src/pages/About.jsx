@@ -6,7 +6,7 @@ import { EncryptedText } from '../components/encrypted-text';
 import { BlurFade } from '../components/BlurFade';
 import { getCloudinaryUrl } from '../data/galleryData';
 
-const personalPhoto = getCloudinaryUrl('personalphoto_aj4ytw', { width: 600, quality: 'auto' });
+const personalPhoto = getCloudinaryUrl('personalphoto_3_75562', { width: 600, quality: 'auto' });
 
 // Icon components
 const Icons = {
@@ -100,17 +100,19 @@ const About = () => {
               src={personalPhoto}
               width={300}
               height={450}
-              cellSize={2}
-              dotScale={1}
+              cellSize={3}
+              dotScale={0.9}
               shape="square"
-              backgroundColor="#616060ff"
-              dropoutStrength={0.4}
+              backgroundColor="#000000"
+              tintStrength={0}
+              dropoutStrength={0.2}
               interactive={true}
               distortionStrength={3}
               distortionRadius={80}
               distortionMode="swirl"
               jitterStrength={4}
               jitterSpeed={4}
+              sampleAverage
               responsive={true}
               className="pixelated-photo"
             />
