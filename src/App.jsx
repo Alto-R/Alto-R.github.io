@@ -69,7 +69,7 @@ function App() {
   return (
     <div className="app">
       {/* 左侧导航时间线 */}
-      <NavigationTimeline currentSection={currentSection} />
+      <NavigationTimeline currentSection={currentSection} onNavigate={scrollToSection} />
 
       {/* 顶部导航栏 */}
       <nav className="navbar">

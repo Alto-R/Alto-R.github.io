@@ -70,6 +70,12 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.nav-timeline-item:hover .nav-timeline-label {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* 节点外圈 */

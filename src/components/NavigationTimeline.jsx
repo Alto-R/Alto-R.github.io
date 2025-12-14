@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import './NavigationTimeline.css';
 
-const NavigationTimeline = ({ currentSection }) => {
+const NavigationTimeline = ({ currentSection, onNavigate }) => {
   const { t } = useTranslation();
   const [timelineHeight, setTimelineHeight] = useState(0);
 
@@ -56,6 +56,8 @@ const NavigationTimeline = ({ currentSection }) => {
           <div
             key={section.id}
             className={`nav-timeline-item ${index <= currentSection ? 'active' : ''}`}
+            onClick={() => onNavigate?.(index)}
+            style={{ cursor: 'pointer' }}
           >
             <motion.div
               className="nav-timeline-dot"
@@ -63,6 +65,7 @@ const NavigationTimeline = ({ currentSection }) => {
                 scale: index === currentSection ? 1.5 : 1,
               }}
               transition={{ duration: 0.3 }}
+              whileHover={{ scale: 1.8 }}
             >
               {/* 内圈 */}
               <motion.div
