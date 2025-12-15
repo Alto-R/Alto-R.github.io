@@ -19,13 +19,21 @@ const Projects = () => {
             <h2 className="project-title">{t('projects.items.0.title')}</h2>
             <p className="project-description">{t('projects.items.0.description')}</p>
 
-            <div className="video-wrapper">
-              <iframe
-                src="//player.bilibili.com/player.html?bvid=BV1Cw411k7yz&autoplay=0"
-                allowFullScreen
-                className="project-video"
-                style={{ width: '100%', aspectRatio: '16/9', border: 'none' }}
-              />
+            <div className="videos-container">
+              <div className="video-wrapper">
+                <iframe
+                  src="//player.bilibili.com/player.html?bvid=BV1Cw411k7yz&autoplay=0"
+                  allowFullScreen
+                  className="project-video"
+                />
+              </div>
+              <div className="video-wrapper">
+                <video
+                  src="https://res.cloudinary.com/dj5oohbni/video/upload/mappo_demo_lsuoiq.mp4"
+                  controls
+                  className="project-video"
+                />
+              </div>
             </div>
           </div>
         </BlurFade>
