@@ -15,11 +15,10 @@ const Projects = () => {
         </h1>
 
         <BlurFade delay={0.2} inView>
-          <div className="project-card">
-            <h2 className="project-title">{t('projects.items.0.title')}</h2>
-            <p className="project-description">{t('projects.items.0.description')}</p>
-
-            <div className="videos-container">
+          <div className="projects-row">
+            <div className="project-card">
+              <h2 className="project-title">{t('projects.items.0.title')}</h2>
+              <p className="project-description">{t('projects.items.0.description')}</p>
               <div className="video-wrapper">
                 <iframe
                   src="//player.bilibili.com/player.html?bvid=BV1Cw411k7yz&autoplay=0"
@@ -27,9 +26,15 @@ const Projects = () => {
                   className="project-video"
                 />
               </div>
+            </div>
+
+            <div className="project-card">
+              <h2 className="project-title">{t('projects.items.1.title')}</h2>
+              <p className="project-description">{t('projects.items.1.description')}</p>
               <div className="video-wrapper">
                 <video
-                  src="https://res.cloudinary.com/dj5oohbni/video/upload/mappo_demo_lsuoiq.mp4"
+                  src="https://res.cloudinary.com/dj5oohbni/video/upload/Video_Project_1_q2t1bo.mp4"
+                  poster="https://res.cloudinary.com/dj5oohbni/video/upload/so_5/Video_Project_1_q2t1bo.jpg"
                   controls
                   className="project-video"
                 />

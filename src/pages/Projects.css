@@ -30,14 +30,18 @@
   margin-bottom: 1.5rem;
 }
 
-.videos-container {
+.projects-row {
   display: flex;
   gap: 1rem;
 }
 
+.projects-row .project-card {
+  flex: 1;
+  margin-bottom: 0;
+}
+
 .video-wrapper {
   position: relative;
-  flex: 1;
   border-radius: 0.75rem;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.3);
@@ -64,7 +68,7 @@
     font-size: 0.9rem;
   }
 
-  .videos-container {
+  .projects-row {
     flex-direction: column;
   }
 }

@@ -193,6 +193,10 @@
       {
         "title": "Recreation Route Recommendation System Based on Social Media Data",
         "description": "Independently developed a recreation route recommendation system based on social media data and user preferences, integrating data crawling, NLP, and path optimization algorithms."
+      },
+      {
+        "title": "Truck-Drone Cooperative Delivery Route Optimization with MAPPO",
+        "description": "Applied MAPPO (Multi-Agent Proximal Policy Optimization) algorithm to solve VRP (Vehicle Routing Problem) for truck-drone cooperative delivery scenarios."
       }
     ]
   },
