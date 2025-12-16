@@ -47,10 +47,9 @@ function processBuildingData() {
   // - 雾气: 从300开始到600完全消失
   // - 自动旋转360度绕Y轴
   //
-  // 激进裁剪：只保留视觉核心区域
-  // 相机水平距离182，雾气从300开始变淡，取 250 作为有效可视范围
-  const CAMERA_VIEW_RADIUS = 250; // 从原点的最大水平可视距离（激进）
-  const MAX_VISIBLE_HEIGHT = 100; // Y方向最大可视高度（相机高度60，再往上看不清）
+  // 极度激进裁剪：只保留视觉核心区域
+  const CAMERA_VIEW_RADIUS = 180; // 从原点的最大水平可视距离（与相机距离齐平）
+  const MAX_VISIBLE_HEIGHT = 100; // Y方向最大可视高度（低于相机高度）
 
   console.log('处理建筑数据...');
   console.log(`经度范围: ${minLon.toFixed(6)} - ${maxLon.toFixed(6)}`);
@@ -59,7 +58,7 @@ function processBuildingData() {
 
   // 使用 Map 来合并相近的点（去重）
   const pointMap = new Map();
-  const gridSize = 2; // 网格大小：相邻建筑距离小于此值会合并（可调整：2-5）
+  const gridSize = 4; // 网格大小：相邻建筑距离小于此值会合并（增大以减少点数）
 
   // 统计裁剪信息
   let culledCount = 0;
@@ -98,7 +97,7 @@ function processBuildingData() {
 
     // 稀疏化策略：每N层取一个点
     const floorHeight = 3; // 每层3米
-    const samplingInterval = 2; // 每2层取一个点（可调整：2=每隔一层，3=每隔两层）
+    const samplingInterval = 3; // 每3层取一个点
     const totalFloors = Math.max(1, Math.ceil(height / floorHeight));
 
     // 采样生成点：不是每层都生成，而是间隔取样
