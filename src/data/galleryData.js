@@ -17,7 +17,6 @@ export const galleryImages = [
   { id: 7, publicId: 'P1046210_leo8al', className: "md:col-span-3 md:row-span-3", title: { zh: "颐和园", en: "Summer Palace" }, description: { zh: "", en: "" } },
   { id: 8, publicId: 'P1035200_aep2fp', className: "md:col-span-2 md:row-span-3", title: { zh: "未名湖的冬天", en: "Winter at Weiming Lake" }, description: { zh: "", en: "" } },
   { id: 9, publicId: 'P1035232_jpm9nk', className: "md:col-span-2 md:row-span-3", title: { zh: "湖面结冰", en: "Frozen Lake" }, description: { zh: "", en: "" } },
-  { id: 10, publicId: 'P1024453_kuktfo', className: "md:col-span-2 md:row-span-3", title: { zh: "北京野生动物园卡皮巴拉", en: "Capybara at Beijing Wildlife Park" }, description: { zh: "", en: "" } },
 
   { id: 12, publicId: 'P1036275_xsm1xp', className: "md:col-span-2 md:row-span-3", title: { zh: "苏州", en: "Suzhou" }, description: { zh: "", en: "" } },
   { id: 13, publicId: 'P1012377_vpxneb', className: "md:col-span-3 md:row-span-3", title: { zh: "深圳湾公园", en: "Shenzhen Bay Park" }, description: { zh: "", en: "" } },
@@ -29,14 +28,12 @@ export const galleryImages = [
   { id: 18, publicId: 'P1063047_zmom6v', className: "md:col-span-5 md:row-span-3", title: { zh: "涩谷sky顶层", en: "Shibuya Sky Rooftop" }, description: { zh: "", en: "" } },
   { id: 19, publicId: 'P1063043_msfckf', className: "md:col-span-2 md:row-span-4", title: { zh: "东京塔", en: "Tokyo Tower" }, description: { zh: "", en: "" } },
   { id: 20, publicId: 'P1023467_ze8ill', className: "md:col-span-3 md:row-span-4", title: { zh: "新宿", en: "Shinjuku" }, description: { zh: "", en: "" } },
-  { id: 21, publicId: 'P1073288_vjqaf8', className: "md:col-span-4 md:row-span-3", title: { zh: "下北泽", en: "Shimokitazawa" }, description: { zh: "", en: "" } },
   { id: 22, publicId: 'P1062025_izdug5', className: "md:col-span-5 md:row-span-3", title: { zh: "大阪道顿堀", en: "Dotonbori, Osaka" }, description: { zh: "", en: "" } },
   { id: 23, publicId: 'P1062091_d7ai9t', className: "md:col-span-3 md:row-span-3", title: { zh: "奈良法隆寺", en: "Horyu-ji Temple, Nara" }, description: { zh: "", en: "" } },
   { id: 24, publicId: 'P1062241_el96k8', className: "md:col-span-2 md:row-span-3", title: { zh: "奈良公园", en: "Nara Park" }, description: { zh: "", en: "" } },
   { id: 25, publicId: 'P1062189_qc1avg', className: "md:col-span-2 md:row-span-3", title: { zh: "奈良的🦌", en: "Deer in Nara" }, description: { zh: "", en: "" } },
   { id: 26, publicId: 'P1062700_t47f51', className: "md:col-span-3 md:row-span-3", title: { zh: "宇治大吉山", en: "Mt. Daikichi, Uji" }, description: { zh: "", en: "" } },
   { id: 27, publicId: 'P1073391_cehylj', className: "md:col-span-5 md:row-span-3", title: { zh: "镰仓", en: "Kamakura" }, description: { zh: "", en: "" } },
-  { id: 28, publicId: 'P1073421_fkad7e', className: "md:col-span-5 md:row-span-3", title: { zh: "镰仓看富士山", en: "Mt. Fuji from Kamakura" }, description: { zh: "", en: "" } }
 ];
 
 // 生成 Cloudinary URL 的工具函数

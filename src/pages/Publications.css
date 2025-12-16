@@ -291,6 +291,14 @@
   }
 }
 
+/* Performance: reduce blur for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .modal-backdrop {
+    backdrop-filter: none;
+    background: rgba(0, 0, 0, 0.92);
+  }
+}
+
 /* Animation Enhancements */
 .pub-card {
   transform-origin: center;

@@ -40,6 +40,18 @@ function processBuildingData() {
   // 缩放系数（调整城市在3D空间中的大小）
   const scale = 800;
 
+  // ========== 相机可视范围裁剪配置 ==========
+  // 相机配置 (来自 Home.jsx):
+  // - 位置: [-180, 60, 30], 到原点水平距离约 182
+  // - FOV: 60度
+  // - 雾气: 从300开始到600完全消失
+  // - 自动旋转360度绕Y轴
+  //
+  // 激进裁剪：只保留视觉核心区域
+  // 相机水平距离182，雾气从300开始变淡，取 250 作为有效可视范围
+  const CAMERA_VIEW_RADIUS = 250; // 从原点的最大水平可视距离（激进）
+  const MAX_VISIBLE_HEIGHT = 100; // Y方向最大可视高度（相机高度60，再往上看不清）
+
   console.log('处理建筑数据...');
   console.log(`经度范围: ${minLon.toFixed(6)} - ${maxLon.toFixed(6)}`);
   console.log(`纬度范围: ${minLat.toFixed(6)} - ${maxLat.toFixed(6)}`);
@@ -48,6 +60,10 @@ function processBuildingData() {
   // 使用 Map 来合并相近的点（去重）
   const pointMap = new Map();
   const gridSize = 2; // 网格大小：相邻建筑距离小于此值会合并（可调整：2-5）
+
+  // 统计裁剪信息
+  let culledCount = 0;
+  let processedCount = 0;
 
   // 为每栋建筑生成最终的显示点
   filteredFeatures.forEach(feature => {
@@ -65,6 +81,17 @@ function processBuildingData() {
     centerX = (centerX / coords.length - centerLon) * scale;
     centerZ = (centerZ / coords.length - centerLat) * scale;
 
+    // ========== 相机可视范围裁剪 ==========
+    // 计算建筑到原点的水平距离（XZ平面）
+    const distanceFromOrigin = Math.sqrt(centerX * centerX + centerZ * centerZ);
+
+    // 如果建筑超出可视范围，跳过
+    if (distanceFromOrigin > CAMERA_VIEW_RADIUS) {
+      culledCount++;
+      return;
+    }
+    processedCount++;
+
     // 量化到网格（用于合并相近建筑）
     const gridX = Math.round(centerX / gridSize) * gridSize;
     const gridZ = Math.round(centerZ / gridSize) * gridSize;
@@ -77,6 +104,10 @@ function processBuildingData() {
     // 采样生成点：不是每层都生成，而是间隔取样
     for (let floor = 0; floor < totalFloors; floor += samplingInterval) {
       const y = floor * (floorHeight / 3); // 在3D空间中，每层的高度缩放
+
+      // 高度裁剪：超出可视高度的点不生成
+      if (y > MAX_VISIBLE_HEIGHT) break;
+
       const gridY = Math.round(y * 10) / 10; // y方向精度保持0.1
 
       // 使用网格坐标作为key，实现空间去重
@@ -103,7 +134,11 @@ function processBuildingData() {
     });
   });
 
-  console.log(`去重前预估点数: ${filteredFeatures.length * 5} (约)`);
+  console.log(`\n========== 相机可视范围裁剪统计 ==========`);
+  console.log(`可视半径: ${CAMERA_VIEW_RADIUS}, 最大高度: ${MAX_VISIBLE_HEIGHT}`);
+  console.log(`保留建筑数: ${processedCount}`);
+  console.log(`裁剪建筑数: ${culledCount} (${(culledCount / filteredFeatures.length * 100).toFixed(1)}%)`);
+  console.log(`去重前预估点数: ${processedCount * 5} (约)`);
   console.log(`去重后实际点数: ${points.length}`);
 
   // 计算并输出数据的边界范围
