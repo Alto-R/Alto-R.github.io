@@ -110,14 +110,14 @@ const SelectedCard = ({ selected }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="w-full h-full relative z-[60] flex items-center justify-center rounded-lg shadow-2xl overflow-hidden bg-black"
+      className="w-full h-full relative z-[60] flex items-center justify-center"
     >
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative flex items-center justify-center expanded-image-style overflow-hidden bg-black">
         <img
           src={getCloudinaryUrl(selected.publicId, 'full')}
           alt={selected.title || `Gallery ${selected.id}`}
           className={cn(
-            "max-h-[60vh] max-w-[85vw] md:max-h-[85vh] md:max-w-[90vw] object-contain rounded-lg transition-opacity duration-300",
+            "max-h-[60vh] max-w-[85vw] md:max-h-[85vh] md:max-w-[90vw] object-contain transition-opacity duration-300",
             loaded ? "opacity-100" : "opacity-0"
           )}
           onLoad={() => setLoaded(true)}

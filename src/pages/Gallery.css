@@ -77,3 +77,15 @@
     padding: 0.5rem 0.8rem;
   }
 }
+
+/* ====================================
+   展开图片磨砂玻璃边框
+   ==================================== */
+.expanded-image-style {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.3),
+    0 20px 50px -10px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
