@@ -170,19 +170,48 @@ h1 {
 
 /* --- Publications 卡片样式 --- */
 .publications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* 响应式网格 */
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .pub-card {
-  background: rgba(255, 255, 255, 0.03); /* 极淡的背景 */
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 2rem;
   transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.pub-card-content {
+  flex: 1;
+  display: flex;
   flex-direction: column;
+  min-width: 0;
+}
+
+.pub-card-image {
+  width: 280px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  align-self: center;
+}
+
+.pub-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pub-card:hover .pub-card-image img {
+  transform: scale(1.05);
 }
 
 .pub-card:hover {
@@ -520,16 +549,22 @@ h1 {
 
   /* Publications */
   .publications-grid {
-    grid-template-columns: 1fr; /* 单列布局 */
-    gap: 1.5rem; /* 从 2rem 减小 */
+    gap: 1.5rem;
   }
 
   .pub-card {
-    padding: 1.5rem; /* 从 2rem 减小 */
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .pub-card-image {
+    width: 100%;
+    height: 160px;
+    order: -1;
   }
 
   .pub-title {
-    font-size: 1.3rem; /* 从 1.5rem 略微减小 */
+    font-size: 1.3rem;
   }
 
   /* Resume */

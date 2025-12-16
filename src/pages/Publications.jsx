@@ -6,6 +6,18 @@ import { useOutsideClick } from '../hooks/useOutsideClick';
 import { BlurFade } from '../components/BlurFade';
 import './Publications.css';
 
+// Cloudinary image mapping for publications
+const publicationImages = {
+  1: 'carbon_emission_qi343r',  // Carbon emission paper
+  2: 'island_udfics',           // Island paper
+  3: 'EVIPV_e7drs3',            // EVIPV paper
+  // id 4 (review paper) has no image
+};
+
+const getCloudinaryUrl = (publicId, width = 600) => {
+  return `https://res.cloudinary.com/dj5oohbni/image/upload/w_${width},c_fill,q_auto,f_auto/${publicId}`;
+};
+
 const Publications = () => {
   const { t } = useTranslation();
   const [activeId, setActiveId] = useState(null);
@@ -71,39 +83,51 @@ const Publications = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
-              <motion.div layoutId={`header-${pub.id}`} className="pub-header">
-                <span className="pub-year">{pub.year}</span>
-                <span className="pub-venue">{pub.venue}</span>
-              </motion.div>
+              <div className="pub-card-content">
+                <motion.div layoutId={`header-${pub.id}`} className="pub-header">
+                  <span className="pub-year">{pub.year}</span>
+                  <span className="pub-venue">{pub.venue}</span>
+                </motion.div>
 
-              <motion.h2 layoutId={`title-${pub.id}`} className="pub-title">
-                {pub.title}
-              </motion.h2>
+                <motion.h2 layoutId={`title-${pub.id}`} className="pub-title">
+                  {pub.title}
+                </motion.h2>
 
-              <motion.p layoutId={`authors-${pub.id}`} className="pub-authors">
-                {renderAuthors(pub.authors)}
-              </motion.p>
+                <motion.p layoutId={`authors-${pub.id}`} className="pub-authors">
+                  {renderAuthors(pub.authors)}
+                </motion.p>
 
-              <p className="pub-abstract-preview">
-                {pub.abstract.substring(0, 150)}...
-              </p>
+                <p className="pub-abstract-preview">
+                  {pub.abstract.substring(0, 150)}...
+                </p>
 
-              <div className="pub-footer">
-                <div className="pub-tags">
-                  {pub.tags.map(tag => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
+                <div className="pub-footer">
+                  <div className="pub-tags">
+                    {pub.tags.map(tag => (
+                      <span key={tag} className="tag">{tag}</span>
+                    ))}
+                  </div>
+                  <a
+                    href={pub.link}
+                    className="pub-link-compact"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    → PDF
+                  </a>
                 </div>
-                <a
-                  href={pub.link}
-                  className="pub-link-compact"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  → PDF
-                </a>
               </div>
+
+              {publicationImages[pub.id] && (
+                <div className="pub-card-image">
+                  <img
+                    src={getCloudinaryUrl(publicationImages[pub.id], 400)}
+                    alt={pub.title}
+                    loading="lazy"
+                  />
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -126,7 +150,7 @@ const Publications = () => {
                 <motion.div
                   ref={modalRef}
                   layoutId={`card-${activeId}`}
-                  className="modal-content"
+                  className={`modal-content ${publicationImages[activeId] ? 'modal-with-image' : ''}`}
                 >
                   {/* Close Button */}
                   <button
@@ -179,7 +203,23 @@ const Publications = () => {
                     className="modal-body"
                   >
                     <h3 className="abstract-title">{t('publications.abstractTitle') || 'Abstract'}</h3>
-                    <p className="pub-abstract-full">{activePub.abstract}</p>
+
+                    <div className="abstract-content">
+                      {publicationImages[activeId] && (
+                        <motion.div
+                          className="modal-image-float"
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.15 }}
+                        >
+                          <img
+                            src={getCloudinaryUrl(publicationImages[activeId], 600)}
+                            alt={activePub.title}
+                          />
+                        </motion.div>
+                      )}
+                      <p className="pub-abstract-full">{activePub.abstract}</p>
+                    </div>
 
                     <div className="pub-footer">
                       <div className="pub-tags">
