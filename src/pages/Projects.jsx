@@ -33,8 +33,8 @@ const Projects = () => {
               <p className="project-description">{t('projects.items.1.description')}</p>
               <div className="video-wrapper">
                 <video
-                  src="https://res.cloudinary.com/dj5oohbni/video/upload/Video_Project_1_q2t1bo.mp4"
-                  poster="https://res.cloudinary.com/dj5oohbni/video/upload/so_5/Video_Project_1_q2t1bo.jpg"
+                  src="https://res.cloudinary.com/dj5oohbni/video/upload/mappo_vrp_uwbany.mp4"
+                  poster="https://res.cloudinary.com/dj5oohbni/video/upload/so_5/mappo_vrp_uwbany.jpg"
                   controls
                   className="project-video"
                 />
