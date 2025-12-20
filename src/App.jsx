@@ -8,6 +8,7 @@ import Resume from './pages/Resume';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import NavigationTimeline from './components/NavigationTimeline';
+import Lanyard from './components/Lanyard/Lanyard';
 import './App.css';
 
 // 页面配置
@@ -145,6 +146,13 @@ function App() {
           </a>
         </div>
       </nav>
+
+      {/* 右侧 Lanyard 卡片 - 从 Resume 页面开始显示 */}
+      <div className={`lanyard-container ${currentSection >= 1 ? 'visible' : ''}`}>
+        {currentSection >= 1 && (
+          <Lanyard position={[0, 0, 18]} gravity={[0, -40, 0]} fov={20} />
+        )}
+      </div>
 
       {/* 滚动容器 */}
       <div className="scroll-container">
