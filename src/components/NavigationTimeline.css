@@ -120,11 +120,11 @@
 }
 
 /* ========================================
-   响应式：平板 (768px 及以下) - 隐藏文字
+   响应式：中等屏幕 (1300px 及以下) - 隐藏文字
    ======================================== */
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .nav-timeline {
-    left: 16px;
+    left: 20px;
   }
 
   .nav-timeline-label {
@@ -133,6 +133,28 @@
 
   .nav-timeline-track {
     margin-right: 0;
+  }
+
+  .nav-timeline-dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .nav-timeline-dot-inner {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* ========================================
+   响应式：平板 (768px 及以下)
+   ======================================== */
+@media (max-width: 768px) {
+  .nav-timeline {
+    left: 16px;
+  }
+
+  .nav-timeline-track {
     width: 1.5px;
   }
 

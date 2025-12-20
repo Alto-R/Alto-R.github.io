@@ -8,6 +8,7 @@ import Resume from './pages/Resume';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import NavigationTimeline from './components/NavigationTimeline';
+import PillNav from './components/PillNav';
 import Lanyard from './components/Lanyard/Lanyard';
 import './App.css';
 
@@ -23,7 +24,6 @@ const sections = [
 
 function App() {
   const { t, i18n } = useTranslation();
-  const [menuOpen, setMenuOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
   const sectionRefs = useRef([]);
   const isScrolling = useRef(false); // 防止滚动时重复触发
@@ -53,8 +53,6 @@ function App() {
 
   // 点击导航栏滚动到对应 section
   const scrollToSection = useCallback((index) => {
-    setMenuOpen(false);
-
     const section = sectionRefs.current[index];
     if (!section) return;
 
@@ -75,77 +73,35 @@ function App() {
       <NavigationTimeline currentSection={currentSection} onNavigate={scrollToSection} />
 
       {/* 顶部导航栏 */}
-      <nav className="navbar">
-        {/* 语言切换器 - 左侧 */}
-        <div className="language-switcher">
-          <span
-            onClick={() => i18n.changeLanguage('zh')}
-            className={i18n.language === 'zh' ? 'active' : ''}
-            style={{ cursor: 'pointer' }}
-          >
-            中文
-          </span>
-          <span style={{ margin: '0 0.5rem', color: 'rgba(255,255,255,0.3)' }}>|</span>
-          <span
-            onClick={() => i18n.changeLanguage('en')}
-            className={i18n.language === 'en' ? 'active' : ''}
-            style={{ cursor: 'pointer' }}
-          >
-            English
-          </span>
-        </div>
-
-        {/* 汉堡菜单按钮 - 仅在移动端显示 */}
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={menuOpen ? 'open' : ''}></span>
-          <span className={menuOpen ? 'open' : ''}></span>
-          <span className={menuOpen ? 'open' : ''}></span>
-        </button>
-
-        {/* 导航链接 - 右侧 */}
-        <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <a
-            className={currentSection === 0 ? 'active' : ''}
-            onClick={() => scrollToSection(0)}
-          >
-            {t('nav.home')}
-          </a>
-          <a
-            className={currentSection === 1 ? 'active' : ''}
-            onClick={() => scrollToSection(1)}
-          >
-            {t('nav.resume')}
-          </a>
-          <a
-            className={currentSection === 2 ? 'active' : ''}
-            onClick={() => scrollToSection(2)}
-          >
-            {t('nav.publications')}
-          </a>
-          <a
-            className={currentSection === 3 ? 'active' : ''}
-            onClick={() => scrollToSection(3)}
-          >
-            {t('nav.projects')}
-          </a>
-          <a
-            className={currentSection === 4 ? 'active' : ''}
-            onClick={() => scrollToSection(4)}
-          >
-            {t('nav.gallery')}
-          </a>
-          <a
-            className={currentSection === 5 ? 'active' : ''}
-            onClick={() => scrollToSection(5)}
-          >
-            {t('nav.about')}
-          </a>
-        </div>
-      </nav>
+      <PillNav
+        items={[
+          { label: t('nav.home') },
+          { label: t('nav.resume') },
+          { label: t('nav.publications') },
+          { label: t('nav.projects') },
+          { label: t('nav.gallery') },
+          { label: t('nav.about') },
+        ]}
+        activeIndex={currentSection}
+        onItemClick={scrollToSection}
+        languageSwitcher={
+          <div className="flex items-center gap-2 text-sm">
+            <span
+              onClick={() => i18n.changeLanguage('zh')}
+              className={`cursor-pointer transition-opacity ${i18n.language === 'zh' ? 'text-white' : 'text-white/50 hover:text-white/80'}`}
+            >
+              中文
+            </span>
+            <span className="text-white/30">|</span>
+            <span
+              onClick={() => i18n.changeLanguage('en')}
+              className={`cursor-pointer transition-opacity ${i18n.language === 'en' ? 'text-white' : 'text-white/50 hover:text-white/80'}`}
+            >
+              EN
+            </span>
+          </div>
+        }
+      />
 
       {/* 右侧 Lanyard 卡片 - 从 Resume 页面开始显示 */}
       <div className={`lanyard-container ${currentSection >= 1 ? 'visible' : ''}`}>
