@@ -7,43 +7,55 @@
 
 .dock {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 68px;
+  padding: 0 1.25rem;
+  padding-bottom: 10px;
+  background: rgb(40, 40, 40);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  overflow: visible;
 }
 
 .dock-icon {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
   cursor: pointer;
   color: currentColor;
   text-decoration: none;
+  background: rgb(60, 60, 60);
 }
 
-.dock-icon:hover {
-  transform: translateY(-8px) scale(1.2);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+.dock-icon-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.dock-icon svg {
-  width: 28px;
-  height: 28px;
-  transition: all 0.3s ease;
+.dock-icon-inner svg {
+  width: 100%;
+  height: 100%;
 }
 
-.dock-icon:hover svg {
-  width: 32px;
-  height: 32px;
+.dock-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(30, 30, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  pointer-events: none;
 }
 
 .size-full {
@@ -53,9 +65,10 @@
 
 /* Background colors for icons */
 .bg-black\/10 {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgb(60, 60, 60);
 }
 
-.dark .bg-white\/10 {
-  background-color: rgba(255, 255, 255, 0.1);
+.dark .bg-white\/10,
+.bg-white\/10 {
+  background-color: rgb(60, 60, 60);
 }

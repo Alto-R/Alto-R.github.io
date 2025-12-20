@@ -227,14 +227,14 @@ const Resume = () => {
             </BlurFade>
           </h2>
           <div className="contact-info">
-            <Dock iconMagnification={60} iconDistance={100}>
-              <DockIcon className="bg-black/10 dark:bg-white/10" href="mailto:2501212708@stu.pku.edu.cn">
+            <Dock>
+              <DockIcon className="bg-black/10 dark:bg-white/10" href="mailto:2501212708@stu.pku.edu.cn" title="Email">
                 <Icons.email className="size-full" />
               </DockIcon>
-              <DockIcon className="bg-black/10 dark:bg-white/10" href="https://github.com/Alto-R">
+              <DockIcon className="bg-black/10 dark:bg-white/10" href="https://github.com/Alto-R" title="GitHub">
                 <Icons.gitHub className="size-full" />
               </DockIcon>
-              <DockIcon className="bg-black/10 dark:bg-white/10" href="https://scholar.google.com/citations?user=apavbykAAAAJ">
+              <DockIcon className="bg-black/10 dark:bg-white/10" href="https://scholar.google.com/citations?user=apavbykAAAAJ" title="Google Scholar">
                 <Icons.google className="size-full" />
               </DockIcon>
               <DockIcon className="bg-black/10 dark:bg-white/10" title="WeChat: hcr12708">
