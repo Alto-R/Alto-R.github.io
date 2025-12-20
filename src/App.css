@@ -137,14 +137,14 @@ html {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: clamp(2rem, 5vw + 1rem, 4rem);
   margin: 0;
   color: #a5b4fc;
 }
 
 .subtitle {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 1.5vw + 0.5rem, 1.2rem);
   line-height: 1.8;
 }
 
@@ -166,7 +166,7 @@ h1 {
 }
 
 .page-title {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 4vw + 0.5rem, 3rem);
   margin-bottom: 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 1rem;
@@ -542,14 +542,6 @@ h1 {
   }
 
   /* 首页 */
-  h1 {
-    font-size: 2.5rem; /* 从 4rem 减小 */
-  }
-
-  .subtitle {
-    font-size: 1rem; /* 从 1.2rem 减小 */
-  }
-
   .hero-content {
     padding: 1.2rem 1.5rem; /* 从 1.5rem 2rem 减小 */
     max-width: 90%;
@@ -573,7 +565,6 @@ h1 {
   }
 
   .page-title {
-    font-size: 2.2rem; /* 从 3rem 减小 */
     margin-bottom: 2rem; /* 从 3rem 减小 */
   }
 
@@ -675,15 +666,6 @@ h1 {
   }
 
   /* 首页 */
-  h1 {
-    font-size: 2rem; /* 进一步减小 */
-  }
-
-  .subtitle {
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-
   .hero-content {
     padding: 1rem;
     max-width: 85%;
@@ -697,7 +679,6 @@ h1 {
 
   /* 页面标题 */
   .page-title {
-    font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
 

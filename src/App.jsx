@@ -27,6 +27,7 @@ function App() {
   const [currentSection, setCurrentSection] = useState(0);
   const sectionRefs = useRef([]);
   const isScrolling = useRef(false); // 防止滚动时重复触发
+  const currentSectionRef = useRef(0); // 用于在 useEffect 中追踪当前 section
 
   // 监听滚动，更新当前 section
   useEffect(() => {
@@ -39,7 +40,8 @@ function App() {
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sectionRefs.current[i];
         if (section && section.offsetTop <= scrollPosition) {
-          if (currentSection !== i) {
+          if (currentSectionRef.current !== i) {
+            currentSectionRef.current = i;
             setCurrentSection(i);
           }
           break;
@@ -49,7 +51,7 @@ function App() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [currentSection]);
+  }, []);
 
   // 点击导航栏滚动到对应 section
   const scrollToSection = useCallback((index) => {
@@ -85,7 +87,7 @@ function App() {
         activeIndex={currentSection}
         onItemClick={scrollToSection}
         languageSwitcher={
-          <div className="flex items-center gap-2 text-sm">
+          <div className="flex items-center gap-2 text-sm px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-xl border border-white/10">
             <span
               onClick={() => i18n.changeLanguage('zh')}
               className={`cursor-pointer transition-opacity ${i18n.language === 'zh' ? 'text-white' : 'text-white/50 hover:text-white/80'}`}
