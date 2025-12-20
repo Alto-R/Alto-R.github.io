@@ -361,6 +361,26 @@ h1 {
   margin-bottom: 3rem;
 }
 
+/* About 页面 Lanyard 容器 */
+.about-page {
+  position: relative;
+}
+
+.lanyard-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.lanyard-canvas-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
 /* About 页面照片布局 */
 .about-with-photo {
   display: flex;
@@ -471,6 +491,11 @@ h1 {
 
 /* --- 平板设备 (768px 及以下) --- */
 @media (max-width: 768px) {
+  /* 移动端隐藏 Lanyard */
+  .lanyard-container {
+    display: none;
+  }
+
   /* 导航栏 */
   .navbar {
     padding: 1rem 1.5rem;

@@ -5,6 +5,7 @@ import { PixelatedCanvas } from '../components/pixelated-canvas';
 import { EncryptedText } from '../components/encrypted-text';
 import { BlurFade } from '../components/BlurFade';
 import { getCloudinaryUrl } from '../data/galleryData';
+import Lanyard from '../components/Lanyard/Lanyard';
 
 const personalPhoto = getCloudinaryUrl('personalphoto_3_75562', { width: 600, quality: 'auto' });
 
@@ -71,7 +72,12 @@ const About = () => {
   const researchInterests = t('about.researchInterests', { returnObjects: true });
 
   return (
-    <div className="page-container">
+    <div className="page-container about-page">
+      {/* 右侧固定的 Lanyard 卡片 */}
+      <div className="lanyard-container">
+        <Lanyard position={[0, 0, 18]} gravity={[0, -40, 0]} fov={20}/>
+      </div>
+
       <div className="content-wrapper">
         <h1 className="page-title">
           <BlurFade delay={0.1} inView>
