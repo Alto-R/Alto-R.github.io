@@ -5,6 +5,7 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useTranslation } from 'react-i18next';
 import ParticlesCityReal from '../components/ParticlesCityReal';
 import { BlurFade } from '../components/BlurFade';
+import { InteractiveHoverButton } from '../components/InteractiveHoverButton';
 
 const Home = ({ onNavigate }) => {
   const { t } = useTranslation();
@@ -59,20 +60,9 @@ const Home = ({ onNavigate }) => {
 
           <BlurFade delay={0.75} inView>
             <div style={{marginTop: '2rem'}}>
-               <button
-                 onClick={() => onNavigate?.(1)}
-                 style={{
-                   padding: '12px 24px',
-                   background: 'white',
-                   border: 'none',
-                   borderRadius: '4px',
-                   cursor: 'pointer',
-                   fontWeight: 'bold',
-                   color: 'black',
-                   boxShadow: '0 0 10px rgba(255,255,255,0.3)' // 给按钮加一点微光
-               }}>
+               <InteractiveHoverButton onClick={() => onNavigate?.(1)}>
                    {t('home.button')}
-               </button>
+               </InteractiveHoverButton>
             </div>
           </BlurFade>
         </div>
