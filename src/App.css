@@ -123,13 +123,17 @@ html {
 }
 
 .hero-content {
-  pointer-events: auto;
+  pointer-events: none;
   background: rgba(0, 0, 0, 0.6);
   padding: 1.5rem 2rem;
   border-radius: 8px;
   backdrop-filter: blur(0.1px);
   width: fit-content;
   max-width: 90%;
+}
+
+.hero-content button {
+  pointer-events: auto;
 }
 
 h1 {
@@ -373,7 +377,11 @@ h1 {
   width: 25%;
   height: 100vh;
   z-index: 10;
-  pointer-events: auto;
+  pointer-events: none; /* 默认不拦截点击 */
+}
+
+.lanyard-container.visible {
+  pointer-events: auto; /* 显示时才拦截点击 */
 }
 
 .lanyard-canvas-wrapper {
