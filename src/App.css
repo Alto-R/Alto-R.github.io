@@ -489,13 +489,15 @@ h1 {
    移动端响应式样式
    ========================= */
 
-/* --- 平板设备 (768px 及以下) --- */
-@media (max-width: 768px) {
-  /* 移动端隐藏 Lanyard */
+/* --- 中等屏幕隐藏 Lanyard (1650px 及以下) --- */
+@media (max-width: 1650px) {
   .lanyard-container {
     display: none;
   }
+}
 
+/* --- 平板设备 (768px 及以下) --- */
+@media (max-width: 768px) {
   /* 导航栏 */
   .navbar {
     padding: 1rem 1.5rem;
