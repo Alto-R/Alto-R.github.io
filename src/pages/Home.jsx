@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import ParticlesCityReal from '../components/ParticlesCityReal';
 import { BlurFade } from '../components/BlurFade';
 import { InteractiveHoverButton } from '../components/InteractiveHoverButton';
+import TrueFocus from '../components/TrueFocus';
 
 const Home = ({ onNavigate }) => {
   const { t } = useTranslation();
@@ -45,9 +46,17 @@ const Home = ({ onNavigate }) => {
       {/* --- HTML Layer (上层覆盖) --- */}
       <div className="hero-overlay">
         <div className="hero-content">
-          <BlurFade delay={0.25} inView>
-            <h1>{t('home.greeting')}</h1>
-          </BlurFade>
+          <TrueFocus
+            sentence={t('home.greeting')}
+            separator="|"
+            manualMode={false}
+            blurAmount={5}
+            borderColor="#ffffff"
+            glowColor="rgba(165, 180, 252, 0.6)"
+            textColor="#a5b4fc"
+            animationDuration={0.5}
+            pauseBetweenAnimations={1}
+          />
 
           <BlurFade delay={0.5} inView>
             <p className="subtitle" style={{marginTop: '1.5rem'}}>

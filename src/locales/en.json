@@ -8,7 +8,7 @@
     "about": "About"
   },
   "home": {
-    "greeting": "Hi, I'm Churui Huang.",
+    "greeting": "Hi, I'm|Churui Huang.",
     "subtitle": "Student / Developer.",
     "description": "My research interests are in smart cities and big data,",
     "description2": "with a current focus on convex optimization and reinforcement learning,",

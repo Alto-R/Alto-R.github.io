@@ -8,7 +8,7 @@
     "about": "关于"
   },
   "home": {
-    "greeting": "你好，我是黄楚睿。",
+    "greeting": "你好，|我是黄楚睿。",
     "subtitle": "学生 / 开发者",
     "description": "我的研究兴趣在智慧城市和大数据领域，",
     "description2": "目前专注于凸优化和强化学习，",

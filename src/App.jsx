@@ -10,6 +10,7 @@ import About from './pages/About';
 import NavigationTimeline from './components/NavigationTimeline';
 import PillNav from './components/PillNav';
 import Lanyard from './components/Lanyard/Lanyard';
+import ClickSpark from './components/ClickSpark';
 import './App.css';
 
 // 页面配置
@@ -70,6 +71,7 @@ function App() {
   }, []);
 
   return (
+    <ClickSpark sparkColor="#ffffff" sparkSize={12} sparkRadius={20} sparkCount={10} duration={500}>
     <div className="app">
       {/* 左侧导航时间线 */}
       <NavigationTimeline currentSection={currentSection} onNavigate={scrollToSection} />
@@ -126,6 +128,7 @@ function App() {
         ))}
       </div>
     </div>
+    </ClickSpark>
   );
 }
 
