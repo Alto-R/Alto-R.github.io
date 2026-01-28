@@ -197,6 +197,10 @@
       {
         "title": "Truck-Drone Cooperative Delivery Route Optimization with MAPPO",
         "description": "Applied MAPPO (Multi-Agent Proximal Policy Optimization) algorithm to solve VRP (Vehicle Routing Problem) for truck-drone cooperative delivery scenarios."
+      },
+      {
+        "title": "Gaussian Splatting Location Showcase",
+        "description": "A showcase of locations in modeled using Gaussian Splatting techniques."
       }
     ]
   },

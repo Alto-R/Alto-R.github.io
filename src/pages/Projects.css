@@ -30,13 +30,24 @@
   margin-bottom: 1.5rem;
 }
 
+.project-link {
+  color: #a5b4fc;
+  font-size: 0.95rem;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
 .projects-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .projects-row .project-card {
-  flex: 1;
   margin-bottom: 0;
 }
 
@@ -69,6 +80,6 @@
   }
 
   .projects-row {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }

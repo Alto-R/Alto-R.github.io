@@ -40,6 +40,19 @@ const Projects = () => {
                 />
               </div>
             </div>
+
+            <div className="project-card">
+              <h2 className="project-title">{t('projects.items.2.title')}</h2>
+              <p className="project-description">{t('projects.items.2.description')}</p>
+              <a
+                className="project-link"
+                href="https://yunxiao3dgs.smallworldai.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                → https://yunxiao3dgs.smallworldai.com/
+              </a>
+            </div>
           </div>
         </BlurFade>
       </div>
