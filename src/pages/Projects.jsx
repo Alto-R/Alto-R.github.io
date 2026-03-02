@@ -19,6 +19,19 @@ const Projects = () => {
             <div className="project-card">
               <h2 className="project-title">{t('projects.items.0.title')}</h2>
               <p className="project-description">{t('projects.items.0.description')}</p>
+              <a
+                className="project-link"
+                href="https://github.com/Alto-R/SignalNest"
+                target="_blank"
+                rel="noreferrer"
+              >
+                → https://github.com/Alto-R/SignalNest
+              </a>
+            </div>
+
+            <div className="project-card">
+              <h2 className="project-title">{t('projects.items.1.title')}</h2>
+              <p className="project-description">{t('projects.items.1.description')}</p>
               <div className="video-wrapper">
                 <iframe
                   src="//player.bilibili.com/player.html?bvid=BV1Cw411k7yz&autoplay=0"
@@ -29,8 +42,8 @@ const Projects = () => {
             </div>
 
             <div className="project-card">
-              <h2 className="project-title">{t('projects.items.1.title')}</h2>
-              <p className="project-description">{t('projects.items.1.description')}</p>
+              <h2 className="project-title">{t('projects.items.2.title')}</h2>
+              <p className="project-description">{t('projects.items.2.description')}</p>
               <div className="video-wrapper">
                 <video
                   src="https://res.cloudinary.com/dj5oohbni/video/upload/mappo_vrp_lhtz5o.mp4"
@@ -42,8 +55,8 @@ const Projects = () => {
             </div>
 
             <div className="project-card">
-              <h2 className="project-title">{t('projects.items.2.title')}</h2>
-              <p className="project-description">{t('projects.items.2.description')}</p>
+              <h2 className="project-title">{t('projects.items.3.title')}</h2>
+              <p className="project-description">{t('projects.items.3.description')}</p>
               <a
                 className="project-link"
                 href="https://yunxiao3dgs.smallworldai.com/"

@@ -191,6 +191,10 @@
     "title": "Projects",
     "items": [
       {
+        "title": "SignalNest",
+        "description": "A personalized AI-powered daily digest system that aggregates content from GitHub, YouTube, and RSS feeds. Uses a two-stage AI pipeline to filter and summarize relevant content based on user interests, with delivery via email, Feishu, and WeChat."
+      },
+      {
         "title": "Recreation Route Recommendation System Based on Social Media Data",
         "description": "Independently developed a recreation route recommendation system based on social media data and user preferences, integrating data crawling, NLP, and path optimization algorithms."
       },
