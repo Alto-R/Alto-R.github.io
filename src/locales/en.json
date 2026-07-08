@@ -39,27 +39,33 @@
       "items": [
         {
           "date": "Published",
+          "title": "A global feasibility gap in resilient island energy transitions",
+          "institution": "Nature Communications",
+          "description": "Examined challenges in achieving resilient energy transitions for island systems globally."
+        },
+        {
+          "date": "Published",
           "title": "Carbon emission implications of toll discount policies and network expansions in highway",
           "institution": "Transportation Research Part D (Co-First Author)",
           "description": "Analyzed the impact of highway toll discount policies and network expansions on carbon emissions."
         },
         {
           "date": "Under Review",
-          "title": "A global feasibility gap in resilient island energy transitions",
-          "institution": "Nature Communications",
-          "description": "Examined challenges in achieving resilient energy transitions for island systems globally."
+          "title": "Solar potential and deployment archetypes of electric vehicle integrated photovoltaics in urban fleets",
+          "institution": "Sustainable Cities and Society",
+          "description": "A trajectory-coupled framework integrating 3D building geometry, GPU-accelerated ray tracing, and real-world GPS trajectories to quantify vehicle-integrated photovoltaic generation across 3,000 electric vehicles in Shanghai."
         },
         {
-          "date": "Submitted",
-          "title": "Power generation potential evaluation on electric vehicle integrated photovoltaic: A case study of Shanghai's taxi fleet",
-          "institution": "Applied Energy",
-          "description": "Case study evaluating photovoltaic integration potential in Shanghai's taxi fleet."
+          "date": "Under Review",
+          "title": "Climate Change Reshaping Global Energy Systems: A Review of Supply, Demand, Network, and Regional Resilience Dynamics",
+          "institution": "Advances in Applied Energy",
+          "description": "Comprehensive review of supply, demand, network, and regional resilience dynamics in energy systems under climate change."
         },
         {
-          "date": "Working",
-          "title": "Climate Change Reshaping Global Energy Systems: A Review of Supply-Demand-Network Dynamics and Regional Resilience",
-          "institution": "Nature Reviews",
-          "description": "Comprehensive review of supply-demand-network dynamics and regional resilience in energy systems."
+          "date": "Under Review",
+          "title": "A Development Possibility Frontier Endogenous to Economic Network Topology",
+          "institution": "Communication Sustainability",
+          "description": "Proposed a development possibility frontier endogenous to economic network topology."
         }
       ]
     },
@@ -167,12 +173,12 @@
       },
       {
         "id": 3,
-        "title": "Power generation potential evaluation on electric vehicle integrated photovoltaic: A case study of Shanghai's taxi fleet",
-        "authors": "**Churui Huang**, et al.",
-        "venue": "Applied Energy",
-        "year": "Submitted",
-        "abstract": "This case study evaluates the potential of integrating photovoltaic systems with electric vehicle fleets, focusing on Shanghai's taxi network. We assess the technical feasibility, economic viability, and environmental benefits of solar-powered EV infrastructure in urban transportation systems.",
-        "tags": ["Electric Vehicles", "Photovoltaic", "Urban Energy"],
+        "title": "Solar potential and deployment archetypes of electric vehicle integrated photovoltaics in urban fleets",
+        "authors": "**Churui Huang**, Qing Yu, Xuanyu Xu, Muze Zhang, Haoran Zhang^*^",
+        "venue": "Sustainable Cities and Society",
+        "year": "Under Review",
+        "abstract": "Vehicle-integrated photovoltaics can provide on-board solar generation for electric vehicles, but its urban potential is difficult to estimate because vehicle motion, building shadows, and operating regimes interact at fine spatiotemporal scales. This study develops a trajectory-coupled assessment framework that integrates three-dimensional building geometry, GPU-accelerated ray tracing, reanalysis meteorology, and real-world Global Positioning System trajectories to quantify photovoltaic generation and charging-demand displacement for 3,000 private electric vehicles, taxis, and buses in Shanghai. Results show that weather sets the seasonal generation envelope, while vehicle operation and urban morphology reshape realised output. Taxi generation is tightly coupled with daily irradiance (R² = 0.960), indicating a highly forecastable micro-generation profile. Explicit three-dimensional shadow modelling is essential: disabling building shadows overestimates annual generation by 24.4% for buses, 10.2% for private electric vehicles, and 2.9% for taxis. Annual gross generation reaches 5,093 kWh per bus, 558 kWh per taxi, and 381 kWh per private electric vehicle, corresponding to battery-side charging offsets of 4,482, 491, and 333 kWh yr⁻¹, respectively. However, fractional self-sufficiency follows the opposite order: private electric vehicles achieve the highest upper-bound ratio of 14.23%, compared with buses at 6.28% and taxis at 2.49%. These results reveal a structural decoupling between absolute energy offset and fractional self-sufficiency, suggesting differentiated deployment roles for vehicle-integrated photovoltaics across urban fleets.",
+        "tags": ["Vehicle-Integrated Photovoltaics", "Electric Vehicles", "Urban Energy"],
         "link": "#"
       },
       {
