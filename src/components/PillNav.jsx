@@ -96,19 +96,22 @@ const PillNav = ({
       const lang = langRef.current;
 
       if (lang) {
-        gsap.set(lang, { scale: 0 });
+        gsap.set(lang, { scale: 0.9, opacity: 0 });
         gsap.to(lang, {
           scale: 1,
-          duration: 0.6,
+          opacity: 1,
+          duration: 0.5,
           ease
         });
       }
 
       if (navItems) {
-        gsap.set(navItems, { width: 0, overflow: 'hidden' });
+        // 从左到右揭示，用 clip-path 代替 width 动画（避免 layout 抖动）
+        gsap.set(navItems, { clipPath: 'inset(0 100% 0 0)', opacity: 0 });
         gsap.to(navItems, {
-          width: 'auto',
-          duration: 0.6,
+          clipPath: 'inset(0 0% 0 0)',
+          opacity: 1,
+          duration: 0.5,
           ease
         });
       }

@@ -29,8 +29,8 @@ const NavigationTimeline = ({ currentSection, onNavigate }) => {
   // 使用 useScroll 获取滚动进度
   const { scrollYProgress } = useScroll();
 
-  // 进度线高度动画（从0到完整高度）
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, timelineHeight]);
+  // 进度线：用 scaleY 从顶部展开（GPU transform，不触发 layout）
+  const scaleYTransform = useTransform(scrollYProgress, [0, 1], [0, 1]);
   // 透明度动画（开始时淡入）
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
@@ -45,7 +45,9 @@ const NavigationTimeline = ({ currentSection, onNavigate }) => {
         <motion.div
           className="nav-timeline-progress"
           style={{
-            height: heightTransform,
+            height: '100%',
+            scaleY: scaleYTransform,
+            transformOrigin: 'top',
             opacity: opacityTransform,
           }}
         />
