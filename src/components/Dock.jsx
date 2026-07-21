@@ -82,6 +82,7 @@ export const DockIcon = ({
       style={{ width: size, height: size }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      whileTap={{ scale: 0.92 }}
       {...additionalProps}
       {...props}
     >

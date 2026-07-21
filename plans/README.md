@@ -18,12 +18,12 @@ Bar: Emil Kowalski's animation philosophy + `apple-design` skill.
 
 | # | Plan | Severity | Category | Status |
 |---|------|----------|----------|--------|
-| 005 | [Press feedback (`:active`/`whileTap`)](005-press-feedback.md) | HIGH | §1 Response | TODO |
-| 006 | [Materials & depth (glass)](006-materials-depth.md) | HIGH | §12 Materials | TODO |
-| 007 | [Typography: tracking/leading/font](007-typography-optical.md) | MED-HIGH | §15 Typography | TODO |
-| 008 | [Springs for touchable motion](008-spring-touch-motion.md) | MEDIUM | §4 Springs | TODO |
-| 009 | [Scroll edge fade vs hard divider](009-scroll-edge-fade.md) | LOW | §12 Materials | TODO |
-| 010 | [Reduced-transparency + contrast](010-reduced-transparency-contrast.md) | MEDIUM | §14 Accessibility | TODO |
+| 005 | [Press feedback (`:active`/`whileTap`)](005-press-feedback.md) | HIGH | §1 Response | ✅ DONE |
+| 006 | [Materials & depth (glass)](006-materials-depth.md) | HIGH | §12 Materials | ✅ DONE |
+| 007 | [Typography: tracking/leading/font](007-typography-optical.md) | MED-HIGH | §15 Typography | ✅ DONE |
+| 008 | [Springs for touchable motion](008-spring-touch-motion.md) | MEDIUM | §4 Springs | ✅ DONE |
+| 009 | [Scroll edge fade vs hard divider](009-scroll-edge-fade.md) | LOW | §12 Materials | ✅ DONE |
+| 010 | [Reduced-transparency + contrast](010-reduced-transparency-contrast.md) | MEDIUM | §14 Accessibility | ✅ DONE |
 
 ## Recommended execution order
 

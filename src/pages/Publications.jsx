@@ -79,7 +79,8 @@ const Publications = () => {
               onClick={() => setActiveId(pub.id)}
               className="pub-card"
               whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', bounce: 0, duration: 0.3 }}
             >
               <div className="pub-card-content">
                 <motion.div layoutId={`header-${pub.id}`} className="pub-header">

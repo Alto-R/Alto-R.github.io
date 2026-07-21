@@ -202,10 +202,11 @@ const PillNav = ({
   // 磨砂玻璃效果样式 - 更透明
   const glassStyle = {
     background: 'rgba(255, 255, 255, 0.05)',
-    backdropFilter: 'blur(12px)',
-    WebkitBackdropFilter: 'blur(12px)',
+    backdropFilter: 'blur(20px) saturate(180%)',
+    WebkitBackdropFilter: 'blur(20px) saturate(180%)',
     border: '1px solid rgba(255, 255, 255, 0.1)',
-    boxShadow: '0 4px 24px rgba(0, 0, 0, 0.05)'
+    borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+    boxShadow: '0 4px 24px rgba(0, 0, 0, 0.2)'
   };
 
   const pillStyle = {
@@ -234,7 +235,7 @@ const PillNav = ({
         {/* 导航项容器 (桌面端) - 磨砂玻璃背景 */}
         <div
           ref={navItemsRef}
-          className="relative items-center rounded-full hidden md:flex"
+          className="pill-glass relative items-center rounded-full hidden md:flex"
           style={{
             height: '44px',
             ...glassStyle
@@ -307,7 +308,7 @@ const PillNav = ({
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
-          className="md:hidden rounded-full border-0 flex flex-col items-center justify-center gap-1 cursor-pointer p-0 relative"
+          className="pill-glass md:hidden rounded-full border-0 flex flex-col items-center justify-center gap-1 cursor-pointer p-0 relative"
           style={{
             width: '44px',
             height: '44px',
@@ -328,7 +329,7 @@ const PillNav = ({
       {/* 移动端下拉菜单 */}
       <div
         ref={mobileMenuRef}
-        className="md:hidden absolute top-[3.5em] left-4 right-4 rounded-[20px] z-[998] origin-top"
+        className="pill-glass md:hidden absolute top-[3.5em] left-4 right-4 rounded-[20px] z-[998] origin-top"
         style={glassStyle}
       >
         <ul className="list-none m-0 p-[4px] flex flex-col gap-[4px]">

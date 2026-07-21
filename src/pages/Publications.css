@@ -190,6 +190,11 @@
   box-shadow: 0 4px 12px rgba(165, 180, 252, 0.2);
 }
 
+.pub-link-button:active {
+  transform: translateY(-2px) scale(0.97);
+  transition: transform var(--duration-press) var(--ease-out);
+}
+
 /* Compact PDF link for card view */
 .pub-card .pub-footer {
   display: flex;

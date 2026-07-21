@@ -124,10 +124,14 @@ html {
 
 .hero-content {
   pointer-events: none;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   padding: 1.5rem 2rem;
-  border-radius: 8px;
-  backdrop-filter: blur(0.1px);
+  border-radius: 12px;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
   width: fit-content;
   max-width: 90%;
 }
@@ -140,6 +144,8 @@ h1 {
   font-size: clamp(2rem, 5vw + 1rem, 4rem);
   margin: 0;
   color: #a5b4fc;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
@@ -166,10 +172,28 @@ h1 {
 }
 
 .page-title {
+  position: relative;
   font-size: clamp(1.8rem, 4vw + 0.5rem, 3rem);
   margin-bottom: 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 12%,
+    rgba(255, 255, 255, 0.18) 60%,
+    transparent 100%
+  );
 }
 
 /* --- Publications 卡片样式 --- */
@@ -231,7 +255,8 @@ h1 {
 .pub-title {
   font-size: 1.5rem;
   margin: 0 0 1rem 0;
-  line-height: 1.3;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   color: #fff;
 }
 
@@ -306,6 +331,7 @@ h1 {
   font-size: 1.8rem;
   color: #a5b4fc;
   margin-bottom: 2rem;
+  letter-spacing: -0.01em;
 }
 
 .resume-item {
@@ -459,6 +485,11 @@ h1 {
   background: rgba(165, 180, 252, 0.2);
   border-color: rgba(165, 180, 252, 0.5);
   transform: translateY(-2px);
+}
+
+.contact-link:active {
+  transform: translateY(-2px) scale(0.97);
+  transition: transform var(--duration-press) var(--ease-out);
 }
 
 /* --- 汉堡菜单按钮样式 --- */
@@ -770,4 +801,27 @@ h1 {
   .canvas-container {
     touch-action: pan-y; /* 允许垂直滚动，但限制其他手势 */
   }
+}
+
+/* --- 无障碍：降低透明度偏好 --- */
+@media (prefers-reduced-transparency: reduce) {
+  .navbar,
+  .hero-content,
+  .nav-links,
+  .pill-glass {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .hero-content { background: rgba(5, 5, 5, 0.95); }
+  .nav-links    { background: rgba(0, 0, 0, 0.98); }
+  .pill-glass   { background: rgba(20, 20, 20, 0.96) !important; }
+}
+
+/* --- 无障碍：高对比度偏好 --- */
+@media (prefers-contrast: more) {
+  .hero-content {
+    background: #050505;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .contact-link { border-color: rgba(165, 180, 252, 0.7); }
 }
