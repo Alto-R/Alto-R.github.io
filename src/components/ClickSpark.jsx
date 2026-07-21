@@ -12,7 +12,8 @@ const ClickSpark = ({
 }) => {
   const canvasRef = useRef(null);
   const sparksRef = useRef([]);
-  const startTimeRef = useRef(null);
+  const rafRef = useRef(null);
+  const runningRef = useRef(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -63,17 +64,15 @@ const ClickSpark = ({
     [easing]
   );
 
-  useEffect(() => {
+  // 按需渲染：只在有火花时才跑 rAF 循环，空闲时自动停止（不再 60fps 空转）
+  const startLoop = useCallback(() => {
+    if (runningRef.current) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    runningRef.current = true;
 
-    let animationId;
-
-    const draw = timestamp => {
-      if (!startTimeRef.current) {
-        startTimeRef.current = timestamp;
-      }
+    const loop = timestamp => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       sparksRef.current = sparksRef.current.filter(spark => {
@@ -103,15 +102,24 @@ const ClickSpark = ({
         return true;
       });
 
-      animationId = requestAnimationFrame(draw);
+      if (sparksRef.current.length > 0) {
+        rafRef.current = requestAnimationFrame(loop);
+      } else {
+        // 没有火花了，停止循环并清空画布，释放主线程
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        runningRef.current = false;
+      }
     };
 
-    animationId = requestAnimationFrame(draw);
+    rafRef.current = requestAnimationFrame(loop);
+  }, [sparkColor, sparkSize, sparkRadius, duration, easeFunc, extraScale]);
 
+  // 卸载时取消循环
+  useEffect(() => {
     return () => {
-      cancelAnimationFrame(animationId);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale]);
+  }, []);
 
   const handleClick = e => {
     const canvas = canvasRef.current;
@@ -129,6 +137,7 @@ const ClickSpark = ({
     }));
 
     sparksRef.current.push(...newSparks);
+    startLoop(); // 有火花时才启动循环
   };
 
   return (

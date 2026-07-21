@@ -31,7 +31,7 @@
   cursor: pointer;
   color: currentColor;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgb(60, 60, 60);
 }
 
 .dock-icon-inner {
@@ -67,12 +67,12 @@
 
 /* Background colors for icons */
 .bg-black\/10 {
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: rgb(60, 60, 60);
 }
 
 .dark .bg-white\/10,
 .bg-white\/10 {
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: rgb(60, 60, 60);
 }
 
 /* --- 无障碍：降低透明度偏好 --- */
