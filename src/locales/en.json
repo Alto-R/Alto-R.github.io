@@ -50,6 +50,12 @@
           "description": "Analyzed the impact of highway toll discount policies and network expansions on carbon emissions."
         },
         {
+          "date": "Published",
+          "title": "An end-to-end open-source pipeline for 3D semantic gaze analysis in photogrammetric virtual reality",
+          "institution": "Displays",
+          "description": "Developed an end-to-end open-source pipeline that converts immersive VR eye-tracking streams into 3D semantic gaze measures within a photogrammetric campus digital twin, validated in a 30-participant wayfinding study."
+        },
+        {
           "date": "Under Review",
           "title": "Solar potential and deployment archetypes of electric vehicle integrated photovoltaics in urban fleets",
           "institution": "Sustainable Cities and Society",
@@ -183,13 +189,13 @@
       },
       {
         "id": 4,
-        "title": "Climate Change Reshaping Global Energy Systems: A Review of Supply, Demand, Network, and Regional Resilience Dynamics",
-        "authors": "**Churui Huang**, et al.",
-        "venue": "Advances in Applied Energy",
-        "year": "Under Review",
-        "abstract": "A comprehensive review examining how climate change is reshaping global energy systems across supply, demand, network, and regional resilience dimensions. We synthesize the complex interactions among energy supply, demand, and network infrastructure, with emphasis on regional resilience strategies in the face of climate-driven disruptions.",
-        "tags": ["Climate Change", "Energy Systems", "Resilience"],
-        "link": "#"
+        "title": "An end-to-end open-source pipeline for 3D semantic gaze analysis in photogrammetric virtual reality",
+        "authors": "Yao Yao, Yinghong Jiang, Qing Yu^*^, **Churui Huang**, Haoran Zhang",
+        "venue": "Displays",
+        "year": "Published",
+        "abstract": "Behavioural research in immersive virtual reality (VR) increasingly relies on eye tracking integrated with head-mounted displays (HMDs), yet converting raw gaze streams into reproducible, scene-grounded semantic measures remains difficult, particularly in photogrammetric environments with dense and irregular geometry. We present an end-to-end open-source pipeline for three-dimensional semantic gaze analysis. The pipeline operates within a photogrammetric digital twin of an outdoor university campus and combines a weighted multi-ray visual cone, which integrates foveal and peripheral acuity into a single Effective Gaze Point (EGP), with a three-dimensional adaptation of the Identification-by-Dispersion-Threshold (I-DT) algorithm for fixation detection. Semantic labels are assigned by matching fixations to a manually annotated reference cloud of 3.3 million points using a KD-tree K-Nearest-Neighbours (KNN) procedure. We demonstrate the pipeline in a 30-participant case study involving free exploration, high-information wayfinding, and low-information wayfinding tasks. The resulting measures distinguish task-dependent gaze allocation: signage fixation share increased from 2.7% during free exploration to 7.7% during high-information wayfinding, whereas road-surface fixation share reached 44.2% under low-information wayfinding. End-to-end processing of the case-study dataset required 20.8 s on a single workstation. The pipeline provides a reproducible and extensible workflow for linking immersive VR eye tracking to semantically interpretable three-dimensional scene elements.",
+        "tags": ["Virtual Reality", "Eye Tracking", "Photogrammetry"],
+        "link": "https://www.sciencedirect.com/science/article/pii/S0141938226002714"
       }
     ]
   },
