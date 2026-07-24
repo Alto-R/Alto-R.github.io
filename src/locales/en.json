@@ -9,10 +9,10 @@
   },
   "home": {
     "greeting": "Hi, I'm|Churui Huang.",
-    "subtitle": "Student / Developer.",
-    "description": "My research interests are in smart cities and big data,",
-    "description2": "with a current focus on convex optimization and reinforcement learning,",
-    "description3": "aiming to leverage these techniques to build more intelligent and efficient urban systems.",
+    "subtitle": "Energy, Transportation & Urban Computing.",
+    "description": "My research interests lie in energy systems, transportation, and urban computing,",
+    "description2": "with a focus on spatial analysis, optimization, simulation, and artificial intelligence,",
+    "description3": "to better understand urban systems and support more sustainable and efficient development.",
     "button": "View Resume"
   },
   "resume": {
@@ -129,23 +129,22 @@
   },
   "about": {
     "title": "About Me",
-    "intro": "Hi, I'm <1>Churui Huang</1>, a postgraduate student at Peking University pursuing my Master's degree in Smart City and Big Data. I am passionate about leveraging data-driven approaches and advanced computational techniques to address the complex challenges facing modern urban systems.",
-    "paragraph1": "My research interests lie at the intersection of smart cities and big data, with a particular focus on convex optimization and reinforcement learning. I am fascinated by how these powerful mathematical and computational frameworks can be applied to optimize urban infrastructure, improve resource allocation, and enhance the overall quality of life in cities. From transportation networks to energy systems, I believe intelligent algorithms can unlock significant efficiency gains and sustainability benefits.",
-    "paragraph2": "Through my academic journey and research projects, I strive to develop practical solutions that can translate theoretical advances into real-world impact. Whether it's analyzing large-scale urban datasets, designing optimization algorithms for complex systems, or building decision-support tools for urban planners, I aim to contribute to building more intelligent, efficient, and livable cities for the future.",
+    "intro": "Hi, I'm <1>Churui Huang</1>, a postgraduate student at Peking University pursuing a Master's degree in Smart City and Big Data. My research interests lie at the intersection of energy systems, transportation, urban computing, and spatial modeling.",
+    "paragraph1": "My current research focuses on energy transition, renewable energy deployment, transportation decarbonization, and infrastructure planning. I am interested in how technologies, infrastructure, climate conditions, human mobility, and public policies interact across different cities and regions. By working with large-scale spatial, mobility, environmental, and energy data, I study the performance and spatial differences of urban and energy systems under different development and policy scenarios.",
+    "paragraph2": "My work combines spatial analysis, optimization, energy and transportation system modeling, simulation, machine learning, and spatial intelligence. These methods allow me to examine urban systems at multiple spatial and temporal scales, from individual mobility trajectories and three-dimensional urban environments to regional infrastructure networks and global energy transitions. I hope to contribute to a better understanding of complex urban systems and to support more informed planning and decision-making.",
     "researchTitle": "Research Interests",
     "researchInterests": [
-      "Smart Cities",
-      "Big Data Analytics",
-      "Convex Optimization",
-      "Reinforcement Learning",
-      "Urban Computing",
-      "Transportation Systems",
       "Energy Systems",
-      "Data-Driven Decision Making",
-      "Digital Twin"
+      "Transportation Systems",
+      "Urban Computing",
+      "Spatial Modeling and Intelligence",
+      "Optimization",
+      "Artificial Intelligence",
+      "Climate Resilience",
+      "Infrastructure Planning"
     ],
     "contactTitle": "Get in Touch",
-    "contactText": "Feel free to reach out for collaborations, research discussions, or just to say hi!",
+    "contactText": "Feel free to reach out for research discussions, potential collaborations, or related academic opportunities.",
     "email": "Email",
     "github": "GitHub",
     "quote": "Le vent se lève, il faut tenter de vivre"
