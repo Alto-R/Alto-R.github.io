@@ -221,14 +221,33 @@ h1 {
   min-width: 0;
 }
 
-.pub-card-image {
+/* 右侧一列：期刊名 / 配图 / PDF 链接，整体右对齐 */
+.pub-card-aside {
   width: 340px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.pub-card-aside .pub-venue {
+  font-size: 0.9rem;
+  color: #a5b4fc;
+  text-align: right;
+}
+
+.pub-card-aside .pub-link-compact {
+  margin-top: auto; /* 贴到卡片底部 */
+}
+
+.pub-card-image {
+  width: 100%;
   height: 220px;
   flex-shrink: 0;
   border-radius: 8px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
-  align-self: center;
 }
 
 .pub-card-image img {
@@ -625,8 +644,11 @@ h1 {
     gap: 1.25rem;
   }
 
-  .pub-card-image {
+  .pub-card-aside {
     width: 100%;
+  }
+
+  .pub-card-image {
     height: 180px;
   }
 

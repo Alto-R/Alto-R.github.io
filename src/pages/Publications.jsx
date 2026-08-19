@@ -85,7 +85,6 @@ const Publications = () => {
               <div className="pub-card-content">
                 <motion.div layoutId={`header-${pub.id}`} className="pub-header">
                   <span className="pub-year">{pub.year}</span>
-                  <span className="pub-venue">{pub.venue}</span>
                 </motion.div>
 
                 <motion.h2 layoutId={`title-${pub.id}`} className="pub-title">
@@ -106,44 +105,50 @@ const Publications = () => {
                       <span key={tag} className="tag">{tag}</span>
                     ))}
                   </div>
-                  <a
-                    href={pub.link}
-                    className="pub-link-compact"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    → PDF
-                  </a>
                 </div>
               </div>
 
-              {getPublicationImage(pub.id) ? (
-                <motion.div layoutId={`image-${pub.id}`} className="pub-card-image">
-                  <img
-                    src={getPublicationImage(pub.id, 700)}
-                    alt={pub.title}
-                    loading="lazy"
-                  />
-                </motion.div>
-              ) : (
-                <div className="pub-card-image pub-card-image-placeholder" aria-hidden="true">
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <path d="m21 15-5-5L5 21" />
-                  </svg>
-                </div>
-              )}
+              {/* 右侧一列：期刊名 / 配图 / PDF 链接，统一贴右对齐 */}
+              <div className="pub-card-aside">
+                <span className="pub-venue">{pub.venue}</span>
+
+                {getPublicationImage(pub.id) ? (
+                  <motion.div layoutId={`image-${pub.id}`} className="pub-card-image">
+                    <img
+                      src={getPublicationImage(pub.id, 700)}
+                      alt={pub.title}
+                      loading="lazy"
+                    />
+                  </motion.div>
+                ) : (
+                  <div className="pub-card-image pub-card-image-placeholder" aria-hidden="true">
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <path d="m21 15-5-5L5 21" />
+                    </svg>
+                  </div>
+                )}
+
+                <a
+                  href={pub.link}
+                  className="pub-link-compact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  → PDF
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
