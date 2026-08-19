@@ -199,7 +199,7 @@ h1 {
 /* --- Publications 卡片样式 --- */
 .publications-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr; /* 每篇论文占满一行，右侧放配图 */
   gap: 1.5rem;
 }
 
@@ -222,8 +222,8 @@ h1 {
 }
 
 .pub-card-image {
-  width: 280px;
-  height: 180px;
+  width: 340px;
+  height: 220px;
   flex-shrink: 0;
   border-radius: 8px;
   overflow: hidden;
@@ -234,7 +234,16 @@ h1 {
 .pub-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* 科研配图不裁剪，宁可留白 */
+}
+
+/* 尚未发表、暂无配图时的占位框，保持各卡片对齐 */
+.pub-card-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.18);
 }
 
 .pub-card:hover {
@@ -612,6 +621,13 @@ h1 {
 
   .pub-card {
     padding: 1.5rem;
+    flex-direction: column; /* 窄屏改为图片在文字下方 */
+    gap: 1.25rem;
+  }
+
+  .pub-card-image {
+    width: 100%;
+    height: 180px;
   }
 
   .pub-title {

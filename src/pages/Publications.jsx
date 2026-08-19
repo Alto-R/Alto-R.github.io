@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useOutsideClick } from '../hooks/useOutsideClick';
 import { BlurFade } from '../components/BlurFade';
+import { getPublicationImage } from '../data/publicationImages';
 import './Publications.css';
 
 const Publications = () => {
@@ -116,6 +117,33 @@ const Publications = () => {
                   </a>
                 </div>
               </div>
+
+              {getPublicationImage(pub.id) ? (
+                <motion.div layoutId={`image-${pub.id}`} className="pub-card-image">
+                  <img
+                    src={getPublicationImage(pub.id, 700)}
+                    alt={pub.title}
+                    loading="lazy"
+                  />
+                </motion.div>
+              ) : (
+                <div className="pub-card-image pub-card-image-placeholder" aria-hidden="true">
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <path d="m21 15-5-5L5 21" />
+                  </svg>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -193,6 +221,18 @@ const Publications = () => {
                     <h3 className="abstract-title">{t('publications.abstractTitle') || 'Abstract'}</h3>
 
                     <p className="pub-abstract-full">{activePub.abstract}</p>
+
+                    {getPublicationImage(activeId) && (
+                      <motion.figure
+                        layoutId={`image-${activeId}`}
+                        className="modal-image-bottom"
+                      >
+                        <img
+                          src={getPublicationImage(activeId, 1200)}
+                          alt={activePub.title}
+                        />
+                      </motion.figure>
+                    )}
 
                     <div className="pub-footer">
                       <div className="pub-tags">

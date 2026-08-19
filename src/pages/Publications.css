@@ -55,32 +55,22 @@
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
 }
 
-/* Modal with image - wider layout */
-.modal-content.modal-with-image {
-  max-width: 900px;
+/* 展开后的配图：居中放在摘要下方 */
+.modal-image-bottom {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1.5rem 0;
 }
 
-/* Abstract content with floating image */
-.abstract-content {
-  overflow: hidden;
-}
-
-.modal-image-float {
-  float: right;
-  width: 320px;
-  margin: 0 0 1rem 1.5rem;
-}
-
-.modal-image-float img {
-  width: 100%;
+.modal-image-bottom img {
+  max-width: 100%;
+  max-height: 45vh;
+  width: auto;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   object-fit: contain;
-}
-
-.abstract-content .pub-abstract-full {
-  margin: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Custom scrollbar for modal */
@@ -235,22 +225,8 @@
     max-height: calc(85vh - 5rem - env(safe-area-inset-top, 0px));
   }
 
-  .modal-content.modal-with-image {
-    max-width: 100%;
-  }
-
-  .modal-image-float {
-    float: none;
-    width: 100%;
-    margin: 0 0 1rem 0;
-  }
-
-  .modal-image-float img {
-    max-height: 200px;
-    width: auto;
-    max-width: 100%;
-    margin: 0 auto;
-    display: block;
+  .modal-image-bottom img {
+    max-height: 32vh;
   }
 
   .modal-close {
