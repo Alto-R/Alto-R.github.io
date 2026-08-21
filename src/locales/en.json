@@ -245,10 +245,6 @@
       {
         "title": "Gaussian Splatting Location Showcase",
         "description": "A showcase of locations in modeled using Gaussian Splatting techniques."
-      },
-      {
-        "title": "Large-Scale Gas Pipeline Flow Prediction",
-        "description": "A Transformer-based model for forecasting flow across large-scale natural gas pipeline networks, built for the National Pipeline \"Linghang Cup\" AI Competition organized by China Oil & Gas Pipeline Network. Scored 9/10 and won 2nd Prize nationally."
       }
     ]
   },

@@ -32,11 +32,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* 无媒体/无链接的卡片，去掉描述下方的悬空留白 */
-.project-description:last-child {
-  margin-bottom: 0;
-}
-
 .project-link {
   color: #a5b4fc;
   font-size: 0.95rem;
