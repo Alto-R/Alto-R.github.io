@@ -34,41 +34,52 @@
         }
       ]
     },
+    "honors": {
+      "title": "荣誉奖励",
+      "items": [
+        {
+          "date": "2026",
+          "title": "校级一等奖",
+          "institution": "北京大学第三十四届“挑战杯”五四青年科学奖竞赛",
+          "description": "北京大学最具代表性的学生学术科技竞赛。"
+        }
+      ]
+    },
     "research": {
       "title": "科研经历",
       "items": [
         {
-          "date": "已发表",
+          "date": "2026 · 已发表",
           "title": "全球岛屿能源转型韧性的可行性差距",
           "institution": "Nature Communications（第一作者）",
           "description": "研究了全球岛屿系统实现韧性能源转型面临的挑战。"
         },
         {
-          "date": "已发表",
+          "date": "2025 · 已发表",
           "title": "高速公路通行费折扣政策和网络扩张对碳排放的影响",
           "institution": "Transportation Research Part D（共同第一作者）",
           "description": "分析了高速公路通行费折扣政策和网络扩张对碳排放的影响。"
         },
         {
-          "date": "已发表",
+          "date": "2026 · 已发表",
           "title": "面向摄影测量虚拟现实的端到端开源三维语义注视分析流程",
           "institution": "Displays",
           "description": "提出端到端开源流程，在摄影测量校园数字孪生中将沉浸式VR眼动追踪数据转换为三维语义注视度量，并在30人寻路实验中验证。"
         },
         {
-          "date": "审稿中",
+          "date": "2026 · 审稿中",
           "title": "城市车队电动汽车集成光伏的太阳能潜力与部署模式",
           "institution": "Sustainable Cities and Society",
           "description": "构建轨迹耦合评估框架，整合三维建筑几何、GPU加速光线追踪与真实GPS轨迹，量化上海3000辆电动汽车的车载光伏发电潜力。"
         },
         {
-          "date": "审稿中",
+          "date": "2026 · 审稿中",
           "title": "气候变化重塑全球能源系统：供给、需求、网络与区域韧性动态综述",
           "institution": "Advances in Applied Energy",
           "description": "系统综述气候变化下能源系统的供给、需求、网络与区域韧性动态。"
         },
         {
-          "date": "审稿中",
+          "date": "2026 · 审稿中",
           "title": "内生于经济网络拓扑的发展可能性前沿",
           "institution": "Communications Sustainability",
           "description": "提出内生于经济网络拓扑的发展可能性前沿。"
@@ -79,10 +90,28 @@
       "title": "项目经历",
       "items": [
         {
-          "date": "北大科研",
+          "date": "2025",
+          "title": "大规模管道流量预测",
+          "institution": "国家管网“领航杯”AI 竞赛 — 二等奖",
+          "description": "设计基于 Transformer 的大规模天然气管道流量智能预测模型，在国家石油天然气管网集团主办的全国竞赛中以 9/10 的评分获二等奖。"
+        },
+        {
+          "date": "2025",
+          "title": "空地协同末端配送",
+          "institution": "全球可持续供应链竞赛（队长）",
+          "description": "利用强化学习设计“无人机 + 电动母车”城市物流配送系统，并对成本结构、运营效率与商业可行性进行系统性评估。"
+        },
+        {
+          "date": "2024",
+          "title": "CUES 2024 口头报告",
+          "institution": "学术会议报告",
+          "description": "受邀作口头报告：在城市出行约束条件下，对电动汽车集成光伏发电潜力进行系统级分析。"
+        },
+        {
+          "date": "2023",
           "title": "基于社交媒体数据与用户需求的游憩线路推荐系统构建",
           "institution": "北京大学科研训练项目",
-          "description": "独立开发了基于社交媒体数据和用户偏好的游憩线路推荐系统。"
+          "description": "独立开发游憩线路推荐系统，融合基于 NLP 的用户偏好挖掘与空间分析，实现个性化线路推荐。"
         }
       ]
     },
@@ -116,7 +145,7 @@
     },
     "skills": {
       "title": "专业技能",
-      "items": ["Python", "JavaScript", "SPSS", "MATLAB", "AutoCAD", "SketchUp", "Photoshop", "Premiere", "Lightroom"]
+      "items": ["Python", "JavaScript", "SPSS", "MATLAB", "AutoCAD", "SketchUp", "Photoshop", "Premiere", "Lightroom", "Microsoft Office"]
     },
     "languageSkills": {
       "title": "语言能力",
@@ -216,6 +245,10 @@
       {
         "title": "高斯泼溅地点展示",
         "description": "用高斯泼溅技术建模出来的一些地点。"
+      },
+      {
+        "title": "大规模天然气管道流量预测",
+        "description": "面向国家石油天然气管网集团主办的国家管网“领航杯”AI 竞赛，构建基于 Transformer 的大规模天然气管道流量预测模型，以 9/10 的评分获全国二等奖。"
       }
     ]
   },

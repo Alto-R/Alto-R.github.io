@@ -175,7 +175,7 @@ const About = () => {
               />
             </p>
             <Dock>
-              <DockIcon className="bg-black/10 dark:bg-white/10" href="mailto:2501212708@stu.pku.edu.cn" title="Email">
+              <DockIcon className="bg-black/10 dark:bg-white/10" href="mailto:crhuang@stu.pku.edu.cn" title="Email">
                 <Icons.email className="size-full" />
               </DockIcon>
               <DockIcon className="bg-black/10 dark:bg-white/10" href="https://github.com/Alto-R" title="GitHub">

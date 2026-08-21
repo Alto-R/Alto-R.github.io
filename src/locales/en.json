@@ -34,41 +34,52 @@
         }
       ]
     },
+    "honors": {
+      "title": "Honors & Awards",
+      "items": [
+        {
+          "date": "2026",
+          "title": "First Prize, University Level",
+          "institution": "34th Peking University \"Challenge Cup\" May 4th Youth Science Award Competition",
+          "description": "Peking University's flagship student academic and scientific research competition."
+        }
+      ]
+    },
     "research": {
       "title": "Research & Publications",
       "items": [
         {
-          "date": "Published",
+          "date": "2026 · Published",
           "title": "A global feasibility gap in resilient island energy transitions",
           "institution": "Nature Communications (First Author)",
           "description": "Examined challenges in achieving resilient energy transitions for island systems globally."
         },
         {
-          "date": "Published",
+          "date": "2025 · Published",
           "title": "Carbon emission implications of toll discount policies and network expansions in highway",
           "institution": "Transportation Research Part D (Co-First Author)",
           "description": "Analyzed the impact of highway toll discount policies and network expansions on carbon emissions."
         },
         {
-          "date": "Published",
+          "date": "2026 · Published",
           "title": "An end-to-end open-source pipeline for 3D semantic gaze analysis in photogrammetric virtual reality",
           "institution": "Displays",
           "description": "Developed an end-to-end open-source pipeline that converts immersive VR eye-tracking streams into 3D semantic gaze measures within a photogrammetric campus digital twin, validated in a 30-participant wayfinding study."
         },
         {
-          "date": "Under Review",
+          "date": "2026 · Under Review",
           "title": "Solar potential and deployment archetypes of electric vehicle integrated photovoltaics in urban fleets",
           "institution": "Sustainable Cities and Society",
           "description": "A trajectory-coupled framework integrating 3D building geometry, GPU-accelerated ray tracing, and real-world GPS trajectories to quantify vehicle-integrated photovoltaic generation across 3,000 electric vehicles in Shanghai."
         },
         {
-          "date": "Under Review",
+          "date": "2026 · Under Review",
           "title": "Climate Change Reshaping Global Energy Systems: A Review of Supply, Demand, Network, and Regional Resilience Dynamics",
           "institution": "Advances in Applied Energy",
           "description": "Comprehensive review of supply, demand, network, and regional resilience dynamics in energy systems under climate change."
         },
         {
-          "date": "Under Review",
+          "date": "2026 · Under Review",
           "title": "A Development Possibility Frontier Endogenous to Economic Network Topology",
           "institution": "Communications Sustainability",
           "description": "Proposed a development possibility frontier endogenous to economic network topology."
@@ -79,10 +90,28 @@
       "title": "Project Experience",
       "items": [
         {
-          "date": "PKU Research",
+          "date": "2025",
+          "title": "Large-Scale Pipeline Flow Prediction",
+          "institution": "National Pipeline \"Linghang Cup\" AI Competition — 2nd Prize",
+          "description": "Designed a Transformer-based model for intelligent flow forecasting across large-scale gas pipeline networks, scoring 9/10 for 2nd Prize in the national competition organized by China Oil & Gas Pipeline Network."
+        },
+        {
+          "date": "2025",
+          "title": "Air-Ground Collaborative Last-Mile Delivery",
+          "institution": "Global Sustainable Supply Chain Competition (Team Lead)",
+          "description": "Designed a \"drone + electric mothership\" urban logistics delivery system with reinforcement learning, and evaluated its cost structure, operational efficiency, and commercial feasibility."
+        },
+        {
+          "date": "2024",
+          "title": "Oral Presentation, CUES 2024",
+          "institution": "Conference Presentation",
+          "description": "Presented a system-level analysis of EV-integrated photovoltaic generation potential under urban mobility constraints."
+        },
+        {
+          "date": "2023",
           "title": "Recreation Route Recommendation System Based on Social Media Data and User Needs",
           "institution": "Peking University Research Training Program",
-          "description": "Independently developed a recreation route recommendation system based on social media data and user preferences."
+          "description": "Independently developed a recreation route recommendation system that pairs NLP-based user preference mining with spatial analysis for personalized routing."
         }
       ]
     },
@@ -116,7 +145,7 @@
     },
     "skills": {
       "title": "Professional Skills",
-      "items": ["Python", "JavaScript", "SPSS", "MATLAB", "AutoCAD", "SketchUp", "Photoshop", "Premiere", "Lightroom"]
+      "items": ["Python", "JavaScript", "SPSS", "MATLAB", "AutoCAD", "SketchUp", "Photoshop", "Premiere", "Lightroom", "Microsoft Office"]
     },
     "languageSkills": {
       "title": "Language Proficiency",
@@ -216,6 +245,10 @@
       {
         "title": "Gaussian Splatting Location Showcase",
         "description": "A showcase of locations in modeled using Gaussian Splatting techniques."
+      },
+      {
+        "title": "Large-Scale Gas Pipeline Flow Prediction",
+        "description": "A Transformer-based model for forecasting flow across large-scale natural gas pipeline networks, built for the National Pipeline \"Linghang Cup\" AI Competition organized by China Oil & Gas Pipeline Network. Scored 9/10 and won 2nd Prize nationally."
       }
     ]
   },

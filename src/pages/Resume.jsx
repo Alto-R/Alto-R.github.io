@@ -89,6 +89,7 @@ const Resume = () => {
   const { t } = useTranslation();
 
   const education = t('resume.education.items', { returnObjects: true });
+  const honors = t('resume.honors.items', { returnObjects: true });
   const research = t('resume.research.items', { returnObjects: true });
   const projects = t('resume.projects.items', { returnObjects: true });
   const internship = t('resume.internship.items', { returnObjects: true });
@@ -118,6 +119,25 @@ const Resume = () => {
               <div className="resume-date">{item.date}</div>
               <div className="resume-content">
                 <h3>{item.degree}</h3>
+                <p className="institution">{item.institution}</p>
+                <p className="description">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* Honors & Awards Section */}
+        <section className="resume-section">
+          <h2 className="section-title">
+            <BlurFade delay={0.175} inView>
+              {t('resume.honors.title')}
+            </BlurFade>
+          </h2>
+          {honors.map((item, index) => (
+            <div className="resume-item" key={index}>
+              <div className="resume-date">{item.date}</div>
+              <div className="resume-content">
+                <h3>{item.title}</h3>
                 <p className="institution">{item.institution}</p>
                 <p className="description">{item.description}</p>
               </div>
@@ -252,7 +272,7 @@ const Resume = () => {
           </h2>
           <div className="contact-info">
             <Dock>
-              <DockIcon className="bg-black/10 dark:bg-white/10" href="mailto:2501212708@stu.pku.edu.cn" title="Email">
+              <DockIcon className="bg-black/10 dark:bg-white/10" href="mailto:crhuang@stu.pku.edu.cn" title="Email">
                 <Icons.email className="size-full" />
               </DockIcon>
               <DockIcon className="bg-black/10 dark:bg-white/10" href="https://github.com/Alto-R" title="GitHub">

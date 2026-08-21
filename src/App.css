@@ -381,12 +381,22 @@ h1 {
   border-radius: 50%;
 }
 
+/* 日期靠右，与 PDF 简历的排版一致 */
 .resume-date {
-  min-width: 120px;
-  margin-right: 2rem; /* 增加右边距，与内容保持间距 */
+  order: 2;
+  flex-shrink: 0;
+  min-width: 160px;
+  margin-left: 2rem; /* 与左侧内容保持间距 */
+  text-align: right;
   font-weight: bold;
   color: rgba(255,255,255,0.6);
   padding-top: 4px;
+}
+
+.resume-content {
+  order: 1;
+  flex: 1;
+  min-width: 0;
 }
 
 .resume-content h3 {
@@ -662,10 +672,13 @@ h1 {
     padding-left: 1.5rem; /* 从 2rem 减小 */
   }
 
+  /* 窄屏竖排，日期回到内容上方并左对齐 */
   .resume-date {
+    order: 0;
     min-width: auto;
-    margin-right: 0;
+    margin-left: 0;
     margin-bottom: 0.5rem;
+    text-align: left;
   }
 
   .section-title {

@@ -66,6 +66,11 @@ const Projects = () => {
                 → https://yunxiao3dgs.smallworldai.com/
               </a>
             </div>
+
+            <div className="project-card">
+              <h2 className="project-title">{t('projects.items.4.title')}</h2>
+              <p className="project-description">{t('projects.items.4.description')}</p>
+            </div>
           </div>
         </BlurFade>
       </div>
