@@ -101,7 +101,7 @@ const Resume = () => {
   const { t } = useTranslation();
 
   const education = t('resume.education.items', { returnObjects: true });
-  const honors = t('resume.honors.items', { returnObjects: true });
+  const honors = t('resume.honors.groups', { returnObjects: true });
   const publications = t('resume.publications.items', { returnObjects: true });
   const underReview = t('resume.underReview.items', { returnObjects: true });
   const projects = t('resume.projects.items', { returnObjects: true });
@@ -139,21 +139,26 @@ const Resume = () => {
           ))}
         </section>
 
-        {/* Honors & Awards Section */}
+        {/* Awards & Scholarships Section */}
         <section className="resume-section">
           <h2 className="section-title">
             <BlurFade delay={0.175} inView>
               {t('resume.honors.title')}
             </BlurFade>
           </h2>
-          {honors.map((item, index) => (
-            <div className="resume-item" key={index}>
-              <div className="resume-date">{item.date}</div>
-              <div className="resume-content">
-                <h3>{item.title}</h3>
-                <p className="institution">{item.institution}</p>
-                <p className="description">{item.description}</p>
-              </div>
+          {honors.map((group, groupIndex) => (
+            <div className="resume-group" key={groupIndex}>
+              <h3 className="resume-group-label">{group.label}</h3>
+              {group.items.map((item, index) => (
+                <div className="resume-item" key={index}>
+                  <div className="resume-date">{item.date}</div>
+                  <div className="resume-content">
+                    <h3>{item.title}</h3>
+                    <p className="institution">{item.institution}</p>
+                    <p className="description">{item.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           ))}
         </section>
@@ -167,9 +172,11 @@ const Resume = () => {
           </h2>
           {publications.map((item, index) => (
             <div className="resume-item" key={index}>
-              <div className="resume-date">{item.date}</div>
               <div className="resume-content">
-                <p className="resume-citation">{renderCitation(item.citation)}</p>
+                <p className="resume-citation">
+                  <span className="citation-index">[{index + 1}]</span>
+                  {renderCitation(item.citation)}
+                </p>
                 {item.institution && <p className="institution">{item.institution}</p>}
                 <p className="description">{item.description}</p>
               </div>

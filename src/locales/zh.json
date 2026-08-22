@@ -35,13 +35,18 @@
       ]
     },
     "honors": {
-      "title": "荣誉奖励",
-      "items": [
+      "title": "获奖与奖学金",
+      "groups": [
         {
-          "date": "2026",
-          "title": "校级一等奖",
-          "institution": "北京大学第三十四届“挑战杯”五四青年科学奖竞赛",
-          "description": "北京大学最具代表性的学生学术科技竞赛。"
+          "label": "获奖",
+          "items": [
+            {
+              "date": "2026",
+              "title": "校级一等奖",
+              "institution": "北京大学第三十四届“挑战杯”五四青年科学奖竞赛",
+              "description": "北京大学最具代表性的学生学术科技竞赛。"
+            }
+          ]
         }
       ]
     },
@@ -49,19 +54,16 @@
       "title": "发表论文",
       "items": [
         {
-          "date": "2026",
-          "citation": "**Huang, C.**, Zhang, H. & Yan, J. A global feasibility gap in resilient island energy transitions. *Nat Commun* 17, 8684 (2026).",
+          "citation": "**Huang, C.**, Zhang, H. & Yan, J. A global feasibility gap in resilient island energy transitions. *Nature Communications* **17**, 8684 (2026).",
           "institution": "第一作者",
           "description": "研究了全球岛屿系统实现韧性能源转型面临的挑战。"
         },
         {
-          "date": "2026",
-          "citation": "Yao, Y., Jiang, Y., Yu, Q., **Huang, C.** & Zhang, H. An end-to-end open-source pipeline for 3D semantic gaze analysis in photogrammetric virtual reality. *Displays* 95, 103608 (2026).",
+          "citation": "Yao, Y., Jiang, Y., Yu, Q., **Huang, C.** & Zhang, H. An end-to-end open-source pipeline for 3D semantic gaze analysis in photogrammetric virtual reality. *Displays* **95**, 103608 (2026).",
           "description": "提出端到端开源流程，在摄影测量校园数字孪生中将沉浸式VR眼动追踪数据转换为三维语义注视度量，并在30人寻路实验中验证。"
         },
         {
-          "date": "2025",
-          "citation": "Yang, H., **Huang, C.** et al. Carbon emission implications of toll discount policies and network expansions in highway. *Transportation Research Part D: Transport and Environment* 144, 104758 (2025).",
+          "citation": "Yang, H., **Huang, C.** et al. Carbon emission implications of toll discount policies and network expansions in highway. *Transportation Research Part D: Transport and Environment* **144**, 104758 (2025).",
           "institution": "共同第一作者",
           "description": "分析了高速公路通行费折扣政策和网络扩张对碳排放的影响。"
         }

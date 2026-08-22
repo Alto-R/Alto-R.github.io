@@ -404,12 +404,37 @@ h1 {
   font-size: 1.4rem;
 }
 
+/* 获奖分类（Awards / Scholarships）的小标题 */
+.resume-group-label {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+}
+
+.resume-group + .resume-group {
+  margin-top: 1rem;
+}
+
 /* 已发表论文用标准引用格式，比标题字号小、行距宽一些 */
 .resume-citation {
   margin: 0 0 0.5rem 0;
   font-size: 1.05rem;
   line-height: 1.7;
   color: rgba(255,255,255,0.92);
+}
+
+.citation-index {
+  color: #a5b4fc;
+  font-weight: 600;
+  margin-right: 0.4rem;
+}
+
+/* 期刊名要真的是斜体：Inter 往往没有斜体字形，浏览器也不一定合成，
+   所以回退到确定带斜体字形的系统无衬线字体 */
+.resume-citation em {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-style: italic;
 }
 
 .institution {

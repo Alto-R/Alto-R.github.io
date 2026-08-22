@@ -35,13 +35,18 @@
       ]
     },
     "honors": {
-      "title": "Honors & Awards",
-      "items": [
+      "title": "Awards & Scholarships",
+      "groups": [
         {
-          "date": "2026",
-          "title": "First Prize, University Level",
-          "institution": "34th Peking University \"Challenge Cup\" May 4th Youth Science Award Competition",
-          "description": "Peking University's flagship student academic and scientific research competition."
+          "label": "Awards",
+          "items": [
+            {
+              "date": "2026",
+              "title": "First Prize (University Level)",
+              "institution": "34th Peking University \"Challenge Cup\" May 4th Youth Science Award Competition",
+              "description": "Peking University's flagship student academic and scientific research competition."
+            }
+          ]
         }
       ]
     },
@@ -49,19 +54,16 @@
       "title": "Publications",
       "items": [
         {
-          "date": "2026",
-          "citation": "**Huang, C.**, Zhang, H. & Yan, J. A global feasibility gap in resilient island energy transitions. *Nat Commun* 17, 8684 (2026).",
+          "citation": "**Huang, C.**, Zhang, H. & Yan, J. A global feasibility gap in resilient island energy transitions. *Nature Communications* **17**, 8684 (2026).",
           "institution": "First Author",
           "description": "Examined challenges in achieving resilient energy transitions for island systems globally."
         },
         {
-          "date": "2026",
-          "citation": "Yao, Y., Jiang, Y., Yu, Q., **Huang, C.** & Zhang, H. An end-to-end open-source pipeline for 3D semantic gaze analysis in photogrammetric virtual reality. *Displays* 95, 103608 (2026).",
+          "citation": "Yao, Y., Jiang, Y., Yu, Q., **Huang, C.** & Zhang, H. An end-to-end open-source pipeline for 3D semantic gaze analysis in photogrammetric virtual reality. *Displays* **95**, 103608 (2026).",
           "description": "Developed an end-to-end open-source pipeline that converts immersive VR eye-tracking streams into 3D semantic gaze measures within a photogrammetric campus digital twin, validated in a 30-participant wayfinding study."
         },
         {
-          "date": "2025",
-          "citation": "Yang, H., **Huang, C.** et al. Carbon emission implications of toll discount policies and network expansions in highway. *Transportation Research Part D: Transport and Environment* 144, 104758 (2025).",
+          "citation": "Yang, H., **Huang, C.** et al. Carbon emission implications of toll discount policies and network expansions in highway. *Transportation Research Part D: Transport and Environment* **144**, 104758 (2025).",
           "institution": "Co-First Author",
           "description": "Analyzed the impact of highway toll discount policies and network expansions on carbon emissions."
         }
