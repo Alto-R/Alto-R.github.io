@@ -177,7 +177,6 @@ const Resume = () => {
                   <span className="citation-index">[{index + 1}]</span>
                   {renderCitation(item.citation)}
                 </p>
-                {item.institution && <p className="institution">{item.institution}</p>}
                 <p className="description">{item.description}</p>
               </div>
             </div>

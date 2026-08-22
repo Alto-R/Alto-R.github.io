@@ -24,10 +24,12 @@ dist-ssr
 *.sw?
 /data
 plans/
-.happy-canvas
 
 # Personal notes
 src/data/web-design-notes.md
 
 # claude
 .claude
+
+# happy（画布、粘贴的参考图等本地工作文件）
+.happy-*

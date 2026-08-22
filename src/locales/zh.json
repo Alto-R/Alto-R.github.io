@@ -55,7 +55,6 @@
       "items": [
         {
           "citation": "**Huang, C.**, Zhang, H. & Yan, J. A global feasibility gap in resilient island energy transitions. *Nature Communications* **17**, 8684 (2026).",
-          "institution": "第一作者",
           "description": "研究了全球岛屿系统实现韧性能源转型面临的挑战。"
         },
         {
@@ -64,7 +63,6 @@
         },
         {
           "citation": "Yang, H., **Huang, C.** et al. Carbon emission implications of toll discount policies and network expansions in highway. *Transportation Research Part D: Transport and Environment* **144**, 104758 (2025).",
-          "institution": "共同第一作者",
           "description": "分析了高速公路通行费折扣政策和网络扩张对碳排放的影响。"
         }
       ]
@@ -155,7 +153,7 @@
     },
     "languageSkills": {
       "title": "语言能力",
-      "items": ["英语（CET-6: 563）"]
+      "items": ["普通话（母语）", "英语（CET-6，563 分）"]
     },
     "interests": {
       "title": "个人兴趣",
