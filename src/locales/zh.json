@@ -45,41 +45,45 @@
         }
       ]
     },
-    "research": {
-      "title": "科研经历",
+    "publications": {
+      "title": "发表论文",
       "items": [
         {
-          "date": "2026 · 已发表",
-          "title": "全球岛屿能源转型韧性的可行性差距",
-          "institution": "Nature Communications（第一作者）",
+          "date": "2026",
+          "citation": "**Huang, C.**, Zhang, H. & Yan, J. A global feasibility gap in resilient island energy transitions. *Nat Commun* 17, 8684 (2026).",
+          "institution": "第一作者",
           "description": "研究了全球岛屿系统实现韧性能源转型面临的挑战。"
         },
         {
-          "date": "2025 · 已发表",
-          "title": "高速公路通行费折扣政策和网络扩张对碳排放的影响",
-          "institution": "Transportation Research Part D（共同第一作者）",
-          "description": "分析了高速公路通行费折扣政策和网络扩张对碳排放的影响。"
-        },
-        {
-          "date": "2026 · 已发表",
-          "title": "面向摄影测量虚拟现实的端到端开源三维语义注视分析流程",
-          "institution": "Displays",
+          "date": "2026",
+          "citation": "Yao, Y., Jiang, Y., Yu, Q., **Huang, C.** & Zhang, H. An end-to-end open-source pipeline for 3D semantic gaze analysis in photogrammetric virtual reality. *Displays* 95, 103608 (2026).",
           "description": "提出端到端开源流程，在摄影测量校园数字孪生中将沉浸式VR眼动追踪数据转换为三维语义注视度量，并在30人寻路实验中验证。"
         },
         {
-          "date": "2026 · 审稿中",
+          "date": "2025",
+          "citation": "Yang, H., **Huang, C.** et al. Carbon emission implications of toll discount policies and network expansions in highway. *Transportation Research Part D: Transport and Environment* 144, 104758 (2025).",
+          "institution": "共同第一作者",
+          "description": "分析了高速公路通行费折扣政策和网络扩张对碳排放的影响。"
+        }
+      ]
+    },
+    "underReview": {
+      "title": "在审稿件",
+      "items": [
+        {
+          "date": "2026",
           "title": "城市车队电动汽车集成光伏的太阳能潜力与部署模式",
           "institution": "Sustainable Cities and Society",
           "description": "构建轨迹耦合评估框架，整合三维建筑几何、GPU加速光线追踪与真实GPS轨迹，量化上海3000辆电动汽车的车载光伏发电潜力。"
         },
         {
-          "date": "2026 · 审稿中",
+          "date": "2026",
           "title": "气候变化重塑全球能源系统：供给、需求、网络与区域韧性动态综述",
           "institution": "Advances in Applied Energy",
           "description": "系统综述气候变化下能源系统的供给、需求、网络与区域韧性动态。"
         },
         {
-          "date": "2026 · 审稿中",
+          "date": "2026",
           "title": "内生于经济网络拓扑的发展可能性前沿",
           "institution": "Communications Sustainability",
           "description": "提出内生于经济网络拓扑的发展可能性前沿。"

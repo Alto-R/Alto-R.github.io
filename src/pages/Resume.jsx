@@ -85,12 +85,25 @@ const Icons = {
   ),
 };
 
+// 引用条目里 **加粗** 我的名字、*斜体* 期刊名
+const renderCitation = (text) =>
+  text.split(/(\*\*.*?\*\*|\*.*?\*)/g).map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith('*') && part.endsWith('*')) {
+      return <em key={index}>{part.slice(1, -1)}</em>;
+    }
+    return part;
+  });
+
 const Resume = () => {
   const { t } = useTranslation();
 
   const education = t('resume.education.items', { returnObjects: true });
   const honors = t('resume.honors.items', { returnObjects: true });
-  const research = t('resume.research.items', { returnObjects: true });
+  const publications = t('resume.publications.items', { returnObjects: true });
+  const underReview = t('resume.underReview.items', { returnObjects: true });
   const projects = t('resume.projects.items', { returnObjects: true });
   const internship = t('resume.internship.items', { returnObjects: true });
   const activities = t('resume.activities.items', { returnObjects: true });
@@ -145,14 +158,33 @@ const Resume = () => {
           ))}
         </section>
 
-        {/* Research & Publications Section */}
+        {/* Publications Section */}
         <section className="resume-section">
           <h2 className="section-title">
             <BlurFade delay={0.2} inView>
-              {t('resume.research.title')}
+              {t('resume.publications.title')}
             </BlurFade>
           </h2>
-          {research.map((item, index) => (
+          {publications.map((item, index) => (
+            <div className="resume-item" key={index}>
+              <div className="resume-date">{item.date}</div>
+              <div className="resume-content">
+                <p className="resume-citation">{renderCitation(item.citation)}</p>
+                {item.institution && <p className="institution">{item.institution}</p>}
+                <p className="description">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* Manuscripts Under Review Section */}
+        <section className="resume-section">
+          <h2 className="section-title">
+            <BlurFade delay={0.22} inView>
+              {t('resume.underReview.title')}
+            </BlurFade>
+          </h2>
+          {underReview.map((item, index) => (
             <div className="resume-item" key={index}>
               <div className="resume-date">{item.date}</div>
               <div className="resume-content">

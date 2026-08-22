@@ -404,6 +404,14 @@ h1 {
   font-size: 1.4rem;
 }
 
+/* 已发表论文用标准引用格式，比标题字号小、行距宽一些 */
+.resume-citation {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.92);
+}
+
 .institution {
   margin: 0 0 0.5rem 0;
   color: #a5b4fc;
