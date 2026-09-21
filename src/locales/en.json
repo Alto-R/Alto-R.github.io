@@ -42,6 +42,18 @@
           "items": [
             {
               "date": "2026",
+              "title": "National Scholarship (top 1%)",
+              "institution": "Ministry of Education of China",
+              "description": ""
+            },
+            {
+              "date": "2026",
+              "title": "Merit Student of Peking University (with Distinction, top 1%)",
+              "institution": "Peking University",
+              "description": ""
+            },
+            {
+              "date": "2026",
               "title": "First Prize (University Level)",
               "institution": "34th Peking University \"Challenge Cup\" May 4th Youth Science Award Competition",
               "description": "Peking University's flagship student academic and scientific research competition."
