@@ -210,16 +210,6 @@
         "link": "https://www.nature.com/articles/s41467-026-75606-4"
       },
       {
-        "id": 2,
-        "title": "Carbon emission implications of toll discount policies and network expansions in highway",
-        "authors": "Han Yang^†^, **Churui Huang**^†^, Qing Yu^*^, et al.",
-        "venue": "Transportation Research Part D",
-        "year": "Published",
-        "abstract": "Highways account for a significant share of transportation-related CO2 emissions, yet policy interventions in mitigating these emissions remain underexplored. This paper investigates the impact of toll discount policies and network expansions on highway carbon emissions, drawing on long-term Electronic Toll Collection (ETC) data. We propose a bottom-up framework for estimating highway emissions and use a combination of time series decomposition and causal inference methods to isolate policy impacts. Our results reveal that toll discounts exert a significant and positive effect on highway carbon emissions, the shift of freight traffic onto highways reduces overall system-wide emissions: on average, each kilometer of discounted highway travel yields a net reduction of 52 g of CO2 per day in the transportation network. These findings underscore both the potential of policy-driven highway utilization to lower total carbon footprints and the importance of carefully calibrated policies to manage induced passenger travel.",
-        "tags": ["Transportation", "Carbon Emissions", "Policy Analysis"],
-        "link": "https://www.sciencedirect.com/science/article/pii/S1361920925001683"
-      },
-      {
         "id": 3,
         "title": "Solar potential and deployment archetypes of electric vehicle integrated photovoltaics in urban fleets",
         "authors": "**Churui Huang**, Qing Yu^*^, Xuanyu Xu, Muze Zhang, Haoran Zhang",
@@ -238,6 +228,16 @@
         "abstract": "Behavioural research in immersive virtual reality (VR) increasingly relies on eye tracking integrated with head-mounted displays (HMDs), yet converting raw gaze streams into reproducible, scene-grounded semantic measures remains difficult, particularly in photogrammetric environments with dense and irregular geometry. We present an end-to-end open-source pipeline for three-dimensional semantic gaze analysis. The pipeline operates within a photogrammetric digital twin of an outdoor university campus and combines a weighted multi-ray visual cone, which integrates foveal and peripheral acuity into a single Effective Gaze Point (EGP), with a three-dimensional adaptation of the Identification-by-Dispersion-Threshold (I-DT) algorithm for fixation detection. Semantic labels are assigned by matching fixations to a manually annotated reference cloud of 3.3 million points using a KD-tree K-Nearest-Neighbours (KNN) procedure. We demonstrate the pipeline in a 30-participant case study involving free exploration, high-information wayfinding, and low-information wayfinding tasks. The resulting measures distinguish task-dependent gaze allocation: signage fixation share increased from 2.7% during free exploration to 7.7% during high-information wayfinding, whereas road-surface fixation share reached 44.2% under low-information wayfinding. End-to-end processing of the case-study dataset required 20.8 s on a single workstation. The pipeline provides a reproducible and extensible workflow for linking immersive VR eye tracking to semantically interpretable three-dimensional scene elements.",
         "tags": ["Virtual Reality", "Eye Tracking", "Photogrammetry"],
         "link": "https://www.sciencedirect.com/science/article/pii/S0141938226002714"
+      },
+      {
+        "id": 2,
+        "title": "Carbon emission implications of toll discount policies and network expansions in highway",
+        "authors": "Han Yang^†^, **Churui Huang**^†^, Qing Yu^*^, et al.",
+        "venue": "Transportation Research Part D",
+        "year": "Published",
+        "abstract": "Highways account for a significant share of transportation-related CO2 emissions, yet policy interventions in mitigating these emissions remain underexplored. This paper investigates the impact of toll discount policies and network expansions on highway carbon emissions, drawing on long-term Electronic Toll Collection (ETC) data. We propose a bottom-up framework for estimating highway emissions and use a combination of time series decomposition and causal inference methods to isolate policy impacts. Our results reveal that toll discounts exert a significant and positive effect on highway carbon emissions, the shift of freight traffic onto highways reduces overall system-wide emissions: on average, each kilometer of discounted highway travel yields a net reduction of 52 g of CO2 per day in the transportation network. These findings underscore both the potential of policy-driven highway utilization to lower total carbon footprints and the importance of carefully calibrated policies to manage induced passenger travel.",
+        "tags": ["Transportation", "Carbon Emissions", "Policy Analysis"],
+        "link": "https://www.sciencedirect.com/science/article/pii/S1361920925001683"
       }
     ]
   },
