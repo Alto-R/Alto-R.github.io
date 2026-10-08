@@ -104,6 +104,12 @@
       "title": "Project Experience",
       "items": [
         {
+          "date": "2026.09",
+          "title": "Oral Presentation, ICAE 2026",
+          "institution": "ICAE 2026 · Jeju Island, Korea",
+          "description": "Presented “Resilience-oriented planning of integrated energy systems: a techno-economic assessment worldwide” at ICAE 2026."
+        },
+        {
           "date": "2025",
           "title": "Large-Scale Pipeline Flow Prediction",
           "institution": "National Pipeline \"Linghang Cup\" AI Competition — 2nd Prize",
